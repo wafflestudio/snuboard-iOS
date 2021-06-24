@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51311A0FBAD2717F56A862A4 /* Pods_snuboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCD705FBA019B9F09E93F50 /* Pods_snuboard.framework */; };
+		CC02705526849FD10021A3FF /* UnautorizedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02705426849FD10021A3FF /* UnautorizedDataModel.swift */; };
+		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
+		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
+		CC6862902684C1F400E83C52 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68628F2684C1F400E83C52 /* TopBar.swift */; };
+		CC6862952684CF9900E83C52 /* DepartmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862942684CF9900E83C52 /* DepartmentListView.swift */; };
+		CC6862972684E08A00E83C52 /* SegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862962684E08A00E83C52 /* SegmentedPickerView.swift */; };
+		CC68629B2684E68C00E83C52 /* DepartmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68629A2684E68C00E83C52 /* DepartmentDetailView.swift */; };
+		CC68629D2684E74200E83C52 /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68629C2684E74200E83C52 /* FlexibleView.swift */; };
+		CC68629F2684E8F000E83C52 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68629E2684E8F000E83C52 /* TagListView.swift */; };
+		CC6862A12684EA1900E83C52 /* _FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862A02684EA1900E83C52 /* _FlexibleView.swift */; };
+		CC6862A32684F38000E83C52 /* DepartmentDetailFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862A22684F38000E83C52 /* DepartmentDetailFeedView.swift */; };
+		CCDDD04A267F45EA00C1EFFA /* CollegeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD049267F45EA00C1EFFA /* CollegeList.swift */; };
+		CCDDD04D267F476000C1EFFA /* CollegeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD04C267F476000C1EFFA /* CollegeListView.swift */; };
+		CCDDD050267F48B400C1EFFA /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD04F267F48B400C1EFFA /* Department.swift */; };
+		CCDDD053267F48F300C1EFFA /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD052267F48F300C1EFFA /* BaseAPI.swift */; };
+		CCDDD055267F4A1F00C1EFFA /* DepartmentsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD054267F4A1F00C1EFFA /* DepartmentsAPI.swift */; };
+		CCDDD058267F4A8300C1EFFA /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD057267F4A8300C1EFFA /* TokenUtils.swift */; };
+		CCDDD05A267F4AA800C1EFFA /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD059267F4AA800C1EFFA /* KeyChain.swift */; };
+		CCDDD05D267F4C0800C1EFFA /* NetworkResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD05C267F4C0800C1EFFA /* NetworkResults.swift */; };
+		CCDDD060267F4C4400C1EFFA /* DepartmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD05F267F4C4400C1EFFA /* DepartmentService.swift */; };
+		CCDDD063267F4D8600C1EFFA /* BadRequestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD062267F4D8600C1EFFA /* BadRequestDataModel.swift */; };
+		CCDDD06A267F607E00C1EFFA /* CollegeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD069267F607E00C1EFFA /* CollegeListViewModel.swift */; };
+		CCDDD06C267F677100C1EFFA /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD06B267F677100C1EFFA /* College.swift */; };
+		CCDDD06F267F6DF500C1EFFA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD06E267F6DF500C1EFFA /* SignUpViewModel.swift */; };
+		CCDDD071267F8A2000C1EFFA /* StartAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD070267F8A2000C1EFFA /* StartAppService.swift */; };
+		CCDDD073267F8A9B00C1EFFA /* UserAuthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD072267F8A9B00C1EFFA /* UserAuthDataModel.swift */; };
+		CCDDD075267F8ABD00C1EFFA /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD074267F8ABD00C1EFFA /* UserAPI.swift */; };
+		CCDDD077267F968800C1EFFA /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD076267F968800C1EFFA /* SignInViewModel.swift */; };
+		CCDDD079267F987200C1EFFA /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD078267F987200C1EFFA /* ClearButton.swift */; };
+		CCFC2E1226773E33000390CB /* snuboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E1126773E33000390CB /* snuboardApp.swift */; };
+		CCFC2E1426773E33000390CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E1326773E33000390CB /* ContentView.swift */; };
+		CCFC2E1626773E35000390CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFC2E1526773E35000390CB /* Assets.xcassets */; };
+		CCFC2E1926773E35000390CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFC2E1826773E35000390CB /* Preview Assets.xcassets */; };
+		CCFC2E2226773F14000390CB /* StartAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E2126773F14000390CB /* StartAppView.swift */; };
+		CCFC2E2726774182000390CB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFC2E2626774182000390CB /* Colors.xcassets */; };
+		CCFC2E2A26774274000390CB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E2926774274000390CB /* Const.swift */; };
+		CCFC2E2C26774290000390CB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E2B26774290000390CB /* Color.swift */; };
+		CCFC2E3226778EEC000390CB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E3126778EEC000390CB /* SignUpView.swift */; };
+		CCFC2E39267797CD000390CB /* UnderlinedTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E38267797CD000390CB /* UnderlinedTextFieldView.swift */; };
+		CCFC2E3B26779B8F000390CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC2E3A26779B8F000390CB /* SignInView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A3429EB20D260CC16FD5AF7 /* Pods-snuboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard.debug.xcconfig"; path = "Target Support Files/Pods-snuboard/Pods-snuboard.debug.xcconfig"; sourceTree = "<group>"; };
+		8BCD705FBA019B9F09E93F50 /* Pods_snuboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D302BB2A7DD5B739A04042 /* Pods-snuboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard.release.xcconfig"; path = "Target Support Files/Pods-snuboard/Pods-snuboard.release.xcconfig"; sourceTree = "<group>"; };
+		CC02705426849FD10021A3FF /* UnautorizedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnautorizedDataModel.swift; sourceTree = "<group>"; };
+		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		CC6862942684CF9900E83C52 /* DepartmentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListView.swift; sourceTree = "<group>"; };
+		CC6862962684E08A00E83C52 /* SegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerView.swift; sourceTree = "<group>"; };
+		CC68629A2684E68C00E83C52 /* DepartmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDetailView.swift; sourceTree = "<group>"; };
+		CC68629C2684E74200E83C52 /* FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
+		CC68629E2684E8F000E83C52 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		CC6862A02684EA1900E83C52 /* _FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _FlexibleView.swift; sourceTree = "<group>"; };
+		CC6862A22684F38000E83C52 /* DepartmentDetailFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDetailFeedView.swift; sourceTree = "<group>"; };
+		CCDDD049267F45EA00C1EFFA /* CollegeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeList.swift; sourceTree = "<group>"; };
+		CCDDD04C267F476000C1EFFA /* CollegeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeListView.swift; sourceTree = "<group>"; };
+		CCDDD04F267F48B400C1EFFA /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		CCDDD052267F48F300C1EFFA /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		CCDDD054267F4A1F00C1EFFA /* DepartmentsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsAPI.swift; sourceTree = "<group>"; };
+		CCDDD057267F4A8300C1EFFA /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
+		CCDDD059267F4AA800C1EFFA /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		CCDDD05C267F4C0800C1EFFA /* NetworkResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResults.swift; sourceTree = "<group>"; };
+		CCDDD05F267F4C4400C1EFFA /* DepartmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentService.swift; sourceTree = "<group>"; };
+		CCDDD062267F4D8600C1EFFA /* BadRequestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadRequestDataModel.swift; sourceTree = "<group>"; };
+		CCDDD069267F607E00C1EFFA /* CollegeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeListViewModel.swift; sourceTree = "<group>"; };
+		CCDDD06B267F677100C1EFFA /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
+		CCDDD06E267F6DF500C1EFFA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		CCDDD070267F8A2000C1EFFA /* StartAppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppService.swift; sourceTree = "<group>"; };
+		CCDDD072267F8A9B00C1EFFA /* UserAuthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthDataModel.swift; sourceTree = "<group>"; };
+		CCDDD074267F8ABD00C1EFFA /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		CCDDD076267F968800C1EFFA /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		CCDDD078267F987200C1EFFA /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		CCFC2E0E26773E33000390CB /* snuboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snuboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCFC2E1126773E33000390CB /* snuboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuboardApp.swift; sourceTree = "<group>"; };
+		CCFC2E1326773E33000390CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CCFC2E1526773E35000390CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCFC2E1826773E35000390CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CCFC2E1A26773E35000390CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCFC2E2126773F14000390CB /* StartAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppView.swift; sourceTree = "<group>"; };
+		CCFC2E2626774182000390CB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		CCFC2E2926774274000390CB /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		CCFC2E2B26774290000390CB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CCFC2E3126778EEC000390CB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		CCFC2E38267797CD000390CB /* UnderlinedTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextFieldView.swift; sourceTree = "<group>"; };
+		CCFC2E3A26779B8F000390CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCFC2E0B26773E33000390CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51311A0FBAD2717F56A862A4 /* Pods_snuboard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27CF0A59A9D8C90703D5BBD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A3429EB20D260CC16FD5AF7 /* Pods-snuboard.debug.xcconfig */,
+				C3D302BB2A7DD5B739A04042 /* Pods-snuboard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C6B92FE0C9F6572437A981C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BCD705FBA019B9F09E93F50 /* Pods_snuboard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCDDD04B267F474900C1EFFA /* Departments */ = {
+			isa = PBXGroup;
+			children = (
+				CC68629A2684E68C00E83C52 /* DepartmentDetailView.swift */,
+				CC6862942684CF9900E83C52 /* DepartmentListView.swift */,
+				CCDDD04C267F476000C1EFFA /* CollegeListView.swift */,
+				CC6862962684E08A00E83C52 /* SegmentedPickerView.swift */,
+				CC6862A22684F38000E83C52 /* DepartmentDetailFeedView.swift */,
+			);
+			path = Departments;
+			sourceTree = "<group>";
+		};
+		CCDDD04E267F48AB00C1EFFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD061267F4D7600C1EFFA /* DataModel */,
+				CCDDD04F267F48B400C1EFFA /* Department.swift */,
+				CCDDD06B267F677100C1EFFA /* College.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCDDD051267F48CC00C1EFFA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD05B267F4BCD00C1EFFA /* API */,
+				CCDDD05C267F4C0800C1EFFA /* NetworkResults.swift */,
+				CCDDD05F267F4C4400C1EFFA /* DepartmentService.swift */,
+				CCDDD070267F8A2000C1EFFA /* StartAppService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CCDDD056267F4A6000C1EFFA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD057267F4A8300C1EFFA /* TokenUtils.swift */,
+				CCDDD059267F4AA800C1EFFA /* KeyChain.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CCDDD05B267F4BCD00C1EFFA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD052267F48F300C1EFFA /* BaseAPI.swift */,
+				CCDDD054267F4A1F00C1EFFA /* DepartmentsAPI.swift */,
+				CCDDD074267F8ABD00C1EFFA /* UserAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CCDDD061267F4D7600C1EFFA /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD062267F4D8600C1EFFA /* BadRequestDataModel.swift */,
+				CCDDD072267F8A9B00C1EFFA /* UserAuthDataModel.swift */,
+				CC02705426849FD10021A3FF /* UnautorizedDataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		CCDDD066267F605600C1EFFA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CCDDD067267F606800C1EFFA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD06D267F6DD100C1EFFA /* StartApp */,
+				CCDDD068267F607300C1EFFA /* Departments */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CCDDD068267F607300C1EFFA /* Departments */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD069267F607E00C1EFFA /* CollegeListViewModel.swift */,
+			);
+			path = Departments;
+			sourceTree = "<group>";
+		};
+		CCDDD06D267F6DD100C1EFFA /* StartApp */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD06E267F6DF500C1EFFA /* SignUpViewModel.swift */,
+				CCDDD076267F968800C1EFFA /* SignInViewModel.swift */,
+			);
+			path = StartApp;
+			sourceTree = "<group>";
+		};
+		CCFC2E0526773E33000390CB = {
+			isa = PBXGroup;
+			children = (
+				CCFC2E1026773E33000390CB /* snuboard */,
+				CCFC2E0F26773E33000390CB /* Products */,
+				27CF0A59A9D8C90703D5BBD5 /* Pods */,
+				C6B92FE0C9F6572437A981C9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CCFC2E0F26773E33000390CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC2E0E26773E33000390CB /* snuboard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCFC2E1026773E33000390CB /* snuboard */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD067267F606800C1EFFA /* ViewModel */,
+				CCFC2E2026773EF8000390CB /* Views */,
+				CCDDD056267F4A6000C1EFFA /* Utils */,
+				CCDDD051267F48CC00C1EFFA /* Networking */,
+				CCDDD04E267F48AB00C1EFFA /* Model */,
+				CCFC2E2D26774431000390CB /* Extension */,
+				CCFC2E2826774267000390CB /* Constants */,
+				CCFC2E2326774157000390CB /* Resources */,
+				CCFC2E1126773E33000390CB /* snuboardApp.swift */,
+				CCFC2E1326773E33000390CB /* ContentView.swift */,
+				CCFC2E1A26773E35000390CB /* Info.plist */,
+				CCFC2E1726773E35000390CB /* Preview Content */,
+			);
+			path = snuboard;
+			sourceTree = "<group>";
+		};
+		CCFC2E1726773E35000390CB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC2E1826773E35000390CB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CCFC2E2026773EF8000390CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC2E3326778F4F000390CB /* CommonViews */,
+				CCDDD04B267F474900C1EFFA /* Departments */,
+				CCFC2E3026778ECD000390CB /* StartApp */,
+				CC504EFB26838C2200535AFC /* MainTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCFC2E2326774157000390CB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD066267F605600C1EFFA /* ViewModel */,
+				CCFC2E1526773E35000390CB /* Assets.xcassets */,
+				CCFC2E2626774182000390CB /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCFC2E2826774267000390CB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC2E2926774274000390CB /* Const.swift */,
+				CCFC2E2B26774290000390CB /* Color.swift */,
+				CCDDD049267F45EA00C1EFFA /* CollegeList.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		CCFC2E2D26774431000390CB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CC504EFD26839CC900535AFC /* View+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CCFC2E3026778ECD000390CB /* StartApp */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC2E2126773F14000390CB /* StartAppView.swift */,
+				CCFC2E3126778EEC000390CB /* SignUpView.swift */,
+				CCFC2E3A26779B8F000390CB /* SignInView.swift */,
+			);
+			path = StartApp;
+			sourceTree = "<group>";
+		};
+		CCFC2E3326778F4F000390CB /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC2E38267797CD000390CB /* UnderlinedTextFieldView.swift */,
+				CCDDD078267F987200C1EFFA /* ClearButton.swift */,
+				CC68628F2684C1F400E83C52 /* TopBar.swift */,
+				CC68629C2684E74200E83C52 /* FlexibleView.swift */,
+				CC68629E2684E8F000E83C52 /* TagListView.swift */,
+				CC6862A02684EA1900E83C52 /* _FlexibleView.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCFC2E0D26773E33000390CB /* snuboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCFC2E1D26773E35000390CB /* Build configuration list for PBXNativeTarget "snuboard" */;
+			buildPhases = (
+				D3E50D772BA738B8FBA0482E /* [CP] Check Pods Manifest.lock */,
+				CCFC2E0A26773E33000390CB /* Sources */,
+				CCFC2E0B26773E33000390CB /* Frameworks */,
+				CCFC2E0C26773E33000390CB /* Resources */,
+				417BD4777060FF9EEA41BC8D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = snuboard;
+			productName = snuboard;
+			productReference = CCFC2E0E26773E33000390CB /* snuboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCFC2E0626773E33000390CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					CCFC2E0D26773E33000390CB = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = CCFC2E0926773E33000390CB /* Build configuration list for PBXProject "snuboard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCFC2E0526773E33000390CB;
+			productRefGroup = CCFC2E0F26773E33000390CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCFC2E0D26773E33000390CB /* snuboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCFC2E0C26773E33000390CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCFC2E2726774182000390CB /* Colors.xcassets in Resources */,
+				CCFC2E1926773E35000390CB /* Preview Assets.xcassets in Resources */,
+				CCFC2E1626773E35000390CB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		417BD4777060FF9EEA41BC8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snuboard/Pods-snuboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snuboard/Pods-snuboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snuboard/Pods-snuboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3E50D772BA738B8FBA0482E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snuboard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCFC2E0A26773E33000390CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6862A32684F38000E83C52 /* DepartmentDetailFeedView.swift in Sources */,
+				CCDDD073267F8A9B00C1EFFA /* UserAuthDataModel.swift in Sources */,
+				CCFC2E1426773E33000390CB /* ContentView.swift in Sources */,
+				CC02705526849FD10021A3FF /* UnautorizedDataModel.swift in Sources */,
+				CCFC2E2C26774290000390CB /* Color.swift in Sources */,
+				CCDDD04D267F476000C1EFFA /* CollegeListView.swift in Sources */,
+				CCDDD055267F4A1F00C1EFFA /* DepartmentsAPI.swift in Sources */,
+				CCDDD04A267F45EA00C1EFFA /* CollegeList.swift in Sources */,
+				CC68629D2684E74200E83C52 /* FlexibleView.swift in Sources */,
+				CC6862902684C1F400E83C52 /* TopBar.swift in Sources */,
+				CCDDD063267F4D8600C1EFFA /* BadRequestDataModel.swift in Sources */,
+				CC68629F2684E8F000E83C52 /* TagListView.swift in Sources */,
+				CC6862972684E08A00E83C52 /* SegmentedPickerView.swift in Sources */,
+				CCDDD060267F4C4400C1EFFA /* DepartmentService.swift in Sources */,
+				CCFC2E2A26774274000390CB /* Const.swift in Sources */,
+				CCDDD079267F987200C1EFFA /* ClearButton.swift in Sources */,
+				CCFC2E2226773F14000390CB /* StartAppView.swift in Sources */,
+				CCDDD05D267F4C0800C1EFFA /* NetworkResults.swift in Sources */,
+				CC68629B2684E68C00E83C52 /* DepartmentDetailView.swift in Sources */,
+				CCDDD05A267F4AA800C1EFFA /* KeyChain.swift in Sources */,
+				CCDDD050267F48B400C1EFFA /* Department.swift in Sources */,
+				CCDDD071267F8A2000C1EFFA /* StartAppService.swift in Sources */,
+				CCDDD077267F968800C1EFFA /* SignInViewModel.swift in Sources */,
+				CCFC2E3226778EEC000390CB /* SignUpView.swift in Sources */,
+				CCDDD06F267F6DF500C1EFFA /* SignUpViewModel.swift in Sources */,
+				CCDDD058267F4A8300C1EFFA /* TokenUtils.swift in Sources */,
+				CCDDD075267F8ABD00C1EFFA /* UserAPI.swift in Sources */,
+				CCDDD06A267F607E00C1EFFA /* CollegeListViewModel.swift in Sources */,
+				CCDDD053267F48F300C1EFFA /* BaseAPI.swift in Sources */,
+				CCFC2E1226773E33000390CB /* snuboardApp.swift in Sources */,
+				CCFC2E3B26779B8F000390CB /* SignInView.swift in Sources */,
+				CCFC2E39267797CD000390CB /* UnderlinedTextFieldView.swift in Sources */,
+				CC6862A12684EA1900E83C52 /* _FlexibleView.swift in Sources */,
+				CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */,
+				CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */,
+				CCDDD06C267F677100C1EFFA /* College.swift in Sources */,
+				CC6862952684CF9900E83C52 /* DepartmentListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CCFC2E1B26773E35000390CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CCFC2E1C26773E35000390CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCFC2E1E26773E35000390CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A3429EB20D260CC16FD5AF7 /* Pods-snuboard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = snuboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.subeen.snuboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCFC2E1F26773E35000390CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3D302BB2A7DD5B739A04042 /* Pods-snuboard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = snuboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.subeen.snuboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCFC2E0926773E33000390CB /* Build configuration list for PBXProject "snuboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCFC2E1B26773E35000390CB /* Debug */,
+				CCFC2E1C26773E35000390CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCFC2E1D26773E35000390CB /* Build configuration list for PBXNativeTarget "snuboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCFC2E1E26773E35000390CB /* Debug */,
+				CCFC2E1F26773E35000390CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCFC2E0626773E33000390CB /* Project object */;
+}
