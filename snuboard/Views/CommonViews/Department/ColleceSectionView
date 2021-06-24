@@ -1,0 +1,39 @@
+//
+//  CollegeSectionHeader.swift
+//  snuboard
+//
+//  Created by Subeen Park on 2021/06/24.
+//
+
+import SwiftUI
+
+struct CollegeSectionView: View {
+    
+    let college: College
+    
+    init(college: String) {
+        self.college = college
+    }
+    
+    var body: some View {
+        HStack {
+            Image("domain")
+                .resizable()
+                .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Text(college.college)
+                .bold()
+                .font(.system(size: 19))
+            Spacer()
+        } // End of Hstack
+        .padding(.leading, 13)
+        .padding(.top, 8.5)
+        .padding(.bottom, 8.5)
+        .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
+    }
+}
+
+struct CollegeSectionHeader_Previews: PreviewProvider {
+    static var previews: some View {
+        CollegeSectionHeader("자연과학대학")
+    }
+}
