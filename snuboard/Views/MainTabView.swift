@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainTabView: View {
     
+    @StateObject var deptModel = DepartmentViewModel()
+    
     init() {
         UITabBar.appearance().barTintColor = .white
         UITabBar.appearance().tintColor = UIColor(named: "Main Blue")
@@ -18,12 +20,19 @@ struct MainTabView: View {
 
         TabView() {
             
-            Color.red.hideNavigationBar()
+            ZStack {
+                Color.red.hideNavigationBar()
+                TagChipView(item: "tagChip", selected: false, actionIfSelected: {print("selected")}, actionIfUnselected: {
+                    print("unselected")
+                })
+            }
                 .tabItem {
                     Image("dynamic_feed").renderingMode(.template)
                     Text("피드")
                         .font(.system(size: 12))
                 }
+            
+            
             CollegeListView().hideNavigationBar()
                 .tabItem {
                     Image("domain").renderingMode(.template)
@@ -39,6 +48,7 @@ struct MainTabView: View {
             
         } // End of tab view
         .hideNavigationBar()
+        .environmentObject(deptModel)
     }
 }
 

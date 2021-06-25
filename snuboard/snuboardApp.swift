@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct snuboardApp: App {
+    
     var body: some Scene {
         WindowGroup {
             StartAppView()
