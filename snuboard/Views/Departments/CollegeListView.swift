@@ -9,11 +9,10 @@ import SwiftUI
 
 struct CollegeListView: View {
     
-    @StateObject private var model = CollegeListViewModel()
+    @EnvironmentObject var deptModel: DepartmentViewModel
     
     
     var body: some View {
-        
         
         VStack(spacing: 0) {
             
@@ -24,7 +23,7 @@ struct CollegeListView: View {
     
             ScrollView {
                 VStack(spacing: 10) {
-                    ForEach(model.colleges, id: \.self) { college in
+                    ForEach(deptModel.colleges, id: \.self) { college in
                         
                         DepartmentListView(college: college)
     

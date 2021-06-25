@@ -9,14 +9,21 @@ import SwiftUI
 
 struct DepartmentDetailFeedView: View {
     
+    @EnvironmentObject var deptModel: DepartmentViewModel
+    
     var dept: Department
+    var collegeId: Int = 0
     
     init(dept: Department) {
         self.dept = dept
     }
     
     var body: some View {
+       
         VStack {
+            
+            
+            // Follow-Chip
             VStack {
                 HStack {
                     Image("tag")
@@ -28,15 +35,36 @@ struct DepartmentDetailFeedView: View {
                         .bold()
                     Spacer()
                 }
-                TagListView(tagList: dept.tags, followList: dept.follow)
+                FeedTagListView(id: dept.id, college: dept.college).environmentObject(deptModel)
             }
             .padding(12)
             .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
+            
+            // Palette-Chip
+            VStack {
+                HStack {
+                    Image("color_lens")
+                        .resizable()
+                        .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Text("색")
+                        .foregroundColor(Const.ColorSet.Gray1.color)
+                        .font(.system(size: 16))
+                        .bold()
+                    Spacer()
+                }
+                ColorPalette()
+            }
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
+            
             Spacer()
+            
+            
         }
         .padding(10)
-        .ignoresSafeArea()
-        .background(Const.ColorSet.BgGray.color)
+        .background(Const.ColorSet.BgGray.color.ignoresSafeArea())
+        
+        
         
     }
 }

@@ -26,6 +26,10 @@ enum DepartmentsAPI: BaseAPI {
         switch self {
         case .getAllDepartments:
             return .get
+        case .createDepartmentFollow:
+            return .post
+        case .deleteDepartmentFollow:
+            return .delete
         default:
             return .get
         }
@@ -35,7 +39,10 @@ enum DepartmentsAPI: BaseAPI {
         switch self {
         case .getAllDepartments:
             return ""
-        
+        case .createDepartmentFollow(let id, _):
+            return "/\(id)/follow"
+        case .deleteDepartmentFollow(let id, _):
+            return "/\(id)/follow"
         default:
             return ""
         }
@@ -43,6 +50,12 @@ enum DepartmentsAPI: BaseAPI {
     
     var param: [String : Any]? {
         switch self {
+        
+        case .createDepartmentFollow(_, let follow):
+            return ["follow": follow]
+            
+        case .deleteDepartmentFollow(_, let follow):
+            return ["follow": follow]
     
         
         default:
@@ -54,6 +67,9 @@ enum DepartmentsAPI: BaseAPI {
     
     
     case getAllDepartments
+    case createDepartmentFollow(id: Int, follow: String)
+    case deleteDepartmentFollow(id: Int, follow: String)
+    
     
     
 }

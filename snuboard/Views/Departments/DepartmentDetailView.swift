@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DepartmentDetailView: View {
     
+    @EnvironmentObject var deptModel: DepartmentViewModel
+    
+    
     var dept: Department
     @State var indexSelected: Int = 0
     
@@ -19,17 +22,21 @@ struct DepartmentDetailView: View {
 
     
     var body: some View {
+        
+        
         VStack(spacing: 0) {
+            
             SegmentedPickerView(selectedIndex: $indexSelected)
             if (indexSelected == 0) {
 //                TagListView()
-                Text("index 0")
+                DepartmentDetailHomeView(dept: dept).environmentObject(deptModel)
             }
             else if (indexSelected == 1) {
-                DepartmentDetailFeedView(dept: dept)
+                DepartmentDetailFeedView(dept: dept).environmentObject(deptModel)
             }
             Spacer()
         }
+        .background(Const.ColorSet.BgGray.color.edgesIgnoringSafeArea(.bottom))
         
         
     }
