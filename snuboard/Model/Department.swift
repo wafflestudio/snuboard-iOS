@@ -13,7 +13,7 @@ struct Department: Codable, Hashable {
     let name, college: String
     let link: String
     let tags: [String]
-    let follow: [String]
+    var follow: [String]
 }
 
 
