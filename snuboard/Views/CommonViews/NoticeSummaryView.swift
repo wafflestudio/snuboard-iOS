@@ -24,6 +24,8 @@ struct NoticeSummaryView: View {
             
             // TagList
 //            TagListView(id: notice.departmentID, college: <#String#>, tagList: notice.tags, followList: [])
+            NoticeTagListView(dept: notice.departmentName, tags: notice.tags)
+            
             
             
             HStack {

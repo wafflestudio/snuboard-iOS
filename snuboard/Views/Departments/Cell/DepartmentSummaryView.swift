@@ -60,6 +60,7 @@ struct DepartmentSummaryView: View {
 //            .background(Color.white)
         } // End of Vstack
         .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+        .hideNavigationBar()
     }
 }
 

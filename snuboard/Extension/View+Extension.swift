@@ -9,13 +9,32 @@ import SwiftUI
 import UIKit
 
 
+// Navigation var related extensions
 extension View {
     
     func hideNavigationBar() -> some View {
         self
+            .preferredColorScheme(.light)
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
+    }
+    
+    
+    func customNavBarWithOutSearch(title: String, action: @escaping ()->()) -> some View {
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 20, weight: .bold)]
+
+        return self
+            .navigationBarTitle(title)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                                    Image("navigate_before")
+                                    .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                                    .foregroundColor(.black)
+                                    .onTapGesture {
+                                        action()
+                                    })
     }
     
 }

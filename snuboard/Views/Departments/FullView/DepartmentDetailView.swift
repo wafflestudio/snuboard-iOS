@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DepartmentDetailView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var deptModel: DepartmentViewModel
     
     
@@ -41,7 +42,9 @@ struct DepartmentDetailView: View {
             Spacer()
         }
         .background(Const.ColorSet.BgGray.color.edgesIgnoringSafeArea(.bottom))
-        
+        .customNavBarWithOutSearch(title: dept.name, action: {
+            self.presentationMode.wrappedValue.dismiss()
+        })
         
     }
 }

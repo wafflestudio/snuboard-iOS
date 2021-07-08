@@ -13,38 +13,41 @@ struct CollegeListView: View {
     
     var body: some View {
         
-        VStack(spacing: 0) {
-            
-            // TOP BAR
-            TopBar("팔로우")
-            
-            Divider()
-    
-            ScrollView {
-                VStack(spacing: 10) {
-                    
-                    ForEach(deptModel.colleges, id: \.self) { college in
-                        
-                        ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in
-                            DepartmentSummaryView(id: dept.id).environmentObject(deptModel)
-                        }
-    
-                    } // End of ForEach
-                    
-
-                    
-                    ForEach(deptModel.colleges, id: \.self) { college in
-                        
-                        DepartmentListView(college: college)
-    
-                    } // End of ForEach
-                }// End of VStack
-                .padding()
-                .background(Const.ColorSet.BgGray.color)
+        NavigationView {
+            VStack(spacing: 0) {
                 
-            } // End of Scroll View
-    
-            
+                // TOP BAR
+                TopBar("팔로우")
+                
+                Divider()
+        
+                ScrollView {
+                    VStack(spacing: 10) {
+                        
+                        ForEach(deptModel.colleges, id: \.self) { college in
+                            
+                            ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in
+                                DepartmentSummaryView(id: dept.id).environmentObject(deptModel)
+                            }
+        
+                        } // End of ForEach
+                        
+
+                        
+                        ForEach(deptModel.colleges, id: \.self) { college in
+                            
+                            DepartmentListView(college: college)
+        
+                        } // End of ForEach
+                    }// End of VStack
+                    .padding()
+                    .background(Const.ColorSet.BgGray.color)
+                    
+                } // End of Scroll View
+        
+                
+            } // End of VStack
+            .preferredColorScheme(.light)
         }
         
         

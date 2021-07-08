@@ -12,10 +12,17 @@ struct TagChipView: View {
     
     let item: String
     var activateTagSelect = true
+    var isDept = false
     @State var selected = false
 
-    let actionIfSelected: () -> Void
-    let actionIfUnSelected: () -> Void
+    var actionIfSelected: () -> Void = {}
+    var actionIfUnSelected: () -> Void = {}
+    
+    init (item: String, isDept: Bool) {
+        self.item = item
+        self.isDept = isDept
+    }
+
     
     
     init (item: String, selected: Bool, actionIfSelected: @escaping ()-> Void, actionIfUnselected: @escaping ()->Void) {
@@ -44,7 +51,7 @@ struct TagChipView: View {
             .padding(.trailing, 4)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                .fill(selected ? Const.ColorSet.MainBlue.color : Const.ColorSet.Unselected.color)
+                    .fill(isDept ? Color(UserDefaults.standard.deptColor[item]!) : selected ? Const.ColorSet.MainBlue.color : Const.ColorSet.Unselected.color)
             )
             .onTapGesture {
                 if activateTagSelect {
