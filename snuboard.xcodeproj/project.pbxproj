@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		51311A0FBAD2717F56A862A4 /* Pods_snuboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCD705FBA019B9F09E93F50 /* Pods_snuboard.framework */; };
 		CC02705526849FD10021A3FF /* UnautorizedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02705426849FD10021A3FF /* UnautorizedDataModel.swift */; };
+		CC02A508268DADE8005E1B7F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02A507268DADE8005E1B7F /* Settings.swift */; };
+		CC02A50C268DB448005E1B7F /* DepartmentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */; };
 		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
 		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
 		CC6862902684C1F400E83C52 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68628F2684C1F400E83C52 /* TopBar.swift */; };
@@ -31,8 +33,9 @@
 		CC6862B926860C5E00E83C52 /* NoticeSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862B826860C5E00E83C52 /* NoticeSummaryView.swift */; };
 		CC6862BB2686163100E83C52 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BA2686163100E83C52 /* String+Extension.swift */; };
 		CC6862BD2686360C00E83C52 /* TagChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BC2686360C00E83C52 /* TagChip.swift */; };
+		CC6862BF26871FA900E83C52 /* HomeTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BE26871FA900E83C52 /* HomeTagListView.swift */; };
 		CCDDD04A267F45EA00C1EFFA /* CollegeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD049267F45EA00C1EFFA /* CollegeList.swift */; };
-		CCDDD04D267F476000C1EFFA /* DepartmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD04C267F476000C1EFFA /* DepartmentViewModel.swift */; };
+		CCDDD04D267F476000C1EFFA /* CollegeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD04C267F476000C1EFFA /* CollegeListView.swift */; };
 		CCDDD050267F48B400C1EFFA /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD04F267F48B400C1EFFA /* Department.swift */; };
 		CCDDD053267F48F300C1EFFA /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD052267F48F300C1EFFA /* BaseAPI.swift */; };
 		CCDDD055267F4A1F00C1EFFA /* DepartmentsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD054267F4A1F00C1EFFA /* DepartmentsAPI.swift */; };
@@ -67,6 +70,8 @@
 		8BCD705FBA019B9F09E93F50 /* Pods_snuboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D302BB2A7DD5B739A04042 /* Pods-snuboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard.release.xcconfig"; path = "Target Support Files/Pods-snuboard/Pods-snuboard.release.xcconfig"; sourceTree = "<group>"; };
 		CC02705426849FD10021A3FF /* UnautorizedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnautorizedDataModel.swift; sourceTree = "<group>"; };
+		CC02A507268DADE8005E1B7F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSummaryView.swift; sourceTree = "<group>"; };
 		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -89,8 +94,9 @@
 		CC6862B826860C5E00E83C52 /* NoticeSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSummaryView.swift; sourceTree = "<group>"; };
 		CC6862BA2686163100E83C52 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CC6862BC2686360C00E83C52 /* TagChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChip.swift; sourceTree = "<group>"; };
+		CC6862BE26871FA900E83C52 /* HomeTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTagListView.swift; sourceTree = "<group>"; };
 		CCDDD049267F45EA00C1EFFA /* CollegeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeList.swift; sourceTree = "<group>"; };
-		CCDDD04C267F476000C1EFFA /* DepartmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewModel.swift; sourceTree = "<group>"; };
+		CCDDD04C267F476000C1EFFA /* CollegeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeListView.swift; sourceTree = "<group>"; };
 		CCDDD04F267F48B400C1EFFA /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		CCDDD052267F48F300C1EFFA /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		CCDDD054267F4A1F00C1EFFA /* DepartmentsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsAPI.swift; sourceTree = "<group>"; };
@@ -151,17 +157,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CC02A50D268DE33F005E1B7F /* FullView */ = {
+			isa = PBXGroup;
+			children = (
+				CC6862A22684F38000E83C52 /* DepartmentDetailFeedView.swift */,
+				CCDDD04C267F476000C1EFFA /* CollegeListView.swift */,
+				CC68629A2684E68C00E83C52 /* DepartmentDetailView.swift */,
+				CC6862AE2686042900E83C52 /* DepartmentDetailHomeView.swift */,
+			);
+			path = FullView;
+			sourceTree = "<group>";
+		};
+		CC02A50E268DE364005E1B7F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */,
+				CC68629E2684E8F000E83C52 /* FeedTagListView.swift */,
+				CC6862942684CF9900E83C52 /* DepartmentListView.swift */,
+				CC6862A42684FBA100E83C52 /* ColorPalette.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CCDDD04B267F474900C1EFFA /* Departments */ = {
 			isa = PBXGroup;
 			children = (
-				CC68629E2684E8F000E83C52 /* FeedTagListView.swift */,
-				CC68629A2684E68C00E83C52 /* DepartmentDetailView.swift */,
-				CC6862942684CF9900E83C52 /* DepartmentListView.swift */,
-				CCDDD04C267F476000C1EFFA /* DepartmentViewModel.swift */,
+				CC02A50E268DE364005E1B7F /* Cell */,
+				CC02A50D268DE33F005E1B7F /* FullView */,
+				CC6862BE26871FA900E83C52 /* HomeTagListView.swift */,
 				CC6862962684E08A00E83C52 /* SegmentedPickerView.swift */,
-				CC6862A22684F38000E83C52 /* DepartmentDetailFeedView.swift */,
-				CC6862A42684FBA100E83C52 /* ColorPalette.swift */,
-				CC6862AE2686042900E83C52 /* DepartmentDetailHomeView.swift */,
 			);
 			path = Departments;
 			sourceTree = "<group>";
@@ -220,13 +244,6 @@
 				CC6862A62685745D00E83C52 /* NoticeSummaryDataModel.swift */,
 			);
 			path = DataModel;
-			sourceTree = "<group>";
-		};
-		CCDDD066267F605600C1EFFA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CCDDD067267F606800C1EFFA /* ViewModel */ = {
@@ -315,7 +332,6 @@
 		CCFC2E2326774157000390CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CCDDD066267F605600C1EFFA /* ViewModel */,
 				CCFC2E1526773E35000390CB /* Assets.xcassets */,
 				CCFC2E2626774182000390CB /* Colors.xcassets */,
 			);
@@ -328,6 +344,7 @@
 				CCFC2E2926774274000390CB /* Const.swift */,
 				CCFC2E2B26774290000390CB /* Color.swift */,
 				CCDDD049267F45EA00C1EFFA /* CollegeList.swift */,
+				CC02A507268DADE8005E1B7F /* Settings.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -482,10 +499,11 @@
 				CC6862A32684F38000E83C52 /* DepartmentDetailFeedView.swift in Sources */,
 				CCDDD073267F8A9B00C1EFFA /* UserAuthDataModel.swift in Sources */,
 				CC6862AF2686042900E83C52 /* DepartmentDetailHomeView.swift in Sources */,
+				CC02A508268DADE8005E1B7F /* Settings.swift in Sources */,
 				CCFC2E1426773E33000390CB /* ContentView.swift in Sources */,
 				CC02705526849FD10021A3FF /* UnautorizedDataModel.swift in Sources */,
 				CCFC2E2C26774290000390CB /* Color.swift in Sources */,
-				CCDDD04D267F476000C1EFFA /* DepartmentViewModel.swift in Sources */,
+				CCDDD04D267F476000C1EFFA /* CollegeListView.swift in Sources */,
 				CC6862B32686064200E83C52 /* NoticeAPI.swift in Sources */,
 				CC6862BD2686360C00E83C52 /* TagChip.swift in Sources */,
 				CC6862B926860C5E00E83C52 /* NoticeSummaryView.swift in Sources */,
@@ -501,6 +519,7 @@
 				CCFC2E2A26774274000390CB /* Const.swift in Sources */,
 				CCDDD079267F987200C1EFFA /* ClearButton.swift in Sources */,
 				CCFC2E2226773F14000390CB /* StartAppView.swift in Sources */,
+				CC6862BF26871FA900E83C52 /* HomeTagListView.swift in Sources */,
 				CCDDD05D267F4C0800C1EFFA /* NetworkResults.swift in Sources */,
 				CC6862A72685745D00E83C52 /* NoticeSummaryDataModel.swift in Sources */,
 				CC68629B2684E68C00E83C52 /* DepartmentDetailView.swift in Sources */,
@@ -516,6 +535,7 @@
 				CCDDD06F267F6DF500C1EFFA /* SignUpViewModel.swift in Sources */,
 				CCDDD058267F4A8300C1EFFA /* TokenUtils.swift in Sources */,
 				CCDDD075267F8ABD00C1EFFA /* UserAPI.swift in Sources */,
+				CC02A50C268DB448005E1B7F /* DepartmentSummaryView.swift in Sources */,
 				CCDDD06A267F607E00C1EFFA /* DepartmentViewModel.swift in Sources */,
 				CCDDD053267F48F300C1EFFA /* BaseAPI.swift in Sources */,
 				CCFC2E1226773E33000390CB /* snuboardApp.swift in Sources */,
