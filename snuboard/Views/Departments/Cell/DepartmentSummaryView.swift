@@ -54,10 +54,10 @@ struct DepartmentSummaryView: View {
             
     
             FlexibleView(data: tags, spacing: 10, alignment: .leading) { item in
-                TagChipView(item: item, activateTagSelect: false, selected: false, actionIfSelected: {}, actionIfUnselected: {})
+                DepartmentTagChipView(item: item, isDept: false)
             }
             .padding(10)
-//            .background(Color.white)
+            .background(Color.white)
         } // End of Vstack
         .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
         .hideNavigationBar()

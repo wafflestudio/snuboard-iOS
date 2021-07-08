@@ -33,13 +33,10 @@ struct NoticeTagListView: View {
             spacing: 8,
                 alignment: .leading
               )  { item in
-            
-            TagChipView(item: item, isDept: dept == item)
-            
+
+            DepartmentTagChipView(item: item, isDept: dept == item)
+
         }
-            
-            
-        
         
  
     }// end of body

@@ -11,30 +11,13 @@ struct TagChipView: View {
     
     
     let item: String
-    var activateTagSelect = true
-    var isDept = false
     @State var selected = false
-
-    var actionIfSelected: () -> Void = {}
-    var actionIfUnSelected: () -> Void = {}
-    
-    init (item: String, isDept: Bool) {
-        self.item = item
-        self.isDept = isDept
-    }
-
+    let actionIfSelected: () -> Void
+    let actionIfUnSelected: () -> Void
     
     
     init (item: String, selected: Bool, actionIfSelected: @escaping ()-> Void, actionIfUnselected: @escaping ()->Void) {
         self.item = item
-        self.selected = selected
-        self.actionIfSelected = actionIfSelected
-        self.actionIfUnSelected = actionIfUnselected
-    }
-    
-    init (item: String, activateTagSelect: Bool, selected: Bool, actionIfSelected: @escaping ()-> Void, actionIfUnselected: @escaping ()->Void) {
-        self.item = item
-        self.activateTagSelect = false
         self.selected = selected
         self.actionIfSelected = actionIfSelected
         self.actionIfUnSelected = actionIfUnselected
@@ -51,17 +34,15 @@ struct TagChipView: View {
             .padding(.trailing, 4)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(isDept ? Color(UserDefaults.standard.deptColor[item]!) : selected ? Const.ColorSet.MainBlue.color : Const.ColorSet.Unselected.color)
+                .fill(selected ? Const.ColorSet.MainBlue.color : Const.ColorSet.Unselected.color)
             )
             .onTapGesture {
-                if activateTagSelect {
-                    selected.toggle()
-                    if selected {
-                        actionIfSelected()
-                    }
-                    else {
-                        actionIfUnSelected()
-                    }
+                selected.toggle()
+                if selected {
+                    actionIfSelected()
+                }
+                else {
+                    actionIfUnSelected()
                 }
             }
         

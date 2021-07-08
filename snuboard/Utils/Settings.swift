@@ -73,5 +73,6 @@ class Settings: ObservableObject{
             UserDefaults.standard.queryParameters = self.queryParameters
         }
     }
+
     
 }

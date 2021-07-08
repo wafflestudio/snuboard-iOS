@@ -25,13 +25,12 @@ struct HomeTagListView: View {
             spacing: 8,
                 alignment: .leading
               )  { item in
-            Group {
+
                 TagChipView(item: item, selected: settings.queryParameters[dept]!.contains(item), actionIfSelected: {
                     settings.queryParameters[dept]?.append(item)
                 }, actionIfUnselected: {
                     settings.queryParameters[dept] = settings.queryParameters[dept]!.filter {$0 != item}
                 })
-            }
             
                 
           }

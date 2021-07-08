@@ -11,7 +11,7 @@ import Combine
 
 class DepartmentViewModel: ObservableObject {
     
-    
+
     @Published var colleges: [College] = []
     @Published var depts: [Department] = []
     
@@ -47,6 +47,7 @@ class DepartmentViewModel: ObservableObject {
                 }
                 
 //                print(UserDefaults.standard.deptColor)
+                
                 
 
                 let departmentDictionary = Dictionary(grouping: departmentList, by: { $0.college })

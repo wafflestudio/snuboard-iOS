@@ -13,6 +13,7 @@
 		CC02A50C268DB448005E1B7F /* DepartmentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */; };
 		CC100BDB26975699005EED21 /* NoticeTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BDA26975699005EED21 /* NoticeTagListView.swift */; };
 		CC100BE026976F5D005EED21 /* TagFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BDF26976F5D005EED21 /* TagFilterView.swift */; };
+		CC100BE42697884A005EED21 /* DepartmentTagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BE32697884A005EED21 /* DepartmentTagChipView.swift */; };
 		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
 		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
 		CC6862902684C1F400E83C52 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68628F2684C1F400E83C52 /* TopBar.swift */; };
@@ -76,6 +77,7 @@
 		CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSummaryView.swift; sourceTree = "<group>"; };
 		CC100BDA26975699005EED21 /* NoticeTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTagListView.swift; sourceTree = "<group>"; };
 		CC100BDF26976F5D005EED21 /* TagFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagFilterView.swift; sourceTree = "<group>"; };
+		CC100BE32697884A005EED21 /* DepartmentTagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTagChipView.swift; sourceTree = "<group>"; };
 		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				CC6862BE26871FA900E83C52 /* HomeTagListView.swift */,
 				CC100BDA26975699005EED21 /* NoticeTagListView.swift */,
 				CC100BDF26976F5D005EED21 /* TagFilterView.swift */,
+				CC100BE32697884A005EED21 /* DepartmentTagChipView.swift */,
 			);
 			path = TagViews;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */,
 				CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */,
 				CCDDD06C267F677100C1EFFA /* College.swift in Sources */,
+				CC100BE42697884A005EED21 /* DepartmentTagChipView.swift in Sources */,
 				CC6862A92685748500E83C52 /* NoticeSummary.swift in Sources */,
 				CC6862952684CF9900E83C52 /* DepartmentListView.swift in Sources */,
 			);
