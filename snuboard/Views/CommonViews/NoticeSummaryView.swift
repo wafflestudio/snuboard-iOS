@@ -9,21 +9,29 @@ import SwiftUI
 
 struct NoticeSummaryView: View {
     
-    var notice: NoticeSummary
+    @EnvironmentObject var noticeModel: NoticeViewModel
     
-    init (notice: NoticeSummary) {
-        self.notice = notice
+    var id: Int
+    var favouriteTab: Bool = false
+    
+    var notice: NoticeSummary {
+        
+        noticeModel.notices.first {
+            $0.id == self.id
+        }!
     }
     
+    init (id: Int) {
+        self.id = id
+    }
+    
+    
     var body: some View {
-        
-       
         
         // Title
         VStack(alignment: .leading, spacing: 8) {
             
-            // TagList
-//            TagListView(id: notice.departmentID, college: <#String#>, tagList: notice.tags, followList: [])
+
             NoticeTagListView(dept: notice.departmentName, tags: notice.tags)
             
             
@@ -46,6 +54,21 @@ struct NoticeSummaryView: View {
                     .font(.system(size: 12))
                     .foregroundColor(Const.ColorSet.Unselected.color)
                 Spacer()
+                if notice.isScrapped {
+                    Button(action: {
+                        noticeModel.deleteNoticeScrap(id: id)
+                    }){
+                        Image("favorite_selected")
+                    }
+                    
+                } else {
+                    Button(action: {
+                        noticeModel.postNoticeScrap(id: id)
+                    }) {
+                        Image("favorite_unselected")
+                    }
+                    
+                }
             }
         }
         .padding(12)
@@ -58,8 +81,4 @@ struct NoticeSummaryView: View {
     }
 }
 
-struct NoticeSummaryView_Previews: PreviewProvider {
-    static var previews: some View {
-        NoticeSummaryView(notice: NoticeSummary(id: 1, title: "title", createdAt: "2021-04-01T06:48:00.000Z", isPinned: false, link: "link", isScrapped: true, preview: "previewpreviewpreview", departmentID: 2, departmentName: "컴퓨터공학부", tags: ["tag1", "tag2"]))
-    }
-}
+

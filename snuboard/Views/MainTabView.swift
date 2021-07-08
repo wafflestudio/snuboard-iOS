@@ -21,12 +21,7 @@ struct MainTabView: View {
 
         TabView() {
             
-            ZStack {
-                Color.red.hideNavigationBar()
-                TagChipView(item: "tagChip", selected: false, actionIfSelected: {print("selected")}, actionIfUnselected: {
-                    print("unselected")
-                })
-            }
+            FeedListView().hideNavigationBar()
                 .tabItem {
                     Image("dynamic_feed").renderingMode(.template)
                     Text("피드")
@@ -40,7 +35,7 @@ struct MainTabView: View {
                     Text("학과")
                         .font(.system(size: 12))
                 }
-            Text("Tab3").hideNavigationBar()
+            FavouriteListView().hideNavigationBar()
                 .tabItem {
                     Image("favorite_border").renderingMode(.template)
                     Text("관심목록")
@@ -48,7 +43,6 @@ struct MainTabView: View {
                 }
             
         } // End of tab view
-        .hideNavigationBar()
         .environmentObject(deptModel)
         .environmentObject(settings)
     }

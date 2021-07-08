@@ -26,6 +26,12 @@ enum NoticeAPI: BaseAPI {
         switch self {
         case .getNoticesByDepartmentId:
             return .get
+        case .getScrappedNotices:
+            return .get
+        case .postNoticeScrap:
+            return .post
+        case .deleteNoticeScrap:
+            return .delete
         default:
             return .get
         }
@@ -35,6 +41,12 @@ enum NoticeAPI: BaseAPI {
         switch self {
         case .getNoticesByDepartmentId(let id):
             return "department/\(id)"
+        case .getScrappedNotices:
+            return "scrap"
+        case .postNoticeScrap(let id):
+            return "\(id)/scrap"
+        case .deleteNoticeScrap(let id):
+            return "\(id)/scrap"
         default:
             return ""
         }
@@ -44,6 +56,8 @@ enum NoticeAPI: BaseAPI {
         switch self {
         
         case .getNoticesByDepartmentId:
+            return ["limit": 30]
+        case .getScrappedNotices:
             return ["limit": 30]
     
         
@@ -56,6 +70,9 @@ enum NoticeAPI: BaseAPI {
     
     
     case getNoticesByDepartmentId(id: Int)
+    case getScrappedNotices
+    case postNoticeScrap(id: Int)
+    case deleteNoticeScrap(id: Int)
     
     
     

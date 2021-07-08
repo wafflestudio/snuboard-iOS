@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DepartmentDetailHomeView: View {
     
-    @StateObject var model: DepartmentNoticeViewModel
+    @StateObject var noticeModel: NoticeViewModel
     @EnvironmentObject var deptModel: DepartmentViewModel
     @EnvironmentObject var settings: Settings
 
@@ -17,7 +17,7 @@ struct DepartmentDetailHomeView: View {
     
     init(dept: Department) {
         self.dept = dept
-        _model = StateObject(wrappedValue: DepartmentNoticeViewModel(id: dept.id))
+        _noticeModel = StateObject(wrappedValue: NoticeViewModel(id: dept.id))
     }
     
     var body: some View {
@@ -29,14 +29,11 @@ struct DepartmentDetailHomeView: View {
             .padding(12)
             .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
             
-            
-        
-            
-            // Palette-Chip
+
             ScrollView {
                 VStack {
-                    ForEach(model.notices) { noticeSummary in
-                        NoticeSummaryView(notice: noticeSummary)
+                    ForEach(noticeModel.notices) { noticeSummary in
+                        NoticeSummaryView(id: noticeSummary.id).environmentObject(noticeModel)
                     }
                 }
             }

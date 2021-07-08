@@ -14,6 +14,12 @@
 		CC100BDB26975699005EED21 /* NoticeTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BDA26975699005EED21 /* NoticeTagListView.swift */; };
 		CC100BE026976F5D005EED21 /* TagFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BDF26976F5D005EED21 /* TagFilterView.swift */; };
 		CC100BE42697884A005EED21 /* DepartmentTagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BE32697884A005EED21 /* DepartmentTagChipView.swift */; };
+		CC100BE726978C2B005EED21 /* FeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BE626978C2B005EED21 /* FeedListView.swift */; };
+		CC100BEC26978D07005EED21 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BEB26978D07005EED21 /* FeedViewModel.swift */; };
+		CC100BEE26978DA3005EED21 /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BED26978DA3005EED21 /* PlaceHolderView.swift */; };
+		CC100BF226979152005EED21 /* LogoTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF126979152005EED21 /* LogoTopBar.swift */; };
+		CC100BF526979A79005EED21 /* FavouriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF426979A79005EED21 /* FavouriteListView.swift */; };
+		CC100BF826979C56005EED21 /* FavouriteNoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */; };
 		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
 		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
 		CC6862902684C1F400E83C52 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68628F2684C1F400E83C52 /* TopBar.swift */; };
@@ -32,7 +38,7 @@
 		CC6862AF2686042900E83C52 /* DepartmentDetailHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862AE2686042900E83C52 /* DepartmentDetailHomeView.swift */; };
 		CC6862B12686060100E83C52 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862B02686060100E83C52 /* NoticeService.swift */; };
 		CC6862B32686064200E83C52 /* NoticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862B22686064200E83C52 /* NoticeAPI.swift */; };
-		CC6862B5268607FA00E83C52 /* DepartmentNoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862B4268607FA00E83C52 /* DepartmentNoticeViewModel.swift */; };
+		CC6862B5268607FA00E83C52 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862B4268607FA00E83C52 /* NoticeViewModel.swift */; };
 		CC6862B926860C5E00E83C52 /* NoticeSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862B826860C5E00E83C52 /* NoticeSummaryView.swift */; };
 		CC6862BB2686163100E83C52 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BA2686163100E83C52 /* String+Extension.swift */; };
 		CC6862BD2686360C00E83C52 /* TagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BC2686360C00E83C52 /* TagChipView.swift */; };
@@ -78,6 +84,12 @@
 		CC100BDA26975699005EED21 /* NoticeTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTagListView.swift; sourceTree = "<group>"; };
 		CC100BDF26976F5D005EED21 /* TagFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagFilterView.swift; sourceTree = "<group>"; };
 		CC100BE32697884A005EED21 /* DepartmentTagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTagChipView.swift; sourceTree = "<group>"; };
+		CC100BE626978C2B005EED21 /* FeedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListView.swift; sourceTree = "<group>"; };
+		CC100BEB26978D07005EED21 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		CC100BED26978DA3005EED21 /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
+		CC100BF126979152005EED21 /* LogoTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTopBar.swift; sourceTree = "<group>"; };
+		CC100BF426979A79005EED21 /* FavouriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListView.swift; sourceTree = "<group>"; };
+		CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteNoticeViewModel.swift; sourceTree = "<group>"; };
 		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -96,7 +108,7 @@
 		CC6862AE2686042900E83C52 /* DepartmentDetailHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDetailHomeView.swift; sourceTree = "<group>"; };
 		CC6862B02686060100E83C52 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
 		CC6862B22686064200E83C52 /* NoticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAPI.swift; sourceTree = "<group>"; };
-		CC6862B4268607FA00E83C52 /* DepartmentNoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentNoticeViewModel.swift; sourceTree = "<group>"; };
+		CC6862B4268607FA00E83C52 /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeViewModel.swift; path = Departments/NoticeViewModel.swift; sourceTree = "<group>"; };
 		CC6862B826860C5E00E83C52 /* NoticeSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSummaryView.swift; sourceTree = "<group>"; };
 		CC6862BA2686163100E83C52 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CC6862BC2686360C00E83C52 /* TagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChipView.swift; sourceTree = "<group>"; };
@@ -199,6 +211,38 @@
 			path = TagViews;
 			sourceTree = "<group>";
 		};
+		CC100BE526978C06005EED21 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				CC100BE626978C2B005EED21 /* FeedListView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		CC100BE826978C39005EED21 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				CC100BEB26978D07005EED21 /* FeedViewModel.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		CC100BF326979A65005EED21 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				CC100BF426979A79005EED21 /* FavouriteListView.swift */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		CC100BF626979C46005EED21 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
 		CCDDD04B267F474900C1EFFA /* Departments */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +313,9 @@
 		CCDDD067267F606800C1EFFA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC6862B4268607FA00E83C52 /* NoticeViewModel.swift */,
+				CC100BF626979C46005EED21 /* Favourite */,
+				CC100BE826978C39005EED21 /* Feed */,
 				CCDDD06D267F6DD100C1EFFA /* StartApp */,
 				CCDDD068267F607300C1EFFA /* Departments */,
 			);
@@ -279,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				CCDDD069267F607E00C1EFFA /* DepartmentViewModel.swift */,
-				CC6862B4268607FA00E83C52 /* DepartmentNoticeViewModel.swift */,
 			);
 			path = Departments;
 			sourceTree = "<group>";
@@ -341,6 +387,8 @@
 		CCFC2E2026773EF8000390CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC100BF326979A65005EED21 /* Favourite */,
+				CC100BE526978C06005EED21 /* Feed */,
 				CC100BDE269760CC005EED21 /* TagViews */,
 				CCFC2E3326778F4F000390CB /* CommonViews */,
 				CCDDD04B267F474900C1EFFA /* Departments */,
@@ -395,6 +443,8 @@
 				CCDDD078267F987200C1EFFA /* ClearButton.swift */,
 				CC68628F2684C1F400E83C52 /* TopBar.swift */,
 				CC6862B826860C5E00E83C52 /* NoticeSummaryView.swift */,
+				CC100BED26978DA3005EED21 /* PlaceHolderView.swift */,
+				CC100BF126979152005EED21 /* LogoTopBar.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -517,6 +567,7 @@
 				CCDDD073267F8A9B00C1EFFA /* UserAuthDataModel.swift in Sources */,
 				CC6862AF2686042900E83C52 /* DepartmentDetailHomeView.swift in Sources */,
 				CC02A508268DADE8005E1B7F /* Settings.swift in Sources */,
+				CC100BEE26978DA3005EED21 /* PlaceHolderView.swift in Sources */,
 				CCFC2E1426773E33000390CB /* ContentView.swift in Sources */,
 				CC02705526849FD10021A3FF /* UnautorizedDataModel.swift in Sources */,
 				CCFC2E2C26774290000390CB /* Color.swift in Sources */,
@@ -538,6 +589,7 @@
 				CCDDD079267F987200C1EFFA /* ClearButton.swift in Sources */,
 				CCFC2E2226773F14000390CB /* StartAppView.swift in Sources */,
 				CC6862BF26871FA900E83C52 /* HomeTagListView.swift in Sources */,
+				CC100BF526979A79005EED21 /* FavouriteListView.swift in Sources */,
 				CCDDD05D267F4C0800C1EFFA /* NetworkResults.swift in Sources */,
 				CC6862A72685745D00E83C52 /* NoticeSummaryDataModel.swift in Sources */,
 				CC68629B2684E68C00E83C52 /* DepartmentDetailView.swift in Sources */,
@@ -545,11 +597,14 @@
 				CCDDD05A267F4AA800C1EFFA /* KeyChain.swift in Sources */,
 				CCDDD050267F48B400C1EFFA /* Department.swift in Sources */,
 				CCDDD071267F8A2000C1EFFA /* StartAppService.swift in Sources */,
-				CC6862B5268607FA00E83C52 /* DepartmentNoticeViewModel.swift in Sources */,
+				CC100BE726978C2B005EED21 /* FeedListView.swift in Sources */,
+				CC6862B5268607FA00E83C52 /* NoticeViewModel.swift in Sources */,
+				CC100BF226979152005EED21 /* LogoTopBar.swift in Sources */,
 				CCDDD077267F968800C1EFFA /* SignInViewModel.swift in Sources */,
 				CC6862A52684FBA100E83C52 /* ColorPalette.swift in Sources */,
 				CCFC2E3226778EEC000390CB /* SignUpView.swift in Sources */,
 				CC6862AD2685759900E83C52 /* NoticeFile.swift in Sources */,
+				CC100BEC26978D07005EED21 /* FeedViewModel.swift in Sources */,
 				CCDDD06F267F6DF500C1EFFA /* SignUpViewModel.swift in Sources */,
 				CCDDD058267F4A8300C1EFFA /* TokenUtils.swift in Sources */,
 				CCDDD075267F8ABD00C1EFFA /* UserAPI.swift in Sources */,
@@ -561,6 +616,7 @@
 				CCFC2E3B26779B8F000390CB /* SignInView.swift in Sources */,
 				CCFC2E39267797CD000390CB /* UnderlinedTextFieldView.swift in Sources */,
 				CC6862B12686060100E83C52 /* NoticeService.swift in Sources */,
+				CC100BF826979C56005EED21 /* FavouriteNoticeViewModel.swift in Sources */,
 				CC6862A12684EA1900E83C52 /* _FlexibleView.swift in Sources */,
 				CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */,
 				CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */,
