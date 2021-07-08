@@ -12,13 +12,17 @@ struct DepartmentDetailView: View {
     @EnvironmentObject var deptModel: DepartmentViewModel
     
     
-    var dept: Department
+    var id: Int
+    var dept: Department {
+        deptModel.depts.first { $0.id == id}!
+    }
     @State var indexSelected: Int = 0
     
-    init (department: Department) {
-        self.dept = department
+    init (id: Int) {
+        self.id = id
         UINavigationBar.appearance().backgroundColor = .white
     }
+ 
 
     
     var body: some View {
@@ -44,6 +48,6 @@ struct DepartmentDetailView: View {
 
 struct DepartmentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DepartmentDetailView(department: Department(id: 1, name: "지구환경과학부", college: "자연과학대학", link: "link", tags: ["tag1", "tag2"], follow: ["tag1"]))
+        DepartmentDetailView(id: 1)
     }
 }

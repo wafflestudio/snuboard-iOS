@@ -11,13 +11,23 @@ struct TagChipView: View {
     
     
     let item: String
+    var activateTagSelect = true
     @State var selected = false
+
     let actionIfSelected: () -> Void
     let actionIfUnSelected: () -> Void
     
     
     init (item: String, selected: Bool, actionIfSelected: @escaping ()-> Void, actionIfUnselected: @escaping ()->Void) {
         self.item = item
+        self.selected = selected
+        self.actionIfSelected = actionIfSelected
+        self.actionIfUnSelected = actionIfUnselected
+    }
+    
+    init (item: String, activateTagSelect: Bool, selected: Bool, actionIfSelected: @escaping ()-> Void, actionIfUnselected: @escaping ()->Void) {
+        self.item = item
+        self.activateTagSelect = false
         self.selected = selected
         self.actionIfSelected = actionIfSelected
         self.actionIfUnSelected = actionIfUnselected
@@ -37,12 +47,14 @@ struct TagChipView: View {
                 .fill(selected ? Const.ColorSet.MainBlue.color : Const.ColorSet.Unselected.color)
             )
             .onTapGesture {
-                selected.toggle()
-                if selected {
-                    actionIfSelected()
-                }
-                else {
-                    actionIfUnSelected()
+                if activateTagSelect {
+                    selected.toggle()
+                    if selected {
+                        actionIfSelected()
+                    }
+                    else {
+                        actionIfUnSelected()
+                    }
                 }
             }
         

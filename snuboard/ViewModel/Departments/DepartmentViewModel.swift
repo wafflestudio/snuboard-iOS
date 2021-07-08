@@ -11,7 +11,9 @@ import Combine
 
 class DepartmentViewModel: ObservableObject {
     
+    
     @Published var colleges: [College] = []
+    @Published var depts: [Department] = []
     
     init() {
         
@@ -20,8 +22,23 @@ class DepartmentViewModel: ObservableObject {
             switch response {
 
             case .success(let departmentList):
+                
+                self.depts = departmentList
+                
+                if UserDefaults.standard.deptColor.isEmpty || UserDefaults.standard.deptColor.count != departmentList.count {
+                    var deptColor: [String: String] = [:]
+                    for dept in departmentList {
+                        if !self.depts.contains(dept) {
+                        deptColor[dept.name] = Const.ColorSet.color_palette.randomElement()
+                        }
+                    }
+                    UserDefaults.standard.deptColor = deptColor
+                }
+                
+//                print(UserDefaults.standard.deptColor)
 
                 let departmentDictionary = Dictionary(grouping: departmentList, by: { $0.college })
+                
                 for college in Const.College.colleges {
                     
                     if let depts = departmentDictionary[college] {

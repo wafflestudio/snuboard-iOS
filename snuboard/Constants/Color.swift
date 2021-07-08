@@ -24,5 +24,9 @@ extension Const {
             return Color(self.rawValue)
         }
         
+        static let color_palette = ["석류", "감귤", "들국", "완두", "비취", "지중해", "하늘", "라벤더", "자수정"]
+        
+        
+        
     }
 }

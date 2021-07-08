@@ -25,6 +25,8 @@ struct DepartmentListView: View {
         
     
             VStack(spacing: 0) {
+
+                
                 HStack {
                     Image("domain")
                         .resizable()
@@ -70,7 +72,7 @@ struct DepartmentListView: View {
                                     .font(.system(size: 13))
                                 Spacer()
                                 NavigationLink(
-                                    destination: DepartmentDetailView(department: department).environmentObject(deptModel),
+                                    destination: DepartmentDetailView(id: department.id).environmentObject(deptModel),
                                     label: {
                                         Image("navigate_next")
                                             .resizable()

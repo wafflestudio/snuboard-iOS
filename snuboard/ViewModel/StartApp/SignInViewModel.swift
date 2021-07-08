@@ -22,6 +22,8 @@ class SignInViewModel: ObservableObject {
                 case .success(let userAuthData):
                     if let data = userAuthData as? UserAuthDataModel {
                         data.saveUserAuthDataModel()
+                        TokenUtils.storeID(self.username)
+                        TokenUtils.storePW(self.password)
                         print("Sign In Success")
                         self.pushActive = true
             

@@ -24,6 +24,8 @@ class SignUpViewModel: ObservableObject {
                 case .success(let userAuthData):
                     if let data = userAuthData as? UserAuthDataModel {
                         data.saveUserAuthDataModel()
+                        TokenUtils.storeID(self.username)
+                        TokenUtils.storePW(self.password)
                         print("Sign Up Success")
                         self.pushActive = true
             

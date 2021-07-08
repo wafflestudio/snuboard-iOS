@@ -25,10 +25,9 @@ struct UserAuthDataModel: Codable {
         
         UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
         UserDefaults.standard.synchronize()
-        UserDefaults.standard.setValue(self.nickname, forKey: "nickname")
-        UserDefaults.standard.setValue(self.username, forKey: "username")
         TokenUtils.storeAccessToken(self.accessToken)
         TokenUtils.storeRefreshToken(self.refreshToken)
+        
     }
 }
 

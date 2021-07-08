@@ -32,6 +32,7 @@ struct PaletteCell: View {
 
 struct ColorPalette: View {
     
+    
     let color_set = [["석류", "감귤", "들국"], ["완두", "비취", "지중해"], ["하늘", "라벤더", "자수정"]]
     
     var body: some View {

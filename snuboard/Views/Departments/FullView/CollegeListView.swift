@@ -11,7 +11,6 @@ struct CollegeListView: View {
     
     @EnvironmentObject var deptModel: DepartmentViewModel
     
-    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -23,6 +22,17 @@ struct CollegeListView: View {
     
             ScrollView {
                 VStack(spacing: 10) {
+                    
+                    ForEach(deptModel.colleges, id: \.self) { college in
+                        
+                        ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in
+                            DepartmentSummaryView(id: dept.id).environmentObject(deptModel)
+                        }
+    
+                    } // End of ForEach
+                    
+
+                    
                     ForEach(deptModel.colleges, id: \.self) { college in
                         
                         DepartmentListView(college: college)
@@ -33,6 +43,7 @@ struct CollegeListView: View {
                 .background(Const.ColorSet.BgGray.color)
                 
             } // End of Scroll View
+    
             
         }
         

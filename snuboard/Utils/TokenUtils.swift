@@ -15,10 +15,25 @@ public struct TokenUtils {
     
     private static let accessTokenKey = "accessTokenKey"
     private static let refreshTokenKey = "refreshTokenKey"
+    private static let id = "id"
+    private static let password = "password"
+    
+    public static func enabeleAutoLogin(id: String?, password: String?) {
+        storeID(id)
+        storePW(password)
+    }
     
     public static func store(accessToken: String?, refreshToken: String?) {
         storeAccessToken(accessToken)
         storeRefreshToken(refreshToken)
+    }
+    
+    public static func storeID(_ id: String?) {
+        KeychainService.save(string: id, for: self.id)
+    }
+    
+    public static func storePW(_ password: String?) {
+        KeychainService.save(string: password, for: self.password)
     }
     
     public static func storeAccessToken(_ token: String?) {
@@ -35,7 +50,14 @@ public struct TokenUtils {
     
     public static func loadRefreshToken() -> String? {
         return KeychainService.loadString(for: refreshTokenKey)
-        
+    }
+    
+    public static func loadID() -> String? {
+        return KeychainService.loadString(for: id)
+    }
+    
+    public static func loadPW() -> String? {
+        return KeychainService.loadString(for: password)
     }
     
     public static func getAccessTokenHeader() -> String? {
