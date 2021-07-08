@@ -25,6 +25,17 @@ class DepartmentViewModel: ObservableObject {
                 
                 self.depts = departmentList
                 
+                if UserDefaults.standard.queryParameters.isEmpty {
+                    var queries: [String: [String]] = [:]
+                    for dept in departmentList {
+                        queries[dept.name] = []
+                    }
+                    UserDefaults.standard.queryParameters = queries
+                }
+                
+                print(UserDefaults.standard.queryParameters)
+                
+                
                 if UserDefaults.standard.deptColor.isEmpty || UserDefaults.standard.deptColor.count != departmentList.count {
                     var deptColor: [String: String] = [:]
                     for dept in departmentList {
@@ -36,6 +47,7 @@ class DepartmentViewModel: ObservableObject {
                 }
                 
 //                print(UserDefaults.standard.deptColor)
+                
 
                 let departmentDictionary = Dictionary(grouping: departmentList, by: { $0.college })
                 

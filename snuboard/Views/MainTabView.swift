@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     
     @StateObject var deptModel = DepartmentViewModel()
+    @StateObject var settings = Settings()
     
     init() {
         UITabBar.appearance().barTintColor = .white
@@ -49,6 +50,7 @@ struct MainTabView: View {
         } // End of tab view
         .hideNavigationBar()
         .environmentObject(deptModel)
+        .environmentObject(settings)
     }
 }
 

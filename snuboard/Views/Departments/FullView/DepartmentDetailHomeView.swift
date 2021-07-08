@@ -11,6 +11,7 @@ struct DepartmentDetailHomeView: View {
     
     @StateObject var model: DepartmentNoticeViewModel
     @EnvironmentObject var deptModel: DepartmentViewModel
+    @EnvironmentObject var settings: Settings
 
     var dept: Department
     
@@ -23,21 +24,11 @@ struct DepartmentDetailHomeView: View {
        
         VStack {
             // Follow-Chip
-            VStack {
-                HStack {
-                    Image("home")
-                        .resizable()
-                        .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    Text("태그 필터")
-                        .foregroundColor(Const.ColorSet.Gray1.color)
-                        .font(.system(size: 16))
-                        .bold()
-                    Spacer()
-                }
-//                TagListView(id: dept.id, tagList: dept.tags, followList: [])
-            }
+            TagFilterView(dept: dept.name, tags: dept.tags)
+            .environmentObject(settings)
             .padding(12)
             .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
+            
             
         
             

@@ -12,6 +12,7 @@
 		CC02A508268DADE8005E1B7F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02A507268DADE8005E1B7F /* Settings.swift */; };
 		CC02A50C268DB448005E1B7F /* DepartmentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */; };
 		CC100BDB26975699005EED21 /* NoticeTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BDA26975699005EED21 /* NoticeTagListView.swift */; };
+		CC100BE026976F5D005EED21 /* TagFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BDF26976F5D005EED21 /* TagFilterView.swift */; };
 		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
 		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
 		CC6862902684C1F400E83C52 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68628F2684C1F400E83C52 /* TopBar.swift */; };
@@ -74,6 +75,7 @@
 		CC02A507268DADE8005E1B7F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSummaryView.swift; sourceTree = "<group>"; };
 		CC100BDA26975699005EED21 /* NoticeTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTagListView.swift; sourceTree = "<group>"; };
+		CC100BDF26976F5D005EED21 /* TagFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagFilterView.swift; sourceTree = "<group>"; };
 		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -174,11 +176,24 @@
 			isa = PBXGroup;
 			children = (
 				CC02A50B268DB448005E1B7F /* DepartmentSummaryView.swift */,
-				CC68629E2684E8F000E83C52 /* FeedTagListView.swift */,
 				CC6862942684CF9900E83C52 /* DepartmentListView.swift */,
 				CC6862A42684FBA100E83C52 /* ColorPalette.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CC100BDE269760CC005EED21 /* TagViews */ = {
+			isa = PBXGroup;
+			children = (
+				CC68629C2684E74200E83C52 /* FlexibleView.swift */,
+				CC6862A02684EA1900E83C52 /* _FlexibleView.swift */,
+				CC6862BC2686360C00E83C52 /* TagChipView.swift */,
+				CC68629E2684E8F000E83C52 /* FeedTagListView.swift */,
+				CC6862BE26871FA900E83C52 /* HomeTagListView.swift */,
+				CC100BDA26975699005EED21 /* NoticeTagListView.swift */,
+				CC100BDF26976F5D005EED21 /* TagFilterView.swift */,
+			);
+			path = TagViews;
 			sourceTree = "<group>";
 		};
 		CCDDD04B267F474900C1EFFA /* Departments */ = {
@@ -186,7 +201,6 @@
 			children = (
 				CC02A50E268DE364005E1B7F /* Cell */,
 				CC02A50D268DE33F005E1B7F /* FullView */,
-				CC6862BE26871FA900E83C52 /* HomeTagListView.swift */,
 				CC6862962684E08A00E83C52 /* SegmentedPickerView.swift */,
 			);
 			path = Departments;
@@ -222,6 +236,7 @@
 			children = (
 				CCDDD057267F4A8300C1EFFA /* TokenUtils.swift */,
 				CCDDD059267F4AA800C1EFFA /* KeyChain.swift */,
+				CC02A507268DADE8005E1B7F /* Settings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -323,6 +338,7 @@
 		CCFC2E2026773EF8000390CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC100BDE269760CC005EED21 /* TagViews */,
 				CCFC2E3326778F4F000390CB /* CommonViews */,
 				CCDDD04B267F474900C1EFFA /* Departments */,
 				CCFC2E3026778ECD000390CB /* StartApp */,
@@ -346,7 +362,6 @@
 				CCFC2E2926774274000390CB /* Const.swift */,
 				CCFC2E2B26774290000390CB /* Color.swift */,
 				CCDDD049267F45EA00C1EFFA /* CollegeList.swift */,
-				CC02A507268DADE8005E1B7F /* Settings.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -376,11 +391,7 @@
 				CCFC2E38267797CD000390CB /* UnderlinedTextFieldView.swift */,
 				CCDDD078267F987200C1EFFA /* ClearButton.swift */,
 				CC68628F2684C1F400E83C52 /* TopBar.swift */,
-				CC68629C2684E74200E83C52 /* FlexibleView.swift */,
-				CC6862A02684EA1900E83C52 /* _FlexibleView.swift */,
 				CC6862B826860C5E00E83C52 /* NoticeSummaryView.swift */,
-				CC6862BC2686360C00E83C52 /* TagChipView.swift */,
-				CC100BDA26975699005EED21 /* NoticeTagListView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -516,6 +527,7 @@
 				CC6862902684C1F400E83C52 /* TopBar.swift in Sources */,
 				CCDDD063267F4D8600C1EFFA /* BadRequestDataModel.swift in Sources */,
 				CC68629F2684E8F000E83C52 /* FeedTagListView.swift in Sources */,
+				CC100BE026976F5D005EED21 /* TagFilterView.swift in Sources */,
 				CC6862972684E08A00E83C52 /* SegmentedPickerView.swift in Sources */,
 				CC6862BB2686163100E83C52 /* String+Extension.swift in Sources */,
 				CCDDD060267F4C4400C1EFFA /* DepartmentService.swift in Sources */,

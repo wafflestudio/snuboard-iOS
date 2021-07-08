@@ -30,7 +30,8 @@ struct FeedTagListView: View {
             spacing: 8,
                 alignment: .leading
               )  { item in
-            TagChipView(item: item, selected: deptModel.colleges[deptModel.getCollegeLoc(college: college)].departments[deptModel.getDeptLoc(college: college, deptId: id)].follow.contains(item), actionIfSelected: {
+            TagChipView(item: item, selected: deptModel.colleges[deptModel.getCollegeLoc(college: college)].departments[deptModel.getDeptLoc(college: college, deptId: id)].follow.contains(item),
+            actionIfSelected: {
                 deptModel.createDepartmentFollow(id: id, follow: item)
             }, actionIfUnselected: {
                 deptModel.deleteDepartmentFollow(id: id, follow: item)

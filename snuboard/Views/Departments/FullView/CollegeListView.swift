@@ -10,6 +10,7 @@ import SwiftUI
 struct CollegeListView: View {
     
     @EnvironmentObject var deptModel: DepartmentViewModel
+    @EnvironmentObject var settings: Settings
     
     var body: some View {
         
@@ -27,7 +28,9 @@ struct CollegeListView: View {
                         ForEach(deptModel.colleges, id: \.self) { college in
                             
                             ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in
-                                DepartmentSummaryView(id: dept.id).environmentObject(deptModel)
+                                DepartmentSummaryView(id: dept.id)
+                                    .environmentObject(deptModel)
+                                    .environmentObject(settings)
                             }
         
                         } // End of ForEach

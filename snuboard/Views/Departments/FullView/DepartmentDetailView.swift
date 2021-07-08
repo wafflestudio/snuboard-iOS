@@ -11,6 +11,7 @@ struct DepartmentDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var deptModel: DepartmentViewModel
+    @EnvironmentObject var settings: Settings
     
     
     var id: Int
@@ -34,7 +35,7 @@ struct DepartmentDetailView: View {
             SegmentedPickerView(selectedIndex: $indexSelected)
             if (indexSelected == 0) {
 //                TagListView()
-                DepartmentDetailHomeView(dept: dept).environmentObject(deptModel)
+                DepartmentDetailHomeView(dept: dept).environmentObject(deptModel)       .environmentObject(settings)
             }
             else if (indexSelected == 1) {
                 DepartmentDetailFeedView(dept: dept).environmentObject(deptModel)

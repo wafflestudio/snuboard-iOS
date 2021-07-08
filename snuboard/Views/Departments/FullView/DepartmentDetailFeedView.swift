@@ -10,6 +10,7 @@ import SwiftUI
 struct DepartmentDetailFeedView: View {
     
     @EnvironmentObject var deptModel: DepartmentViewModel
+    @EnvironmentObject var settings: Settings
     
     var dept: Department
     var collegeId: Int = 0
@@ -35,7 +36,9 @@ struct DepartmentDetailFeedView: View {
                         .bold()
                     Spacer()
                 }
-                FeedTagListView(id: dept.id, college: dept.college).environmentObject(deptModel)
+                FeedTagListView(id: dept.id, college: dept.college)
+                    .environmentObject(deptModel)
+                    .environmentObject(settings)
             }
             .padding(12)
             .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
