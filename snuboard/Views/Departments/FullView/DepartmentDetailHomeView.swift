@@ -25,15 +25,15 @@ struct DepartmentDetailHomeView: View {
         VStack {
             // Follow-Chip
             TagFilterView(dept: dept.name, tags: dept.tags)
-            .environmentObject(settings)
-            .padding(12)
-            .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
+                .environmentObject(settings)
+                .padding(12)
+                .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
             
 
             ScrollView {
                 VStack {
                     ForEach(noticeModel.notices) { noticeSummary in
-                        NoticeSummaryView(id: noticeSummary.id).environmentObject(noticeModel)
+                        NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
                     }
                 }
             }

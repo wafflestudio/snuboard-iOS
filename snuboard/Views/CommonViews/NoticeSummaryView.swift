@@ -9,20 +9,14 @@ import SwiftUI
 
 struct NoticeSummaryView: View {
     
+    
     @EnvironmentObject var noticeModel: NoticeViewModel
     
-    var id: Int
-    var favouriteTab: Bool = false
+    var notice: NoticeSummary
+
     
-    var notice: NoticeSummary {
-        
-        noticeModel.notices.first {
-            $0.id == self.id
-        }!
-    }
-    
-    init (id: Int) {
-        self.id = id
+    init (notice: NoticeSummary) {
+        self.notice = notice
     }
     
     
@@ -56,14 +50,14 @@ struct NoticeSummaryView: View {
                 Spacer()
                 if notice.isScrapped {
                     Button(action: {
-                        noticeModel.deleteNoticeScrap(id: id)
+                        noticeModel.deleteNoticeScrap(id: notice.id)
                     }){
                         Image("favorite_selected")
                     }
                     
                 } else {
                     Button(action: {
-                        noticeModel.postNoticeScrap(id: id)
+                        noticeModel.postNoticeScrap(id: notice.id)
                     }) {
                         Image("favorite_unselected")
                     }

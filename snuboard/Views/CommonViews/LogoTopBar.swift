@@ -21,7 +21,7 @@ struct LogoTopBar: View {
                 Spacer()
                 Image("search")
             }.padding([.leading, .trailing], 12)
-        }.padding(.bottom, 10)
+        }.frame(height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         
         
     }

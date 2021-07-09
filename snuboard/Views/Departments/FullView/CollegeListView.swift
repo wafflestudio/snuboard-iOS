@@ -24,7 +24,6 @@ struct CollegeListView: View {
         
                 ScrollView {
                     VStack(spacing: 10) {
-                        
                         ForEach(deptModel.colleges, id: \.self) { college in
                             
                             ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in

@@ -57,9 +57,8 @@ struct DepartmentSummaryView: View {
                 DepartmentTagChipView(item: item, isDept: false)
             }
             .padding(10)
-            .background(Color.white)
+            .background(Color.white).cornerRadius(8, corners: [.bottomLeft, .bottomRight])
         } // End of Vstack
-        .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
         .hideNavigationBar()
     }
 }

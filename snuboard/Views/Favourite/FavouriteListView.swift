@@ -18,7 +18,7 @@ struct FavouriteListView: View {
             ScrollView {
                 VStack {
                     ForEach(noticeModel.notices) { noticeSummary in
-                        NoticeSummaryView(id: noticeSummary.id).environmentObject(noticeModel)
+                        NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
                     }
                 }.padding(10)
             }

@@ -31,11 +31,11 @@ struct TagFilterView: View {
                     .bold()
                 Spacer()
             }
-            HomeTagListView(dept: dept, tags: tags)
+            HomeTagListView(dept: dept, allTags: tags, selectedTags: settings.queryParameters[dept]!).environmentObject(settings)
             HStack {
                 
                 Button(action: {
-                    settings.queryParameters[dept]?.removeAll()
+                    settings.queryParameters[dept]? = []
                     }, label: {
                         Text("초기화").foregroundColor(Const.ColorSet.Gray1.color)
                             .bold()
