@@ -25,7 +25,7 @@ struct FeedListView: View {
                     ScrollView {
                         VStack {
                             ForEach(noticeModel.notices) { noticeSummary in
-                                NoticeSummaryView(notice: noticeSummary, isFavourite: true).environmentObject(noticeModel)
+                                NoticeSummaryView(notice: noticeSummary, isFavourite: false).environmentObject(noticeModel)
                             }
                         }.padding([.top, .leading, .trailing], 10)
                         .background(Const.ColorSet.BgGray.color)
