@@ -14,12 +14,12 @@ struct HTMLStringView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> WKWebView {
         
-        var webView = WKWebView()
-        
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.scrollView.isScrollEnabled = false
-        return webView
+//        var webView = WKWebView()
+//
+//        let webConfiguration = WKWebViewConfiguration()
+//        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+//        webView.scrollView.isScrollEnabled = false
+        return WKWebView()
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {

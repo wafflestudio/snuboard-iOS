@@ -12,12 +12,14 @@ struct NoticeSummaryView: View {
     
     
     @EnvironmentObject var noticeModel: NoticeViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var notice: NoticeSummary
 
     
     init (notice: NoticeSummary) {
         self.notice = notice
+        UINavigationBar.appearance().backgroundColor = .white
     }
     
     

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - NoticeFile
-struct NoticeFile: Codable {
+struct NoticeFile: Codable, Identifiable {
     let id: Int
     let name: String
     let link: String
