@@ -12,6 +12,7 @@ struct snuboardApp: App {
     
     var body: some Scene {
         WindowGroup {
+            
             if let id = TokenUtils.loadID(), let password = TokenUtils.loadPW() {
                 MainTabView()
                     .colorScheme(.light)

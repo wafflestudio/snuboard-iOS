@@ -20,6 +20,8 @@
 		CC100BF226979152005EED21 /* LogoTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF126979152005EED21 /* LogoTopBar.swift */; };
 		CC100BF526979A79005EED21 /* FavouriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF426979A79005EED21 /* FavouriteListView.swift */; };
 		CC100BF826979C56005EED21 /* FavouriteNoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */; };
+		CC24FE5626980A3D00BC608C /* NoticeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */; };
+		CC24FE5826980B9200BC608C /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5726980B9200BC608C /* NoticeDetailView.swift */; };
 		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
 		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
 		CC6862902684C1F400E83C52 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68628F2684C1F400E83C52 /* TopBar.swift */; };
@@ -90,6 +92,8 @@
 		CC100BF126979152005EED21 /* LogoTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTopBar.swift; sourceTree = "<group>"; };
 		CC100BF426979A79005EED21 /* FavouriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListView.swift; sourceTree = "<group>"; };
 		CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteNoticeViewModel.swift; sourceTree = "<group>"; };
+		CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewModel.swift; sourceTree = "<group>"; };
+		CC24FE5726980B9200BC608C /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 		CCDDD067267F606800C1EFFA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */,
 				CC6862B4268607FA00E83C52 /* NoticeViewModel.swift */,
 				CC100BF626979C46005EED21 /* Favourite */,
 				CC100BE826978C39005EED21 /* Feed */,
@@ -445,6 +450,7 @@
 				CC6862B826860C5E00E83C52 /* NoticeSummaryView.swift */,
 				CC100BED26978DA3005EED21 /* PlaceHolderView.swift */,
 				CC100BF126979152005EED21 /* LogoTopBar.swift */,
+				CC24FE5726980B9200BC608C /* NoticeDetailView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -606,6 +612,7 @@
 				CC6862AD2685759900E83C52 /* NoticeFile.swift in Sources */,
 				CC100BEC26978D07005EED21 /* FeedViewModel.swift in Sources */,
 				CCDDD06F267F6DF500C1EFFA /* SignUpViewModel.swift in Sources */,
+				CC24FE5626980A3D00BC608C /* NoticeDetailViewModel.swift in Sources */,
 				CCDDD058267F4A8300C1EFFA /* TokenUtils.swift in Sources */,
 				CCDDD075267F8ABD00C1EFFA /* UserAPI.swift in Sources */,
 				CC02A50C268DB448005E1B7F /* DepartmentSummaryView.swift in Sources */,
@@ -618,6 +625,7 @@
 				CC6862B12686060100E83C52 /* NoticeService.swift in Sources */,
 				CC100BF826979C56005EED21 /* FavouriteNoticeViewModel.swift in Sources */,
 				CC6862A12684EA1900E83C52 /* _FlexibleView.swift in Sources */,
+				CC24FE5826980B9200BC608C /* NoticeDetailView.swift in Sources */,
 				CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */,
 				CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */,
 				CCDDD06C267F677100C1EFFA /* College.swift in Sources */,

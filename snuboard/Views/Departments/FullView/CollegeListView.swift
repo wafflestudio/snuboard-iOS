@@ -60,8 +60,3 @@ struct CollegeListView: View {
        
 }
 
-struct CollegeListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CollegeListView()
-    }
-}

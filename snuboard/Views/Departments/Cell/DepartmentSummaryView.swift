@@ -49,7 +49,7 @@ struct DepartmentSummaryView: View {
                 
             }
             .padding(8)
-            .background(Color(UserDefaults.standard.deptColor[dept]!).cornerRadius(8, corners: [.topLeft, .topRight]))
+            .background(Color(UserDefaults.standard.deptColor[dept] ?? Const.ColorSet.color_palette[0]).cornerRadius(8, corners: [.topLeft, .topRight]))
             
             
     

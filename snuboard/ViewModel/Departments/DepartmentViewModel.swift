@@ -33,20 +33,31 @@ class DepartmentViewModel: ObservableObject {
                     UserDefaults.standard.queryParameters = queries
                 }
                 
-                print(UserDefaults.standard.queryParameters)
-                
-                
-                if UserDefaults.standard.deptColor.isEmpty || UserDefaults.standard.deptColor.count != departmentList.count {
+//                print(UserDefaults.standard.queryParameters)
+                print(self.depts)
+                if UserDefaults.standard.deptColor.isEmpty {
                     var deptColor: [String: String] = [:]
                     for dept in departmentList {
+                        deptColor[dept.name] = Const.ColorSet.color_palette.randomElement()
+                    }
+                    UserDefaults.standard.deptColor = deptColor
+                }
+                
+                if UserDefaults.standard.deptColor.count !=
+                    departmentList.count {
+                    print("deptColorEmpty")
+                    var deptColor: [String: String] = [:]
+                    for dept in departmentList {
+                        print(dept.name)
                         if !self.depts.contains(dept) {
+                            
                         deptColor[dept.name] = Const.ColorSet.color_palette.randomElement()
                         }
                     }
                     UserDefaults.standard.deptColor = deptColor
                 }
                 
-//                print(UserDefaults.standard.deptColor)
+                print(UserDefaults.standard.deptColor)
                 
                 
 

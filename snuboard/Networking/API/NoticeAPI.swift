@@ -32,6 +32,8 @@ enum NoticeAPI: BaseAPI {
             return .post
         case .deleteNoticeScrap:
             return .delete
+        case .getNoticeByNoticeId:
+            return .get
         default:
             return .get
         }
@@ -47,6 +49,9 @@ enum NoticeAPI: BaseAPI {
             return "\(id)/scrap"
         case .deleteNoticeScrap(let id):
             return "\(id)/scrap"
+        case .getNoticeByNoticeId(let id):
+            return "\(id)"
+            
         default:
             return ""
         }
@@ -73,6 +78,7 @@ enum NoticeAPI: BaseAPI {
     case getScrappedNotices
     case postNoticeScrap(id: Int)
     case deleteNoticeScrap(id: Int)
+    case getNoticeByNoticeId(id: Int)
     
     
     
@@ -91,6 +97,8 @@ enum NoticeAPI: BaseAPI {
             header["Authorization"] = TokenUtils.getRefreshTokenHeader()
             
         }
+        
+        
         
         return AF.request(URL,
                           method: method,

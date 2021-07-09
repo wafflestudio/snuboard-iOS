@@ -138,6 +138,35 @@ struct NoticeService {
         
     }
     
+    public func getNoticeByNoticeId(id: Int, completion: @escaping (NetworkResult<NoticeDetail>) -> ()) {
+    
+        let dataRequest = NoticeAPI.deleteNoticeScrap(id: id).requestAPI()
+        
+        dataRequest.responseData { dataResponse in
+            
+            switch dataResponse.result {
+
+            // success status code
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode
+                else {return}
+                print(statusCode)
+                guard let value = dataResponse.value else {return}
+                print(value)
+                
+                let networkResult: NetworkResult<NoticeDetail> = NetworkResult<Any>.judgeStatus(by: statusCode, data: value)
+
+                completion(networkResult)
+
+            // faiulure status code
+            case .failure: completion(.pathError)
+
+
+            }
+            
+        }
+        
+    }
     
    
 }

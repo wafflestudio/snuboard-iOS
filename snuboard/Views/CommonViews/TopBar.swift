@@ -37,9 +37,3 @@ struct TopBar: View {
     }
     
 }
-
-struct TopBar_Previews: PreviewProvider {
-    static var previews: some View {
-        TopBar("팔로우")
-    }
-}
