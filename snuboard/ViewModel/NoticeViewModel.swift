@@ -101,6 +101,31 @@ class NoticeViewModel: ObservableObject {
     }
     
     
+    func getNoticesByFollow() {
+        NoticeService.shared.getNoticesByFollow { response in
+
+                switch response {
+
+                case .success(let noticeData):
+
+                    self.notices = noticeData.notices
+                    self.nextCursor = noticeData.nextCursor
+                    
+                    print("noticesPatched")
+
+                case .badRequest(let badRequest):
+                    print("badRequest: \(badRequest.message)")
+                    
+                case .unauthorized(let unautorized):
+                    print("unautorized: \(unautorized.message)")
+
+                default:
+                    print("Other networking error")
+                }
+        
+        }
+    }
+    
     func getAllNoticesScrapped() {
         NoticeService.shared.getScrappedNotices { response in
 

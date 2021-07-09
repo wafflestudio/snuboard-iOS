@@ -24,6 +24,7 @@ struct LogoTopBar: View {
         }.frame(height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         
         
+        
     }
 }
 

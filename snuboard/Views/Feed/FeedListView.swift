@@ -31,20 +31,28 @@ struct FeedListView: View {
                     
                     LogoTopBar()
                     Divider()
-                    ScrollView {
-                        VStack {
-                            ForEach(noticeModel.notices) { noticeSummary in
-                                NoticeSummaryView(notice: noticeSummary, isFavourite: true).environmentObject(noticeModel)
-                            }
-                        }.padding(10)
-                    }
-                    .background(Const.ColorSet.BgGray.color)
-                    Spacer()
+                    VStack(spacing: 0) {
+                        ScrollView {
+                            VStack {
+                                ForEach(noticeModel.notices) { noticeSummary in
+                                    NoticeSummaryView(notice: noticeSummary, isFavourite: true).environmentObject(noticeModel)
+                                }
+                            }.padding(10)
+                        }
+                        Spacer()
+                    }.background(Const.ColorSet.BgGray.color)
+                   
+                    
                 }
+                
                 .navigationBarTitle("", displayMode: .inline)
                 .navigationBarHidden(true)
             }
+
             
+            
+        }.onAppear {
+            noticeModel.getNoticesByFollow()
         }
         
         
