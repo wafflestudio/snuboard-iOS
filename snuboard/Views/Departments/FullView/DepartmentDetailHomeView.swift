@@ -33,7 +33,7 @@ struct DepartmentDetailHomeView: View {
             ScrollView {
                 VStack {
                     ForEach(noticeModel.notices) { noticeSummary in
-                        NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
+                        NoticeSummaryView(notice: noticeSummary, isFavourite: false).environmentObject(noticeModel)
                     }
                 }
             }

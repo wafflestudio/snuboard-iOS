@@ -78,7 +78,7 @@ struct NoticeService {
     }
     
     
-    public func postNoticeScrap(id: Int, completion: @escaping (NetworkResult<NoticeSummary>) -> ()) {
+    public func postNoticeScrap(id: Int, completion: @escaping (NetworkResult<NoticeDetail>) -> ()) {
     
         let dataRequest = NoticeAPI.postNoticeScrap(id: id).requestAPI()
         
@@ -94,7 +94,7 @@ struct NoticeService {
                 guard let value = dataResponse.value else {return}
                 print(value)
                 
-                let networkResult: NetworkResult<NoticeSummary> = NetworkResult<Any>.judgeStatus(by: statusCode, data: value)
+                let networkResult: NetworkResult<NoticeDetail> = NetworkResult<Any>.judgeStatus(by: statusCode, data: value)
 
                 completion(networkResult)
 
@@ -108,7 +108,7 @@ struct NoticeService {
         
     }
     
-    public func deleteNoticeScrap(id: Int, completion: @escaping (NetworkResult<NoticeSummary>) -> ()) {
+    public func deleteNoticeScrap(id: Int, completion: @escaping (NetworkResult<NoticeDetail>) -> ()) {
     
         let dataRequest = NoticeAPI.deleteNoticeScrap(id: id).requestAPI()
         
@@ -124,7 +124,7 @@ struct NoticeService {
                 guard let value = dataResponse.value else {return}
                 print(value)
                 
-                let networkResult: NetworkResult<NoticeSummary> = NetworkResult<Any>.judgeStatus(by: statusCode, data: value)
+                let networkResult: NetworkResult<NoticeDetail> = NetworkResult<Any>.judgeStatus(by: statusCode, data: value)
 
                 completion(networkResult)
 

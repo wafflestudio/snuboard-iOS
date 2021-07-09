@@ -82,23 +82,27 @@ struct NoticeDetailView: View {
                     if let url = URL(string: noticeModel.notice.link) {
                         Link(destination: url, label: {
                                 Image("link")
+                                    .renderingMode(.template)
+                                    .foregroundColor(Const.ColorSet.Gray2.color)
                                     .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         })
                     } else {
                         Image("link")
+                            .renderingMode(.template)
+                            .foregroundColor(Const.ColorSet.Gray2.color)
                             .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
                 
 
                     if noticeModel.notice.isScrapped {
                         Button(action: {
-                            
+                            noticeModel.deleteNoticeScrap(id: noticeModel.notice.id)
                         }, label: {
                             Image("favorite_selected")
                         })
                     } else {
                         Button(action: {
-                            
+                            noticeModel.postNoticeScrap(id: noticeModel.notice.id)
                         }, label: {
                             Image("favorite_unselected")
                                 .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)

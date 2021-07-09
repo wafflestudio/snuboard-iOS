@@ -13,7 +13,7 @@ struct NoticeSummary: Codable, Identifiable {
     let title, createdAt: String
     let isPinned: Bool
     let link: String
-    let isScrapped: Bool
+    var isScrapped: Bool
     let preview: String
     let departmentID: Int
     let departmentName: String

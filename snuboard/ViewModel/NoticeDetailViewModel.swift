@@ -40,4 +40,53 @@ class NoticeDetailViewModel: ObservableObject {
         }
     }
     
+    func postNoticeScrap(id: Int) {
+        
+        NoticeService.shared.postNoticeScrap(id: id) { response in
+
+            switch response {
+
+            case .success(let data):
+                
+                self.notice.isScrapped.toggle()
+
+            case .badRequest(let badRequest):
+                print("badRequest: \(badRequest.message)")
+                
+            case .unauthorized(let unautorized):
+                print("unautorized: \(unautorized.message)")
+
+            default:
+                print("Other networking error")
+            }
+
+    
+        }
+        
+    }
+    
+    func deleteNoticeScrap(id: Int) {
+        
+        NoticeService.shared.deleteNoticeScrap(id: id) { response in
+
+            switch response {
+
+            case .success(let data):
+                self.notice.isScrapped.toggle()
+                
+
+            case .badRequest(let badRequest):
+                print("badRequest: \(badRequest.message)")
+                
+            case .unauthorized(let unautorized):
+                print("unautorized: \(unautorized.message)")
+
+            default:
+                print("Other networking error")
+            }
+
+    
+        }
+    }
+    
 }

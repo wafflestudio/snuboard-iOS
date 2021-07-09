@@ -99,7 +99,7 @@ class NoticeViewModel: ObservableObject {
             case .success(let data):
             
                 if let noticeIdx = self.notices.firstIndex(where: { $0.id == data.id }) {
-                    self.notices[noticeIdx] = data
+                    self.notices[noticeIdx].isScrapped.toggle()
                         print("\(data.id)-scrapped!")
                     }
 
@@ -118,14 +118,25 @@ class NoticeViewModel: ObservableObject {
         
     }
     
-    func deleteNoticeScrap(id: Int) {
+    func deleteNoticeScrap(id: Int, isFavouriteList: Bool) {
         
         NoticeService.shared.deleteNoticeScrap(id: id) { response in
 
             switch response {
 
             case .success(let data):
-                self.notices = self.notices.filter({ $0.id != data.id})
+                if isFavouriteList {
+                    self.notices = self.notices.filter({$0.id != data.id})
+                    
+                }
+                else {
+                    if let noticeIdx = self.notices.firstIndex(where: { $0.id == data.id }) {
+                        self.notices[noticeIdx].isScrapped.toggle()
+                            print("\(data.id)-scrapped!")
+                        }
+                    
+                }
+                
 
             case .badRequest(let badRequest):
                 print("badRequest: \(badRequest.message)")

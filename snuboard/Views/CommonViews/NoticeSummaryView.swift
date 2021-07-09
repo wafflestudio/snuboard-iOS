@@ -15,10 +15,12 @@ struct NoticeSummaryView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var notice: NoticeSummary
+    var isFavourite: Bool
 
     
-    init (notice: NoticeSummary) {
+    init (notice: NoticeSummary, isFavourite: Bool) {
         self.notice = notice
+        self.isFavourite = isFavourite
         UINavigationBar.appearance().backgroundColor = .white
     }
     
@@ -54,7 +56,7 @@ struct NoticeSummaryView: View {
                     Spacer()
                     if notice.isScrapped {
                         Button(action: {
-                            noticeModel.deleteNoticeScrap(id: notice.id)
+                            noticeModel.deleteNoticeScrap(id: notice.id, isFavouriteList: isFavourite)
                         }){
                             Image("favorite_selected")
                         }
