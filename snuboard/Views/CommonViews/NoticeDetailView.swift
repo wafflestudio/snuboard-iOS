@@ -7,7 +7,6 @@
 
 import SwiftUI
 import WebKit
-import AttributedText
 
 struct NoticeDetailView: View {
     

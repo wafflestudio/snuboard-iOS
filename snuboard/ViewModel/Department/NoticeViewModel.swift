@@ -12,6 +12,7 @@ class NoticeViewModel: ObservableObject {
     
     @Published var notices: [NoticeSummary] = []
     @Published var nextCursor: String = ""
+    @Published var notice: NoticeDetail?
     
     init(id: Int) {
         NoticeService.shared.getNoticesByDepartmentId(id: id) { response in
@@ -141,6 +142,9 @@ class NoticeViewModel: ObservableObject {
         }
         
     }
+    
+    
+    
     
    
     
