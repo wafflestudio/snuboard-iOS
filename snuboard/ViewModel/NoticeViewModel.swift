@@ -10,10 +10,16 @@ import Combine
 
 class NoticeViewModel: ObservableObject {
     
+    enum TYPE {
+        case department
+        case scrap
+        case follow
+    }
+    
     @Published var notices: [NoticeSummary] = []
     @Published var nextCursor: String = ""
     
-    init(id: Int) {
+    init(id: Int, type: TYPE) {
         NoticeService.shared.getNoticesByDepartmentId(id: id) { response in
 
             switch response {
@@ -39,28 +45,59 @@ class NoticeViewModel: ObservableObject {
         }
     }
     
-    init() {
-        NoticeService.shared.getScrappedNotices { response in
+    init(type: TYPE) {
+        
+        
+        switch type {
+        case .scrap:
+            NoticeService.shared.getScrappedNotices { response in
 
-                switch response {
+                    switch response {
 
-                case .success(let noticeData):
+                    case .success(let noticeData):
 
-                    self.notices = noticeData.notices
-                    self.nextCursor = noticeData.nextCursor
-                    
-                    print("noticesPatched")
+                        self.notices = noticeData.notices
+                        self.nextCursor = noticeData.nextCursor
+                        
+                        print("noticesPatched")
 
-                case .badRequest(let badRequest):
-                    print("badRequest: \(badRequest.message)")
-                    
-                case .unauthorized(let unautorized):
-                    print("unautorized: \(unautorized.message)")
+                    case .badRequest(let badRequest):
+                        print("badRequest: \(badRequest.message)")
+                        
+                    case .unauthorized(let unautorized):
+                        print("unautorized: \(unautorized.message)")
 
-                default:
-                    print("Other networking error")
-                }
+                    default:
+                        print("Other networking error")
+                    }
+            }
+        case .follow:
+            NoticeService.shared.getNoticesByFollow { response in
+
+                    switch response {
+
+                    case .success(let noticeData):
+
+                        self.notices = noticeData.notices
+                        self.nextCursor = noticeData.nextCursor
+                        
+                        print("noticesPatched")
+
+                    case .badRequest(let badRequest):
+                        print("badRequest: \(badRequest.message)")
+                        
+                    case .unauthorized(let unautorized):
+                        print("unautorized: \(unautorized.message)")
+
+                    default:
+                        print("Other networking error")
+                    }
+            
+            }
+        default:
+            return
         }
+        
     }
     
     

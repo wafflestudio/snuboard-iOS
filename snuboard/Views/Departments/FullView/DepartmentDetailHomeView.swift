@@ -17,7 +17,7 @@ struct DepartmentDetailHomeView: View {
     
     init(dept: Department) {
         self.dept = dept
-        _noticeModel = StateObject(wrappedValue: NoticeViewModel(id: dept.id))
+        _noticeModel = StateObject(wrappedValue: NoticeViewModel(id: dept.id, type: .department))
     }
     
     var body: some View {

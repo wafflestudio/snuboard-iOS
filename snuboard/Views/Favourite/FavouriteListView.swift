@@ -10,21 +10,27 @@ import WebKit
 
 struct FavouriteListView: View {
     
-    @ObservedObject var noticeModel: NoticeViewModel = NoticeViewModel()
+    @ObservedObject var noticeModel: NoticeViewModel = NoticeViewModel(type: .scrap)
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 TopBar("관심목록")
                 Divider()
-                ScrollView {
-                    VStack {
-                        ForEach(noticeModel.notices) { noticeSummary in
-                            NoticeSummaryView(notice: noticeSummary, isFavourite: true).environmentObject(noticeModel)
-                        }
-                    }.padding(10)
+                
+                if noticeModel.notices.isEmpty {
+                    PlaceHolderView()
                 }
-                .background(Const.ColorSet.BgGray.color)
+                else {
+                    ScrollView {
+                        VStack {
+                            ForEach(noticeModel.notices) { noticeSummary in
+                                NoticeSummaryView(notice: noticeSummary, isFavourite: true).environmentObject(noticeModel)
+                            }
+                        }.padding(10)
+                    }
+                    .background(Const.ColorSet.BgGray.color)
+                }
             }
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarHidden(true)

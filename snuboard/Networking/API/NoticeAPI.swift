@@ -26,6 +26,8 @@ enum NoticeAPI: BaseAPI {
         switch self {
         case .getNoticesByDepartmentId:
             return .get
+        case .getNoticesByFollow:
+            return .get
         case .getScrappedNotices:
             return .get
         case .postNoticeScrap:
@@ -43,6 +45,8 @@ enum NoticeAPI: BaseAPI {
         switch self {
         case .getNoticesByDepartmentId(let id):
             return "department/\(id)"
+        case .getNoticesByFollow:
+            return "follow"
         case .getScrappedNotices:
             return "scrap"
         case .postNoticeScrap(let id):
@@ -60,6 +64,8 @@ enum NoticeAPI: BaseAPI {
     var param: [String : Any]? {
         switch self {
         
+        case .getNoticesByFollow:
+            return ["limit": 30]
         case .getNoticesByDepartmentId:
             return ["limit": 30]
         case .getScrappedNotices:
@@ -75,10 +81,12 @@ enum NoticeAPI: BaseAPI {
     
     
     case getNoticesByDepartmentId(id: Int)
+    case getNoticesByFollow
     case getScrappedNotices
     case postNoticeScrap(id: Int)
     case deleteNoticeScrap(id: Int)
     case getNoticeByNoticeId(id: Int)
+    
     
     
     
