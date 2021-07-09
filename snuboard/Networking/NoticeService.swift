@@ -140,7 +140,7 @@ struct NoticeService {
     
     public func getNoticeByNoticeId(id: Int, completion: @escaping (NetworkResult<NoticeDetail>) -> ()) {
     
-        let dataRequest = NoticeAPI.deleteNoticeScrap(id: id).requestAPI()
+        let dataRequest = NoticeAPI.getNoticeByNoticeId(id: id).requestAPI()
         
         dataRequest.responseData { dataResponse in
             

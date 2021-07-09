@@ -16,7 +16,7 @@ class NoticeDetailViewModel: ObservableObject {
     
     init(id: Int) {
         NoticeService.shared.getNoticeByNoticeId(id: id) { response in
-
+            
             switch response {
 
             case .success(let noticeData):

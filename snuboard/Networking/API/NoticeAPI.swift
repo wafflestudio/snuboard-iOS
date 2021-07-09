@@ -98,8 +98,7 @@ enum NoticeAPI: BaseAPI {
             
         }
         
-        
-        
+
         return AF.request(URL,
                           method: method,
                           parameters: param,

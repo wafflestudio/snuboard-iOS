@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-
+import WebKit
+import AttributedText
 
 struct NoticeDetailView: View {
     
@@ -20,6 +21,16 @@ struct NoticeDetailView: View {
         VStack {
             Text(noticeModel.notice.title)
             NoticeTagListView(dept: noticeModel.notice.departmentName, tags: noticeModel.notice.tags)
+            ScrollView {
+                
+                HTMLStringView(htmlContent: noticeModel.notice.content)
+                    .foregroundColor(.blue)
+                
+                AttributedText("noticeModel.notice.content")
+//                    .foregroundColor(.black)
+
+            }
+            
         }
     }
 }

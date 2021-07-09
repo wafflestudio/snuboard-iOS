@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct NoticeSummaryView: View {
     

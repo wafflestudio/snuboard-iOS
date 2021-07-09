@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,9 +19,11 @@
 		CC100BEE26978DA3005EED21 /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BED26978DA3005EED21 /* PlaceHolderView.swift */; };
 		CC100BF226979152005EED21 /* LogoTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF126979152005EED21 /* LogoTopBar.swift */; };
 		CC100BF526979A79005EED21 /* FavouriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF426979A79005EED21 /* FavouriteListView.swift */; };
-		CC100BF826979C56005EED21 /* FavouriteNoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */; };
 		CC24FE5626980A3D00BC608C /* NoticeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */; };
 		CC24FE5826980B9200BC608C /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5726980B9200BC608C /* NoticeDetailView.swift */; };
+		CC24FE5A269818F800BC608C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE59269818F800BC608C /* WebView.swift */; };
+		CC24FE5C26981CBF00BC608C /* HTMLText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5B26981CBF00BC608C /* HTMLText.swift */; };
+		CC24FE5F26981D8300BC608C /* AttributedText in Frameworks */ = {isa = PBXBuildFile; productRef = CC24FE5E26981D8300BC608C /* AttributedText */; };
 		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
 		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
 		CC6862902684C1F400E83C52 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68628F2684C1F400E83C52 /* TopBar.swift */; };
@@ -91,9 +93,10 @@
 		CC100BED26978DA3005EED21 /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		CC100BF126979152005EED21 /* LogoTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTopBar.swift; sourceTree = "<group>"; };
 		CC100BF426979A79005EED21 /* FavouriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListView.swift; sourceTree = "<group>"; };
-		CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteNoticeViewModel.swift; sourceTree = "<group>"; };
 		CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewModel.swift; sourceTree = "<group>"; };
 		CC24FE5726980B9200BC608C /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
+		CC24FE59269818F800BC608C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		CC24FE5B26981CBF00BC608C /* HTMLText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLText.swift; sourceTree = "<group>"; };
 		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51311A0FBAD2717F56A862A4 /* Pods_snuboard.framework in Frameworks */,
+				CC24FE5F26981D8300BC608C /* AttributedText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +246,6 @@
 		CC100BF626979C46005EED21 /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
-				CC100BF726979C56005EED21 /* FavouriteNoticeViewModel.swift */,
 			);
 			path = Favourite;
 			sourceTree = "<group>";
@@ -285,9 +288,11 @@
 		CCDDD056267F4A6000C1EFFA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CC24FE59269818F800BC608C /* WebView.swift */,
 				CCDDD057267F4A8300C1EFFA /* TokenUtils.swift */,
 				CCDDD059267F4AA800C1EFFA /* KeyChain.swift */,
 				CC02A507268DADE8005E1B7F /* Settings.swift */,
+				CC24FE5B26981CBF00BC608C /* HTMLText.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -473,6 +478,9 @@
 			dependencies = (
 			);
 			name = snuboard;
+			packageProductDependencies = (
+				CC24FE5E26981D8300BC608C /* AttributedText */,
+			);
 			productName = snuboard;
 			productReference = CCFC2E0E26773E33000390CB /* snuboard.app */;
 			productType = "com.apple.product-type.application";
@@ -500,6 +508,9 @@
 				Base,
 			);
 			mainGroup = CCFC2E0526773E33000390CB;
+			packageReferences = (
+				CC24FE5D26981D8300BC608C /* XCRemoteSwiftPackageReference "AttributedText" */,
+			);
 			productRefGroup = CCFC2E0F26773E33000390CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -572,6 +583,7 @@
 				CC6862A32684F38000E83C52 /* DepartmentDetailFeedView.swift in Sources */,
 				CCDDD073267F8A9B00C1EFFA /* UserAuthDataModel.swift in Sources */,
 				CC6862AF2686042900E83C52 /* DepartmentDetailHomeView.swift in Sources */,
+				CC24FE5C26981CBF00BC608C /* HTMLText.swift in Sources */,
 				CC02A508268DADE8005E1B7F /* Settings.swift in Sources */,
 				CC100BEE26978DA3005EED21 /* PlaceHolderView.swift in Sources */,
 				CCFC2E1426773E33000390CB /* ContentView.swift in Sources */,
@@ -602,6 +614,7 @@
 				CC6862AB268574E300E83C52 /* NoticeDetail.swift in Sources */,
 				CCDDD05A267F4AA800C1EFFA /* KeyChain.swift in Sources */,
 				CCDDD050267F48B400C1EFFA /* Department.swift in Sources */,
+				CC24FE5A269818F800BC608C /* WebView.swift in Sources */,
 				CCDDD071267F8A2000C1EFFA /* StartAppService.swift in Sources */,
 				CC100BE726978C2B005EED21 /* FeedListView.swift in Sources */,
 				CC6862B5268607FA00E83C52 /* NoticeViewModel.swift in Sources */,
@@ -623,7 +636,6 @@
 				CCFC2E3B26779B8F000390CB /* SignInView.swift in Sources */,
 				CCFC2E39267797CD000390CB /* UnderlinedTextFieldView.swift in Sources */,
 				CC6862B12686060100E83C52 /* NoticeService.swift in Sources */,
-				CC100BF826979C56005EED21 /* FavouriteNoticeViewModel.swift in Sources */,
 				CC6862A12684EA1900E83C52 /* _FlexibleView.swift in Sources */,
 				CC24FE5826980B9200BC608C /* NoticeDetailView.swift in Sources */,
 				CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */,
@@ -822,6 +834,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC24FE5D26981D8300BC608C /* XCRemoteSwiftPackageReference "AttributedText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Iaenhaall/AttributedText.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC24FE5E26981D8300BC608C /* AttributedText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC24FE5D26981D8300BC608C /* XCRemoteSwiftPackageReference "AttributedText" */;
+			productName = AttributedText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCFC2E0626773E33000390CB /* Project object */;
 }

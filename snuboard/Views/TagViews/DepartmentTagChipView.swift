@@ -29,7 +29,7 @@ struct DepartmentTagChipView: View {
             .padding(.trailing, 4)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(isDept ? Color(UserDefaults.standard.deptColor[item] ?? "black" ) : Const.ColorSet.Unselected.color)
+                    .fill(isDept ? Color(UserDefaults.standard.deptColor[item] ?? Const.ColorSet.color_palette[2] ) : Const.ColorSet.Unselected.color)
             )
         
     }
