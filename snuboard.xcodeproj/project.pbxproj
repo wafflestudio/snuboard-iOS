@@ -21,8 +21,7 @@
 		CC100BF526979A79005EED21 /* FavouriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC100BF426979A79005EED21 /* FavouriteListView.swift */; };
 		CC24FE5626980A3D00BC608C /* NoticeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */; };
 		CC24FE5826980B9200BC608C /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5726980B9200BC608C /* NoticeDetailView.swift */; };
-		CC24FE5A269818F800BC608C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE59269818F800BC608C /* WebView.swift */; };
-		CC24FE5C26981CBF00BC608C /* HTMLText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE5B26981CBF00BC608C /* HTMLText.swift */; };
+		CC24FE5A269818F800BC608C /* HTMLStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FE59269818F800BC608C /* HTMLStringView.swift */; };
 		CC24FE5F26981D8300BC608C /* AttributedText in Frameworks */ = {isa = PBXBuildFile; productRef = CC24FE5E26981D8300BC608C /* AttributedText */; };
 		CC504EFC26838C2200535AFC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFB26838C2200535AFC /* MainTabView.swift */; };
 		CC504EFE26839CC900535AFC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC504EFD26839CC900535AFC /* View+Extension.swift */; };
@@ -95,8 +94,7 @@
 		CC100BF426979A79005EED21 /* FavouriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListView.swift; sourceTree = "<group>"; };
 		CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewModel.swift; sourceTree = "<group>"; };
 		CC24FE5726980B9200BC608C /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
-		CC24FE59269818F800BC608C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		CC24FE5B26981CBF00BC608C /* HTMLText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLText.swift; sourceTree = "<group>"; };
+		CC24FE59269818F800BC608C /* HTMLStringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLStringView.swift; sourceTree = "<group>"; };
 		CC504EFB26838C2200535AFC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CC504EFD26839CC900535AFC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CC68628F2684C1F400E83C52 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -243,13 +241,6 @@
 			path = Favourite;
 			sourceTree = "<group>";
 		};
-		CC100BF626979C46005EED21 /* Favourite */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Favourite;
-			sourceTree = "<group>";
-		};
 		CCDDD04B267F474900C1EFFA /* Departments */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,11 +279,10 @@
 		CCDDD056267F4A6000C1EFFA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CC24FE59269818F800BC608C /* WebView.swift */,
+				CC24FE59269818F800BC608C /* HTMLStringView.swift */,
 				CCDDD057267F4A8300C1EFFA /* TokenUtils.swift */,
 				CCDDD059267F4AA800C1EFFA /* KeyChain.swift */,
 				CC02A507268DADE8005E1B7F /* Settings.swift */,
-				CC24FE5B26981CBF00BC608C /* HTMLText.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -324,7 +314,6 @@
 			children = (
 				CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */,
 				CC6862B4268607FA00E83C52 /* NoticeViewModel.swift */,
-				CC100BF626979C46005EED21 /* Favourite */,
 				CC100BE826978C39005EED21 /* Feed */,
 				CCDDD06D267F6DD100C1EFFA /* StartApp */,
 				CCDDD068267F607300C1EFFA /* Departments */,
@@ -583,7 +572,6 @@
 				CC6862A32684F38000E83C52 /* DepartmentDetailFeedView.swift in Sources */,
 				CCDDD073267F8A9B00C1EFFA /* UserAuthDataModel.swift in Sources */,
 				CC6862AF2686042900E83C52 /* DepartmentDetailHomeView.swift in Sources */,
-				CC24FE5C26981CBF00BC608C /* HTMLText.swift in Sources */,
 				CC02A508268DADE8005E1B7F /* Settings.swift in Sources */,
 				CC100BEE26978DA3005EED21 /* PlaceHolderView.swift in Sources */,
 				CCFC2E1426773E33000390CB /* ContentView.swift in Sources */,
@@ -614,7 +602,7 @@
 				CC6862AB268574E300E83C52 /* NoticeDetail.swift in Sources */,
 				CCDDD05A267F4AA800C1EFFA /* KeyChain.swift in Sources */,
 				CCDDD050267F48B400C1EFFA /* Department.swift in Sources */,
-				CC24FE5A269818F800BC608C /* WebView.swift in Sources */,
+				CC24FE5A269818F800BC608C /* HTMLStringView.swift in Sources */,
 				CCDDD071267F8A2000C1EFFA /* StartAppService.swift in Sources */,
 				CC100BE726978C2B005EED21 /* FeedListView.swift in Sources */,
 				CC6862B5268607FA00E83C52 /* NoticeViewModel.swift in Sources */,

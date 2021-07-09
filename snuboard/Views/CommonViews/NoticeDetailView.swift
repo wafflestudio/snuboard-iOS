@@ -21,15 +21,8 @@ struct NoticeDetailView: View {
         VStack {
             Text(noticeModel.notice.title)
             NoticeTagListView(dept: noticeModel.notice.departmentName, tags: noticeModel.notice.tags)
-            ScrollView {
-                
-                HTMLStringView(htmlContent: noticeModel.notice.content)
-                    .foregroundColor(.blue)
-                
-                AttributedText("noticeModel.notice.content")
-//                    .foregroundColor(.black)
+            HTMLStringView(htmlContent: noticeModel.notice.content)
 
-            }
             
         }
     }
