@@ -24,6 +24,7 @@ extension View {
     func customNavBarWithOutSearch(title: String, action: @escaping ()->()) -> some View {
         
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 20, weight: .bold)]
+        UINavigationBar.appearance().backgroundColor = .white
 
         return self
             .navigationBarTitle(title)

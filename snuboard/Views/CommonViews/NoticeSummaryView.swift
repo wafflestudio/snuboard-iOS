@@ -46,7 +46,7 @@ struct NoticeSummaryView: View {
                 }
                 
                 HStack {
-                    Text("\(notice.createdAt.substring(from: 2, to: 3))/\(notice.createdAt.substring(from: 5, to: 6))/\(notice.createdAt.substring(from: 8, to: 9))")
+                    Text(notice.createdAt.asDate())
                         .font(.system(size: 12))
                         .foregroundColor(Const.ColorSet.Unselected.color)
                     Spacer()

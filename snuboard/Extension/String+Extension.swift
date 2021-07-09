@@ -18,4 +18,8 @@ extension String {
         let endIndex = index(self.startIndex, offsetBy: to + 1)
         return String(self[startIndex ..< endIndex])
     }
+    
+    func asDate() -> String {
+        return "\(self.substring(from: 2, to: 3))/\(self.substring(from: 5, to: 6))/\(self.substring(from: 8, to: 9))"
+    }
 }
