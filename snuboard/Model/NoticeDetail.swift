@@ -9,13 +9,13 @@ import Foundation
 
 
 // MARK: - NoticeDetail
-struct NoticeDetail: Codable {
+struct NoticeDetail: Codable, Identifiable {
     let id: Int
     let title, content, createdAt: String
     let isPinned: Bool
     let link: String
     let files: [NoticeFile]
-    let isScrapped: Bool
+    var isScrapped: Bool
     let departmentID: Int
     let departmentName: String
     let tags: [String]

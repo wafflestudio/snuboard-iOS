@@ -12,12 +12,18 @@ import UIKit
 // Navigation var related extensions
 extension View {
     
+    
     func hideNavigationBar() -> some View {
         self
             .preferredColorScheme(.light)
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
+    }
+    
+    static func whiteNavigationBar() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//        UINavigationBar.appearance().shadowImage = UIImage()
     }
     
     
@@ -28,6 +34,7 @@ extension View {
 
         return self
             .navigationBarTitle(title)
+            .background(Color.white)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                                     Image("navigate_before")
@@ -37,6 +44,7 @@ extension View {
                                         action()
                                     })
     }
+
     
 }
 
