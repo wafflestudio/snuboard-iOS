@@ -10,14 +10,16 @@ import WebKit
 
 struct FavouriteListView: View {
     
+    init() {
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().backgroundColor = .white
+    }
+    
     @ObservedObject var noticeModel: NoticeViewModel = NoticeViewModel(type: .scrap)
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                TopBar("관심목록")
-                Divider()
-                
                 if noticeModel.notices.isEmpty {
                     PlaceHolderView()
                 }
@@ -33,7 +35,22 @@ struct FavouriteListView: View {
                 }
             }
             .navigationBarTitle("", displayMode: .inline)
-            .navigationBarHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("관심목록")
+                        .font(.system(size: 20))
+                        .bold()
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("menu")
+                        .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                
+            }
+            .padding(.top, 1)
+            .navigationViewStyle(StackNavigationViewStyle())
+            
+//            .navigationBarHidden(true)
         }.onAppear {
             noticeModel.getAllNoticesScrapped()
         }
