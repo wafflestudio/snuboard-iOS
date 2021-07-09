@@ -316,17 +316,17 @@
 				CC24FE5526980A3D00BC608C /* NoticeDetailViewModel.swift */,
 				CC100BE826978C39005EED21 /* Feed */,
 				CCDDD06D267F6DD100C1EFFA /* StartApp */,
-				CCDDD068267F607300C1EFFA /* Departments */,
+				CCDDD068267F607300C1EFFA /* Department */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CCDDD068267F607300C1EFFA /* Departments */ = {
+		CCDDD068267F607300C1EFFA /* Department */ = {
 			isa = PBXGroup;
 			children = (
 				CCDDD069267F607E00C1EFFA /* DepartmentViewModel.swift */,
 			);
-			path = Departments;
+			path = Department;
 			sourceTree = "<group>";
 		};
 		CCDDD06D267F6DD100C1EFFA /* StartApp */ = {
