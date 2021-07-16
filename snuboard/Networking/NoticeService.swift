@@ -14,11 +14,12 @@ struct NoticeService {
     
     static let shared = NoticeService()
     
-    public func getNoticesByDepartmentId(id: Int, completion: @escaping (NetworkResult<NoticeSummaryListDataModel>) -> ()) {
+    public func getNoticesByDepartmentId(id: Int, tags: [String]=[], completion: @escaping (NetworkResult<NoticeSummaryListDataModel>) -> ()) {
         
-        let dataRequest = NoticeAPI.getNoticesByDepartmentId(id: id).requestAPI()
+        let dataRequest = NoticeAPI.getNoticesByDepartmentId(id: id, tags: tags).requestAPI()
         
         dataRequest.responseData { dataResponse in
+            
             
             switch dataResponse.result {
 
@@ -201,7 +202,7 @@ struct NoticeService {
     
     public func searchNoticeByFollowingTags(keywords: String, completion: @escaping (NetworkResult<NoticeSummaryListDataModel>) -> ()) {
     
-        let dataRequest = NoticeAPI.searchNoticiesByFollowingTags(keywords: keywords).requestAPI() 
+        let dataRequest = NoticeAPI.searchNoticesByFollowingTags(keywords: keywords).requestAPI() 
         
         dataRequest.responseData { dataResponse in
             

@@ -12,7 +12,7 @@ struct DepartmentDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var deptModel: DepartmentViewModel
     @EnvironmentObject var settings: Settings
-    
+    @StateObject var noticeModel: NoticeViewModel
     
     var id: Int
     var dept: Department {
@@ -23,6 +23,7 @@ struct DepartmentDetailView: View {
     init (id: Int) {
         self.id = id
         UINavigationBar.appearance().backgroundColor = .white
+        _noticeModel = StateObject(wrappedValue: NoticeViewModel(id: id, type: .department))
     }
  
 
@@ -35,7 +36,10 @@ struct DepartmentDetailView: View {
             SegmentedPickerView(selectedIndex: $indexSelected)
             if (indexSelected == 0) {
 //                TagListView()
-                DepartmentDetailHomeView(dept: dept).environmentObject(deptModel)       .environmentObject(settings)
+                DepartmentDetailHomeView(dept: dept)
+                    .environmentObject(deptModel)
+                    .environmentObject(settings)
+                    .environmentObject(noticeModel)
             }
             else if (indexSelected == 1) {
                 DepartmentDetailFeedView(dept: dept).environmentObject(deptModel)

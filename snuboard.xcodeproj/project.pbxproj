@@ -46,6 +46,7 @@
 		CC6862BF26871FA900E83C52 /* HomeTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BE26871FA900E83C52 /* HomeTagListView.swift */; };
 		CC6E789C26A1C6EA00C6C718 /* FeedSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E789B26A1C6EA00C6C718 /* FeedSearchView.swift */; };
 		CC6E78A626A1E14200C6C718 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E78A526A1E14200C6C718 /* SearchBar.swift */; };
+		CC6E78A826A1FA1D00C6C718 /* HomeTagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E78A726A1FA1D00C6C718 /* HomeTagChipView.swift */; };
 		CCA54F6726984D45002532D0 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA54F6626984D45002532D0 /* NoticeViewModel.swift */; };
 		CCDDD04A267F45EA00C1EFFA /* CollegeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD049267F45EA00C1EFFA /* CollegeList.swift */; };
 		CCDDD04D267F476000C1EFFA /* CollegeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD04C267F476000C1EFFA /* CollegeListView.swift */; };
@@ -119,6 +120,7 @@
 		CC6862BE26871FA900E83C52 /* HomeTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTagListView.swift; sourceTree = "<group>"; };
 		CC6E789B26A1C6EA00C6C718 /* FeedSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSearchView.swift; sourceTree = "<group>"; };
 		CC6E78A526A1E14200C6C718 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		CC6E78A726A1FA1D00C6C718 /* HomeTagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTagChipView.swift; sourceTree = "<group>"; };
 		CCA54F6626984D45002532D0 /* NoticeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
 		CCDDD049267F45EA00C1EFFA /* CollegeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeList.swift; sourceTree = "<group>"; };
 		CCDDD04C267F476000C1EFFA /* CollegeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeListView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				CC100BDA26975699005EED21 /* NoticeTagListView.swift */,
 				CC100BDF26976F5D005EED21 /* TagFilterView.swift */,
 				CC100BE32697884A005EED21 /* DepartmentTagChipView.swift */,
+				CC6E78A726A1FA1D00C6C718 /* HomeTagChipView.swift */,
 			);
 			path = TagViews;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				CCFC2E3226778EEC000390CB /* SignUpView.swift in Sources */,
 				CC6862AD2685759900E83C52 /* NoticeFile.swift in Sources */,
 				CCDDD06F267F6DF500C1EFFA /* SignUpViewModel.swift in Sources */,
+				CC6E78A826A1FA1D00C6C718 /* HomeTagChipView.swift in Sources */,
 				CC24FE5626980A3D00BC608C /* NoticeDetailViewModel.swift in Sources */,
 				CCDDD058267F4A8300C1EFFA /* TokenUtils.swift in Sources */,
 				CCDDD075267F8ABD00C1EFFA /* UserAPI.swift in Sources */,

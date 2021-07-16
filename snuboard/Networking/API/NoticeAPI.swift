@@ -36,7 +36,7 @@ enum NoticeAPI: BaseAPI {
             return .delete
         case .getNoticeByNoticeId:
             return .get
-        case .searchNoticiesByFollowingTags:
+        case .searchNoticesByFollowingTags:
             return .get
         default:
             return .get
@@ -45,7 +45,7 @@ enum NoticeAPI: BaseAPI {
     
     var path: String {
         switch self {
-        case .getNoticesByDepartmentId(let id):
+        case .getNoticesByDepartmentId(let id, _):
             return "department/\(id)"
         case .getNoticesByFollow:
             return "follow"
@@ -57,7 +57,7 @@ enum NoticeAPI: BaseAPI {
             return "\(id)/scrap"
         case .getNoticeByNoticeId(let id):
             return "\(id)"
-        case .searchNoticiesByFollowingTags:
+        case .searchNoticesByFollowingTags:
             return "follow/search"
         }
     }
@@ -67,17 +67,20 @@ enum NoticeAPI: BaseAPI {
         
         case .getNoticesByFollow:
             return ["limit": 30]
-        case .getNoticesByDepartmentId:
-            return ["limit": 30]
+        case .getNoticesByDepartmentId( _, let tags):
+            if tags.isEmpty {
+                return ["limit": 30]
+            } else {
+                return ["limit":30,
+                        "tags": tags.joined(separator: ",")]
+            }
         case .getScrappedNotices:
             return ["limit": 30]
-        case .searchNoticiesByFollowingTags(let keywords):
-            
+        case .searchNoticesByFollowingTags(let keywords):
             return ["keywords" : keywords,
                     "limit": 30,
                     "content" : "true",
-                    "title": "true"
-            ]
+                    "title": "true"]
     
         
         default:
@@ -88,13 +91,13 @@ enum NoticeAPI: BaseAPI {
     }
     
     
-    case getNoticesByDepartmentId(id: Int)
+    case getNoticesByDepartmentId(id: Int, tags: [String])
     case getNoticesByFollow
     case getScrappedNotices
     case postNoticeScrap(id: Int)
     case deleteNoticeScrap(id: Int)
     case getNoticeByNoticeId(id: Int)
-    case searchNoticiesByFollowingTags(keywords: String)
+    case searchNoticesByFollowingTags(keywords: String)
     
     
     
