@@ -9,17 +9,21 @@ import SwiftUI
 
 struct FeedListView: View {
     
+    @ObservedObject var noticeModel: NoticeViewModel = NoticeViewModel(type: .follow)
+    
+    
+    
     init() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
     }
     
-    @ObservedObject var noticeModel: NoticeViewModel = NoticeViewModel(type: .follow)
+    
     var body: some View {
         
         NavigationView {
             VStack(spacing: 0) {
                 if noticeModel.notices.isEmpty {
-                    PlaceHolderView()
+                    PlaceHolderView("feed_placeholder")
                 }
                 else {
                     ScrollView {
@@ -41,7 +45,12 @@ struct FeedListView: View {
                     Image("menu")
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Image("search")
+                    HStack {
+                        Text("")
+                        NavigationLink(destination: FeedSearchView()) {
+                            Image("search")
+                        }
+                    }
                 }
             }.padding(.top, 1)
         }.onAppear {

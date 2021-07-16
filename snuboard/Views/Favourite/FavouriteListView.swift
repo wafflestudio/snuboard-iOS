@@ -21,7 +21,7 @@ struct FavouriteListView: View {
         NavigationView {
             VStack(spacing: 0) {
                 if noticeModel.notices.isEmpty {
-                    PlaceHolderView()
+                    PlaceHolderView("favourite_placeholder")
                 }
                 else {
                     ScrollView {

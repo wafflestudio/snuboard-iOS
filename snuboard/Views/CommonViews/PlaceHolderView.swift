@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct PlaceHolderView: View {
+    
+    let imageStr: String
+    
+    init(_ imageStr: String) {
+        self.imageStr = imageStr
+    }
+    
     var body: some View {
         VStack {
             Spacer()
             HStack {
-                Image("feed_placeholder")
+                Image(self.imageStr)
                     .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
             }
             Spacer()
@@ -22,6 +29,6 @@ struct PlaceHolderView: View {
 
 struct PlaceHolderView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceHolderView()
+        PlaceHolderView("feed_placeholder")
     }
 }

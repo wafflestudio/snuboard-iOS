@@ -199,6 +199,38 @@ struct NoticeService {
         
     }
     
+    public func searchNoticeByFollowingTags(keywords: String, completion: @escaping (NetworkResult<NoticeSummaryListDataModel>) -> ()) {
+    
+        let dataRequest = NoticeAPI.searchNoticiesByFollowingTags(keywords: keywords).requestAPI() 
+        
+        dataRequest.responseData { dataResponse in
+            
+            print(dataRequest)
+            
+            switch dataResponse.result {
+
+            // success status code
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode
+                else {return}
+                print(statusCode)
+                guard let value = dataResponse.value else {return}
+                print(value)
+                
+                let networkResult: NetworkResult<NoticeSummaryListDataModel> = NetworkResult<Any>.judgeStatus(by: statusCode, data: value)
+
+                completion(networkResult)
+
+            // faiulure status code
+            case .failure: completion(.pathError)
+
+
+            }
+            
+        }
+        
+    }
+    
    
 }
 

@@ -36,6 +36,8 @@ enum NoticeAPI: BaseAPI {
             return .delete
         case .getNoticeByNoticeId:
             return .get
+        case .searchNoticiesByFollowingTags:
+            return .get
         default:
             return .get
         }
@@ -55,9 +57,8 @@ enum NoticeAPI: BaseAPI {
             return "\(id)/scrap"
         case .getNoticeByNoticeId(let id):
             return "\(id)"
-            
-        default:
-            return ""
+        case .searchNoticiesByFollowingTags:
+            return "follow/search"
         }
     }
     
@@ -70,6 +71,13 @@ enum NoticeAPI: BaseAPI {
             return ["limit": 30]
         case .getScrappedNotices:
             return ["limit": 30]
+        case .searchNoticiesByFollowingTags(let keywords):
+            
+            return ["keywords" : keywords,
+                    "limit": 30,
+                    "content" : "true",
+                    "title": "true"
+            ]
     
         
         default:
@@ -86,6 +94,7 @@ enum NoticeAPI: BaseAPI {
     case postNoticeScrap(id: Int)
     case deleteNoticeScrap(id: Int)
     case getNoticeByNoticeId(id: Int)
+    case searchNoticiesByFollowingTags(keywords: String)
     
     
     
@@ -106,7 +115,7 @@ enum NoticeAPI: BaseAPI {
             
         }
         
-
+        
         return AF.request(URL,
                           method: method,
                           parameters: param,

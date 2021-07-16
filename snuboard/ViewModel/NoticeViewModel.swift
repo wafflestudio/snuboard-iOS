@@ -19,6 +19,10 @@ class NoticeViewModel: ObservableObject {
     @Published var notices: [NoticeSummary] = []
     @Published var nextCursor: String = ""
     
+    init() {
+        
+    }
+    
     init(id: Int, type: TYPE) {
         NoticeService.shared.getNoticesByDepartmentId(id: id) { response in
 
@@ -211,6 +215,33 @@ class NoticeViewModel: ObservableObject {
             }
 
     
+        }
+        
+    }
+    
+    func searchNoticesByFollowingTags(keywords: String) {
+        
+        NoticeService.shared.searchNoticeByFollowingTags(keywords: keywords) {response in
+            
+            switch response {
+
+            case .success(let noticeData):
+
+                self.notices = noticeData.notices
+                self.nextCursor = noticeData.nextCursor
+                
+                print("notices searched by keywords : \(keywords)")
+
+            case .badRequest(let badRequest):
+                print("badRequest: \(badRequest.message)")
+                
+            case .unauthorized(let unautorized):
+                print("unautorized: \(unautorized.message)")
+
+            default:
+                print("Other networking error")
+            }
+            
         }
         
     }
