@@ -38,6 +38,8 @@ enum NoticeAPI: BaseAPI {
             return .get
         case .searchNoticesByFollowingTags:
             return .get
+        case .searchNoticesWithDepartmentId:
+            return .get
         default:
             return .get
         }
@@ -59,6 +61,8 @@ enum NoticeAPI: BaseAPI {
             return "\(id)"
         case .searchNoticesByFollowingTags:
             return "follow/search"
+        case .searchNoticesWithDepartmentId(let id, _, _):
+            return "department/\(id)/search"
         }
     }
     
@@ -82,7 +86,20 @@ enum NoticeAPI: BaseAPI {
                     "content" : "true",
                     "title": "true"]
     
-        
+        case .searchNoticesWithDepartmentId(_,let tags,let keywords):
+            if tags.isEmpty {
+                return ["keywords" : keywords,
+                        "limit": 30,
+                        "content" : "true",
+                        "title": "true"]
+            } else {
+                return  ["keywords" : keywords,
+                         "limit": 30,
+                         "content" : "true",
+                         "title": "true",
+                         "tags" : tags.joined(separator: ",")]
+            }
+            
         default:
             return nil
         }
@@ -98,6 +115,7 @@ enum NoticeAPI: BaseAPI {
     case deleteNoticeScrap(id: Int)
     case getNoticeByNoticeId(id: Int)
     case searchNoticesByFollowingTags(keywords: String)
+    case searchNoticesWithDepartmentId(id: Int, tags: [String], keywords: String)
     
     
     

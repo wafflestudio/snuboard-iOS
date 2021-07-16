@@ -11,6 +11,7 @@ struct DepartmentDetailFeedView: View {
     
     @EnvironmentObject var deptModel: DepartmentViewModel
     @EnvironmentObject var settings: Settings
+    @Environment(\.presentationMode) var presentationMode
     
     var dept: Department
     var collegeId: Int = 0
@@ -66,6 +67,32 @@ struct DepartmentDetailFeedView: View {
         }
         .padding(10)
         .background(Const.ColorSet.BgGray.color.ignoresSafeArea())
+        .navigationBarTitle(dept.name, displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+//        .toolbar {
+//            ToolbarItem(placement: .navigationBarLeading) {
+//                Image("navigate_before").onTapGesture {
+//                    presentationMode.wrappedValue.dismiss()
+//                }
+//            }
+//            ToolbarItem(placement: .navigationBarTrailing) {
+//                HStack {
+//                    if let url = URL(string: dept.link) {
+//                        Link(destination: url, label: {
+//                                Image("link")
+//                                    .renderingMode(.template)
+//                                    .foregroundColor(Const.ColorSet.Gray2.color)
+//                                    .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                        })
+//                    } else {
+//                        Image("link")
+//                            .renderingMode(.template)
+//                            .foregroundColor(Const.ColorSet.Gray2.color)
+//                            .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                    }
+//                }
+//            }
+//        }
         
         
         

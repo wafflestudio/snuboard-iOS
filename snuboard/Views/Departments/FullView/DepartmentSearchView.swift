@@ -1,18 +1,22 @@
 //
-//  FeedSearchView.swift
+//  DepartmentSearchView.swift
 //  snuboard
 //
-//  Created by Subeen Park on 2021/07/16.
+//  Created by Subeen Park on 2021/07/17.
 //
 
 import SwiftUI
 
-
-struct FeedSearchView: View {
+struct DepartmentSearchView: View {
     
     @StateObject var noticeModel = NoticeViewModel()
-    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var settings: Settings
     @State var searchText = ""
+    var dept: Department
+    
+    init(dept: Department) {
+        self.dept = dept
+    }
     
 
 
@@ -43,17 +47,10 @@ struct FeedSearchView: View {
             .background(Const.ColorSet.BgGray.color)
             VStack(spacing: 0) {
                 SearchBar(searchText: $searchText, action: {
-                    noticeModel.searchNoticesByFollowingTags(keywords: searchText)
-                })
+                            noticeModel.searchNoticesWithDepartmentId(id: dept.id, tags: settings.queryParameters[dept.name] ?? [], keywords: searchText)})
                 Divider().background(Const.ColorSet.Gray5.color)
                 Spacer()
             }
         }.hideNavigationBar()
-    }
-}
-
-struct FeedSearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedSearchView()
     }
 }

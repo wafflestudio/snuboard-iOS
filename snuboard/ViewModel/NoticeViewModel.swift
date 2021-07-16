@@ -275,6 +275,35 @@ class NoticeViewModel: ObservableObject {
         }
     }
     
+    
+    func searchNoticesWithDepartmentId(id: Int, tags: [String], keywords: String) {
+        
+        NoticeService.shared.searchNoticeWithDepartmentId(id: id, tags: tags, keywords: keywords) {response in
+            
+            switch response {
+
+            case .success(let noticeData):
+
+                self.notices = noticeData.notices
+                self.nextCursor = noticeData.nextCursor
+                
+                print("notices searched by keywords : \(keywords)")
+
+            case .badRequest(let badRequest):
+                print("badRequest: \(badRequest.message)")
+                
+            case .unauthorized(let unautorized):
+                print("unautorized: \(unautorized.message)")
+
+            default:
+                print("Other networking error")
+            }
+            
+        }
+        
+    }
+    
+    
    
     
 }
