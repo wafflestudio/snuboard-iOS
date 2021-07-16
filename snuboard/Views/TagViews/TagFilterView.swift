@@ -10,12 +10,15 @@ import SwiftUI
 struct TagFilterView: View {
     
     @EnvironmentObject var settings: Settings
+    @EnvironmentObject var noticeModel: NoticeViewModel
     
-    var dept: String
+    var deptId: Int
+    var deptName: String
     var tags: [String]
     
-    init(dept: String, tags: [String]) {
-        self.dept = dept
+    init(deptId: Int, deptName: String, tags: [String]) {
+        self.deptId = deptId
+        self.deptName = deptName
         self.tags = tags
     }
     
@@ -31,11 +34,11 @@ struct TagFilterView: View {
                     .bold()
                 Spacer()
             }
-            HomeTagListView(dept: dept, allTags: tags, selectedTags: settings.queryParameters[dept]!).environmentObject(settings)
+            HomeTagListView(dept: deptName, deptTags: tags).environmentObject(settings)
             HStack {
                 
                 Button(action: {
-                    settings.queryParameters[dept]? = []
+                    settings.queryParameters[deptName]? = []
                     }, label: {
                         Text("초기화").foregroundColor(Const.ColorSet.Gray1.color)
                             .bold()
@@ -48,7 +51,7 @@ struct TagFilterView: View {
                     )
                 
                 Button(action: {
-                    
+                    noticeModel.getNoticesByDepartmentId(id: deptId, tags: settings.queryParameters[deptName] ?? [])
                 }, label: {
                     Text("필터 적용")
                         .bold()

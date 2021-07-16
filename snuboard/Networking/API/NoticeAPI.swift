@@ -36,6 +36,10 @@ enum NoticeAPI: BaseAPI {
             return .delete
         case .getNoticeByNoticeId:
             return .get
+        case .searchNoticesByFollowingTags:
+            return .get
+        case .searchNoticesWithDepartmentId:
+            return .get
         default:
             return .get
         }
@@ -43,7 +47,7 @@ enum NoticeAPI: BaseAPI {
     
     var path: String {
         switch self {
-        case .getNoticesByDepartmentId(let id):
+        case .getNoticesByDepartmentId(let id, _):
             return "department/\(id)"
         case .getNoticesByFollow:
             return "follow"
@@ -55,9 +59,10 @@ enum NoticeAPI: BaseAPI {
             return "\(id)/scrap"
         case .getNoticeByNoticeId(let id):
             return "\(id)"
-            
-        default:
-            return ""
+        case .searchNoticesByFollowingTags:
+            return "follow/search"
+        case .searchNoticesWithDepartmentId(let id, _, _):
+            return "department/\(id)/search"
         }
     }
     
@@ -66,12 +71,35 @@ enum NoticeAPI: BaseAPI {
         
         case .getNoticesByFollow:
             return ["limit": 30]
-        case .getNoticesByDepartmentId:
-            return ["limit": 30]
+        case .getNoticesByDepartmentId( _, let tags):
+            if tags.isEmpty {
+                return ["limit": 30]
+            } else {
+                return ["limit":30,
+                        "tags": tags.joined(separator: ",")]
+            }
         case .getScrappedNotices:
             return ["limit": 30]
+        case .searchNoticesByFollowingTags(let keywords):
+            return ["keywords" : keywords,
+                    "limit": 30,
+                    "content" : "true",
+                    "title": "true"]
     
-        
+        case .searchNoticesWithDepartmentId(_,let tags,let keywords):
+            if tags.isEmpty {
+                return ["keywords" : keywords,
+                        "limit": 30,
+                        "content" : "true",
+                        "title": "true"]
+            } else {
+                return  ["keywords" : keywords,
+                         "limit": 30,
+                         "content" : "true",
+                         "title": "true",
+                         "tags" : tags.joined(separator: ",")]
+            }
+            
         default:
             return nil
         }
@@ -80,12 +108,14 @@ enum NoticeAPI: BaseAPI {
     }
     
     
-    case getNoticesByDepartmentId(id: Int)
+    case getNoticesByDepartmentId(id: Int, tags: [String])
     case getNoticesByFollow
     case getScrappedNotices
     case postNoticeScrap(id: Int)
     case deleteNoticeScrap(id: Int)
     case getNoticeByNoticeId(id: Int)
+    case searchNoticesByFollowingTags(keywords: String)
+    case searchNoticesWithDepartmentId(id: Int, tags: [String], keywords: String)
     
     
     
@@ -106,7 +136,7 @@ enum NoticeAPI: BaseAPI {
             
         }
         
-
+        
         return AF.request(URL,
                           method: method,
                           parameters: param,

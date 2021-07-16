@@ -19,17 +19,22 @@ class NoticeViewModel: ObservableObject {
     @Published var notices: [NoticeSummary] = []
     @Published var nextCursor: String = ""
     
+    init() {
+        
+    }
+    
     init(id: Int, type: TYPE) {
-        NoticeService.shared.getNoticesByDepartmentId(id: id) { response in
+        NoticeService.shared.getNoticesByDepartmentId(id: id, tags: []) { response in
 
             switch response {
 
+            
             case .success(let noticeData):
 
                 self.notices = noticeData.notices
                 self.nextCursor = noticeData.nextCursor
                 
-                print("noticesPatched")
+                print("INIT: initializeByDepartmentId: noticesFetched")
 
             case .badRequest(let badRequest):
                 print("badRequest: \(badRequest.message)")
@@ -38,7 +43,7 @@ class NoticeViewModel: ObservableObject {
                 print("unautorized: \(unautorized.message)")
 
             default:
-                print("Other networking error")
+                print("INIT: initializeByDepartmentId: Other networking error")
             }
 
 
@@ -59,7 +64,7 @@ class NoticeViewModel: ObservableObject {
                         self.notices = noticeData.notices
                         self.nextCursor = noticeData.nextCursor
                         
-                        print("noticesPatched")
+                        print("INIT- getScrappedNotices: noticesFetched")
 
                     case .badRequest(let badRequest):
                         print("badRequest: \(badRequest.message)")
@@ -71,6 +76,7 @@ class NoticeViewModel: ObservableObject {
                         print("Other networking error")
                     }
             }
+            return
         case .follow:
             NoticeService.shared.getNoticesByFollow { response in
 
@@ -81,7 +87,7 @@ class NoticeViewModel: ObservableObject {
                         self.notices = noticeData.notices
                         self.nextCursor = noticeData.nextCursor
                         
-                        print("noticesPatched")
+                        print("INIT- getNoticesByFollow: noticesFetched")
 
                     case .badRequest(let badRequest):
                         print("badRequest: \(badRequest.message)")
@@ -94,6 +100,7 @@ class NoticeViewModel: ObservableObject {
                     }
             
             }
+            return 
         default:
             return
         }
@@ -111,7 +118,7 @@ class NoticeViewModel: ObservableObject {
                     self.notices = noticeData.notices
                     self.nextCursor = noticeData.nextCursor
                     
-                    print("noticesPatched")
+                    print("getNoticesByFollow: noticesFetched")
 
                 case .badRequest(let badRequest):
                     print("badRequest: \(badRequest.message)")
@@ -136,7 +143,7 @@ class NoticeViewModel: ObservableObject {
                     self.notices = noticeData.notices
                     self.nextCursor = noticeData.nextCursor
                     
-                    print("noticesPatched")
+                    print("getAllNoticesScrapped - noticesFetched")
 
                 case .badRequest(let badRequest):
                     print("badRequest: \(badRequest.message)")
@@ -214,6 +221,88 @@ class NoticeViewModel: ObservableObject {
         }
         
     }
+    
+    func searchNoticesByFollowingTags(keywords: String) {
+        
+        NoticeService.shared.searchNoticeByFollowingTags(keywords: keywords) {response in
+            
+            switch response {
+
+            case .success(let noticeData):
+
+                self.notices = noticeData.notices
+                self.nextCursor = noticeData.nextCursor
+                
+                print("notices searched by keywords : \(keywords)")
+
+            case .badRequest(let badRequest):
+                print("badRequest: \(badRequest.message)")
+                
+            case .unauthorized(let unautorized):
+                print("unautorized: \(unautorized.message)")
+
+            default:
+                print("Other networking error")
+            }
+            
+        }
+        
+    }
+    
+    func getNoticesByDepartmentId(id: Int, tags: [String]=[]) {
+        NoticeService.shared.getNoticesByDepartmentId(id: id, tags: tags) { response in
+
+            switch response {
+
+            case .success(let noticeData):
+
+                self.notices = noticeData.notices
+                self.nextCursor = noticeData.nextCursor
+                
+                print("getNoticesByDepartmentId: initializeByDepartmentId: noticesFetched")
+
+            case .badRequest(let badRequest):
+                print("badRequest: \(badRequest.message)")
+                
+            case .unauthorized(let unautorized):
+                print("unautorized: \(unautorized.message)")
+
+            default:
+                print("getNoticesByDepartmentId: Other networking error")
+            }
+
+
+        }
+    }
+    
+    
+    func searchNoticesWithDepartmentId(id: Int, tags: [String], keywords: String) {
+        
+        NoticeService.shared.searchNoticeWithDepartmentId(id: id, tags: tags, keywords: keywords) {response in
+            
+            switch response {
+
+            case .success(let noticeData):
+
+                self.notices = noticeData.notices
+                self.nextCursor = noticeData.nextCursor
+                
+                print("notices searched by keywords : \(keywords)")
+
+            case .badRequest(let badRequest):
+                print("badRequest: \(badRequest.message)")
+                
+            case .unauthorized(let unautorized):
+                print("unautorized: \(unautorized.message)")
+
+            default:
+                print("Other networking error")
+            }
+            
+        }
+        
+    }
+    
     
    
     

@@ -50,6 +50,19 @@ struct CollegeListView: View {
                 
             } // End of VStack
             .preferredColorScheme(.light)
+            .navigationBarTitle("", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("팔로우")
+                        .font(.system(size: 20))
+                        .bold()
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("menu")
+                        .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                
+            }
         }
         
         

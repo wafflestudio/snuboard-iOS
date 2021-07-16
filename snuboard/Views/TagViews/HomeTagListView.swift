@@ -12,28 +12,21 @@ struct HomeTagListView: View {
     @EnvironmentObject var settings: Settings
     
     let dept: String
-    var allTags: [String]
-    var selectedTags: [String]
+    var deptTags: [String]
     
-    init(dept: String, allTags:[String], selectedTags: [String]) {
+    init(dept: String, deptTags:[String]) {
         self.dept = dept
-        self.allTags = allTags
-        self.selectedTags = selectedTags
+        self.deptTags = deptTags
     }
     
     var body: some View {
         FlexibleView(
-            data: allTags,
+            data: deptTags,
             spacing: 8,
                 alignment: .leading
               )  { item in
-
-            TagChipView(item: item, selected: selectedTags.contains(item), actionIfSelected: {
-                    settings.queryParameters[dept]?.append(item)
-                }, actionIfUnselected: {
-                    settings.queryParameters[dept] = settings.queryParameters[dept]!.filter {$0 != item}
-                })
             
+            HomeTagChipView(dept: dept, item: item).environmentObject(settings)            
                 
           }
     }

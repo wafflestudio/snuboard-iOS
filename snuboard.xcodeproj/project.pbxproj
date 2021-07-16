@@ -44,6 +44,10 @@
 		CC6862BB2686163100E83C52 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BA2686163100E83C52 /* String+Extension.swift */; };
 		CC6862BD2686360C00E83C52 /* TagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BC2686360C00E83C52 /* TagChipView.swift */; };
 		CC6862BF26871FA900E83C52 /* HomeTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6862BE26871FA900E83C52 /* HomeTagListView.swift */; };
+		CC6E789C26A1C6EA00C6C718 /* FeedSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E789B26A1C6EA00C6C718 /* FeedSearchView.swift */; };
+		CC6E78A626A1E14200C6C718 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E78A526A1E14200C6C718 /* SearchBar.swift */; };
+		CC6E78A826A1FA1D00C6C718 /* HomeTagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E78A726A1FA1D00C6C718 /* HomeTagChipView.swift */; };
+		CC6E78AA26A20CF300C6C718 /* DepartmentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E78A926A20CF300C6C718 /* DepartmentSearchView.swift */; };
 		CCA54F6726984D45002532D0 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA54F6626984D45002532D0 /* NoticeViewModel.swift */; };
 		CCDDD04A267F45EA00C1EFFA /* CollegeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD049267F45EA00C1EFFA /* CollegeList.swift */; };
 		CCDDD04D267F476000C1EFFA /* CollegeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD04C267F476000C1EFFA /* CollegeListView.swift */; };
@@ -115,6 +119,10 @@
 		CC6862BA2686163100E83C52 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CC6862BC2686360C00E83C52 /* TagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChipView.swift; sourceTree = "<group>"; };
 		CC6862BE26871FA900E83C52 /* HomeTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTagListView.swift; sourceTree = "<group>"; };
+		CC6E789B26A1C6EA00C6C718 /* FeedSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSearchView.swift; sourceTree = "<group>"; };
+		CC6E78A526A1E14200C6C718 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		CC6E78A726A1FA1D00C6C718 /* HomeTagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTagChipView.swift; sourceTree = "<group>"; };
+		CC6E78A926A20CF300C6C718 /* DepartmentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSearchView.swift; sourceTree = "<group>"; };
 		CCA54F6626984D45002532D0 /* NoticeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
 		CCDDD049267F45EA00C1EFFA /* CollegeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeList.swift; sourceTree = "<group>"; };
 		CCDDD04C267F476000C1EFFA /* CollegeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeListView.swift; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 				CCDDD04C267F476000C1EFFA /* CollegeListView.swift */,
 				CC68629A2684E68C00E83C52 /* DepartmentDetailView.swift */,
 				CC6862AE2686042900E83C52 /* DepartmentDetailHomeView.swift */,
+				CC6E78A926A20CF300C6C718 /* DepartmentSearchView.swift */,
 			);
 			path = FullView;
 			sourceTree = "<group>";
@@ -211,6 +220,7 @@
 				CC100BDA26975699005EED21 /* NoticeTagListView.swift */,
 				CC100BDF26976F5D005EED21 /* TagFilterView.swift */,
 				CC100BE32697884A005EED21 /* DepartmentTagChipView.swift */,
+				CC6E78A726A1FA1D00C6C718 /* HomeTagChipView.swift */,
 			);
 			path = TagViews;
 			sourceTree = "<group>";
@@ -219,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				CC100BE626978C2B005EED21 /* FeedListView.swift */,
+				CC6E789B26A1C6EA00C6C718 /* FeedSearchView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -434,6 +445,7 @@
 				CC100BED26978DA3005EED21 /* PlaceHolderView.swift */,
 				CC100BF126979152005EED21 /* LogoTopBar.swift */,
 				CC24FE5726980B9200BC608C /* NoticeDetailView.swift */,
+				CC6E78A526A1E14200C6C718 /* SearchBar.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -565,6 +577,7 @@
 				CC100BEE26978DA3005EED21 /* PlaceHolderView.swift in Sources */,
 				CCFC2E1426773E33000390CB /* ContentView.swift in Sources */,
 				CC02705526849FD10021A3FF /* UnautorizedDataModel.swift in Sources */,
+				CC6E789C26A1C6EA00C6C718 /* FeedSearchView.swift in Sources */,
 				CCFC2E2C26774290000390CB /* Color.swift in Sources */,
 				CCDDD04D267F476000C1EFFA /* CollegeListView.swift in Sources */,
 				CC6862B32686064200E83C52 /* NoticeAPI.swift in Sources */,
@@ -578,6 +591,7 @@
 				CC68629F2684E8F000E83C52 /* FeedTagListView.swift in Sources */,
 				CC100BE026976F5D005EED21 /* TagFilterView.swift in Sources */,
 				CC6862972684E08A00E83C52 /* SegmentedPickerView.swift in Sources */,
+				CC6E78A626A1E14200C6C718 /* SearchBar.swift in Sources */,
 				CC6862BB2686163100E83C52 /* String+Extension.swift in Sources */,
 				CCDDD060267F4C4400C1EFFA /* DepartmentService.swift in Sources */,
 				CCFC2E2A26774274000390CB /* Const.swift in Sources */,
@@ -600,7 +614,9 @@
 				CC6862A52684FBA100E83C52 /* ColorPalette.swift in Sources */,
 				CCFC2E3226778EEC000390CB /* SignUpView.swift in Sources */,
 				CC6862AD2685759900E83C52 /* NoticeFile.swift in Sources */,
+				CC6E78AA26A20CF300C6C718 /* DepartmentSearchView.swift in Sources */,
 				CCDDD06F267F6DF500C1EFFA /* SignUpViewModel.swift in Sources */,
+				CC6E78A826A1FA1D00C6C718 /* HomeTagChipView.swift in Sources */,
 				CC24FE5626980A3D00BC608C /* NoticeDetailViewModel.swift in Sources */,
 				CCDDD058267F4A8300C1EFFA /* TokenUtils.swift in Sources */,
 				CCDDD075267F8ABD00C1EFFA /* UserAPI.swift in Sources */,

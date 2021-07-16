@@ -10,47 +10,49 @@ import SwiftUI
 struct FeedListView: View {
     
     @ObservedObject var noticeModel: NoticeViewModel = NoticeViewModel(type: .follow)
+    
+    
+    
+    init() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    }
+    
+    
     var body: some View {
         
         NavigationView {
-            if noticeModel.notices.isEmpty {
-                ZStack {
-                    PlaceHolderView()
-                    VStack(spacing: 0) {
-                        LogoTopBar()
-                        Divider()
-                        Spacer()
-                        
+            VStack(spacing: 0) {
+                if noticeModel.notices.isEmpty {
+                    PlaceHolderView("feed_placeholder")
+                }
+                else {
+                    ScrollView {
+                        VStack {
+                            ForEach(noticeModel.notices) { noticeSummary in
+                                NoticeSummaryView(notice: noticeSummary, isFavourite: false).environmentObject(noticeModel)
+                            }
+                        }.padding([.top, .leading, .trailing], 10)
+                        .background(Const.ColorSet.BgGray.color)
                     }
                 }
-                .navigationBarTitle("", displayMode: .inline)
-                .navigationBarHidden(true)
             }
-            else {
-                VStack(spacing: 0){
-                    
-                    LogoTopBar()
-                    Divider()
-                    VStack(spacing: 0) {
-                        ScrollView {
-                            VStack {
-                                ForEach(noticeModel.notices) { noticeSummary in
-                                    NoticeSummaryView(notice: noticeSummary, isFavourite: true).environmentObject(noticeModel)
-                                }
-                            }.padding(10)
-                        }
-                        Spacer()
-                    }.background(Const.ColorSet.BgGray.color)
-                   
-                    
+            .navigationBarTitle("", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Image("logo_horizontal")
                 }
-                
-                .navigationBarTitle("", displayMode: .inline)
-                .navigationBarHidden(true)
-            }
-
-            
-            
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("menu")
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Text("")
+                        NavigationLink(destination: FeedSearchView()) {
+                            Image("search")
+                        }
+                    }
+                }
+            }.padding(.top, 1)
         }.onAppear {
             noticeModel.getNoticesByFollow()
         }
@@ -61,25 +63,3 @@ struct FeedListView: View {
 
     }
 }
-
-
-
-
-//
-//var body: some View {
-//    NavigationView {
-//        VStack(spacing: 0) {
-//            ScrollView {
-//                VStack {
-//                    ForEach(noticeModel.notices) { noticeSummary in
-//                        NoticeSummaryView(notice: noticeSummary, isFavourite: true).environmentObject(noticeModel)
-//                    }
-//                }.padding(10)
-//            }
-//            .background(Const.ColorSet.BgGray.color)
-//        }
-//        .navigationBarTitle("", displayMode: .inline)
-//        .navigationBarHidden(true)
-//    }.onAppear {
-//        noticeModel.getAllNoticesScrapped()
-//    }
