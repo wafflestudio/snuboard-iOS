@@ -82,21 +82,15 @@ enum NoticeAPI: BaseAPI {
             return ["limit": 30]
         case .searchNoticesByFollowingTags(let keywords):
             return ["keywords" : keywords,
-                    "limit": 30,
-                    "content" : "true",
-                    "title": "true"]
+                    "limit": 30]
     
         case .searchNoticesWithDepartmentId(_,let tags,let keywords):
             if tags.isEmpty {
                 return ["keywords" : keywords,
-                        "limit": 30,
-                        "content" : "true",
-                        "title": "true"]
+                        "limit": 30,]
             } else {
                 return  ["keywords" : keywords,
                          "limit": 30,
-                         "content" : "true",
-                         "title": "true",
                          "tags" : tags.joined(separator: ",")]
             }
             

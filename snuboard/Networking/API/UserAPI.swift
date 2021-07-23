@@ -68,7 +68,7 @@ enum UserAPI: BaseAPI {
         case .createNewUser(let username, let password, let email):
             return ["username" : username,
                     "password" : password,
-                    "nickname" : email]
+                    "email" : email]
         case .authorizeUser(let grantType, let username, let password):
             if grantType == "refresh_token" {
                 return ["grant_type" : grantType]

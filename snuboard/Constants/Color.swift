@@ -17,6 +17,7 @@ extension Const {
         case Gray5 = "Gray5"
         case Gray6 = "Gray6"
         case MainBlue = "MainBlue"
+        case Blue2 = "Blue2"
         case BgGray = "BgGray"
         case Unselected = "Unselected"
         

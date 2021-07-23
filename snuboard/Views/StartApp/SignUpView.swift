@@ -21,17 +21,21 @@ struct SignUpView: View {
             {
                 UnderlinedTextFieldView(label: "Username", placeholder: "", field: $viewModel.username)
                 
+                UnderlinedTextFieldView(label: "E-mail", placeholder: "",  field: $viewModel.email)
+                
                 UnderlinedTextFieldView(label: "Password", placeholder: "", secureMode: true, field: $viewModel.password)
                 
                 UnderlinedTextFieldView(label: "Confirm Password", placeholder: "", secureMode: true, field: $viewModel.confirmPassword)
                 
-                UnderlinedTextFieldView(label: "email", placeholder: "",  field: $viewModel.email)
+                
                     
                 Spacer()
                 
                 // SIGNUP BUTTON
                 
-                NavigationLink(destination: Text("Second View").colorScheme(.light), isActive: $viewModel.pushActive) { EmptyView() }
+                
+                NavigationLink(destination: MainTabView().colorScheme(.light), isActive: $viewModel.pushActive) { EmptyView() }
+                
                 
                 Button(action: {
                         viewModel.signUp()
