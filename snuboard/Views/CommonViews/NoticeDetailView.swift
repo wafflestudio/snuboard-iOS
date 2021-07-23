@@ -23,7 +23,7 @@ struct NoticeDetailView: View {
             VStack(alignment: .leading) {
                 Text(noticeModel.notice.title)
                     .font(.system(size: 16))
-                    .foregroundColor(Const.ColorSet.Gray2.color)
+                    .foregroundColor(Color.black)
                     .bold()
                 NoticeTagListView(dept: noticeModel.notice.departmentName, tags: noticeModel.notice.tags)
                 HTMLStringView(htmlContent: noticeModel.notice.content)

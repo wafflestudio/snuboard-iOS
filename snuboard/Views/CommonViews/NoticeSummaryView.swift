@@ -39,14 +39,14 @@ struct NoticeSummaryView: View {
                 HStack {
                     Text(notice.title)
                         .font(.system(size: 16))
-                        .foregroundColor(Const.ColorSet.Gray2.color)
+                        .foregroundColor(Color.black)
                         .bold()
                 }
                 HStack {
                     Text(notice.preview)
                         .font(.system(size: 12))
-                        .foregroundColor(Const.ColorSet.Gray3.color)
-                        .lineLimit(3)
+                        .foregroundColor(Color.black)
+                        .lineLimit(2)
                 }
                 
                 HStack {
@@ -59,6 +59,8 @@ struct NoticeSummaryView: View {
                             noticeModel.deleteNoticeScrap(id: notice.id, isFavouriteList: isFavourite)
                         }){
                             Image("favorite_selected")
+                                .resizable()
+                                .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
                         
                     } else {
@@ -66,6 +68,8 @@ struct NoticeSummaryView: View {
                             noticeModel.postNoticeScrap(id: notice.id)
                         }) {
                             Image("favorite_unselected")
+                                .resizable()
+                                .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
                         
                     }
