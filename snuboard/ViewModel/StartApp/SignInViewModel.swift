@@ -15,6 +15,12 @@ class SignInViewModel: ObservableObject {
     
     @Published var pushActive = false
     
+    func autoLogin(username: String, password: String) {
+        self.username = username
+        self.password = password
+        signIn()
+    }
+    
     func signIn() {
         StartAppService.shared.signIn(username: username, password: password) { response in
 
@@ -45,7 +51,7 @@ class SignInViewModel: ObservableObject {
     
        }
     }
-    
+
     
     
 }

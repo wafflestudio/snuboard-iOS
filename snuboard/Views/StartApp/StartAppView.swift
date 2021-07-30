@@ -12,8 +12,11 @@ struct StartAppView: View {
     @State private var showingSignInSheet = false
     @State private var showingSignUpSheet = false
     @State private var action: Int? = 0
+    @ObservedObject var viewModel = SignInViewModel()
     
     var body: some View {
+        
+        
         
 
         ZStack {
@@ -21,6 +24,8 @@ struct StartAppView: View {
             NavigationView {
                 
                 VStack {
+                    
+                    NavigationLink(destination: MainTabView().colorScheme(.light), isActive: $viewModel.pushActive) { EmptyView() }
                     
                     NavigationLink(destination: SignUpView().colorScheme(.light), tag: 1, selection: $action) {
                         EmptyView()
@@ -104,6 +109,10 @@ struct StartAppView: View {
                 }
                 .frame(width: 252, height: 452, alignment: .center)
                 
+            }
+        }.onAppear {
+            if let id = TokenUtils.loadID(), let pw = TokenUtils.loadPW() {
+                viewModel.autoLogin(username: id, password: pw)
             }
         }
 
