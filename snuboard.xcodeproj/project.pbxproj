@@ -1,0 +1,835 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BC656FAE35AF49FFDEB4BD4 /* Pods_snuboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AF6BE5254D6A7612AF5888 /* Pods_snuboard.framework */; };
+		521D0CA2314B762AC91382CA /* Pods_snuboard_snuboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9CEA3CFC6A431D0ABB18D /* Pods_snuboard_snuboardUITests.framework */; };
+		6631A27C60AF097ED86D2AF2 /* Pods_snuboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D39AA2F7FCB0491E280803E /* Pods_snuboardTests.framework */; };
+		CCD0B32726DCF0D600439A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B32626DCF0D600439A74 /* AppDelegate.swift */; };
+		CCD0B32926DCF0D600439A74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B32826DCF0D600439A74 /* SceneDelegate.swift */; };
+		CCD0B32B26DCF0D600439A74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B32A26DCF0D600439A74 /* ContentView.swift */; };
+		CCD0B32D26DCF0D900439A74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD0B32C26DCF0D900439A74 /* Assets.xcassets */; };
+		CCD0B33026DCF0D900439A74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD0B32F26DCF0D900439A74 /* Preview Assets.xcassets */; };
+		CCD0B33326DCF0D900439A74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD0B33126DCF0D900439A74 /* LaunchScreen.storyboard */; };
+		CCD0B33E26DCF0D900439A74 /* snuboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B33D26DCF0D900439A74 /* snuboardTests.swift */; };
+		CCD0B34926DCF0D900439A74 /* snuboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B34826DCF0D900439A74 /* snuboardUITests.swift */; };
+		CCD0B35926DCF2D600439A74 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD0B35826DCF2D600439A74 /* Colours.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCD0B33A26DCF0D900439A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCD0B31B26DCF0D600439A74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCD0B32226DCF0D600439A74;
+			remoteInfo = snuboard;
+		};
+		CCD0B34526DCF0D900439A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCD0B31B26DCF0D600439A74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCD0B32226DCF0D600439A74;
+			remoteInfo = snuboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EB9CEA3CFC6A431D0ABB18D /* Pods_snuboard_snuboardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuboard_snuboardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C5D31F06B0390B22637DB95 /* Pods-snuboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboardTests.debug.xcconfig"; path = "Target Support Files/Pods-snuboardTests/Pods-snuboardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		71813F9A759432122E2CCE83 /* Pods-snuboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard.release.xcconfig"; path = "Target Support Files/Pods-snuboard/Pods-snuboard.release.xcconfig"; sourceTree = "<group>"; };
+		767F64B1E43EF4967953AEB6 /* Pods-snuboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard.debug.xcconfig"; path = "Target Support Files/Pods-snuboard/Pods-snuboard.debug.xcconfig"; sourceTree = "<group>"; };
+		8D39AA2F7FCB0491E280803E /* Pods_snuboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94AF6BE5254D6A7612AF5888 /* Pods_snuboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FCB8306D40BED4793B840B /* Pods-snuboard-snuboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard-snuboardUITests.debug.xcconfig"; path = "Target Support Files/Pods-snuboard-snuboardUITests/Pods-snuboard-snuboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CCD0B32326DCF0D600439A74 /* snuboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snuboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD0B32626DCF0D600439A74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CCD0B32826DCF0D600439A74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CCD0B32A26DCF0D600439A74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CCD0B32C26DCF0D900439A74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCD0B32F26DCF0D900439A74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CCD0B33226DCF0D900439A74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCD0B33426DCF0D900439A74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD0B33926DCF0D900439A74 /* snuboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snuboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD0B33D26DCF0D900439A74 /* snuboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuboardTests.swift; sourceTree = "<group>"; };
+		CCD0B33F26DCF0D900439A74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD0B34426DCF0D900439A74 /* snuboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snuboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD0B34826DCF0D900439A74 /* snuboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuboardUITests.swift; sourceTree = "<group>"; };
+		CCD0B34A26DCF0D900439A74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD0B35826DCF2D600439A74 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
+		D2597FF70741EAE2F231CECA /* Pods-snuboard-snuboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard-snuboardUITests.release.xcconfig"; path = "Target Support Files/Pods-snuboard-snuboardUITests/Pods-snuboard-snuboardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D57F86D6497B39D576239C66 /* Pods-snuboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboardTests.release.xcconfig"; path = "Target Support Files/Pods-snuboardTests/Pods-snuboardTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCD0B32026DCF0D600439A74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC656FAE35AF49FFDEB4BD4 /* Pods_snuboard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD0B33626DCF0D900439A74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6631A27C60AF097ED86D2AF2 /* Pods_snuboardTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD0B34126DCF0D900439A74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521D0CA2314B762AC91382CA /* Pods_snuboard_snuboardUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89A851E982176D551B2500DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94AF6BE5254D6A7612AF5888 /* Pods_snuboard.framework */,
+				2EB9CEA3CFC6A431D0ABB18D /* Pods_snuboard_snuboardUITests.framework */,
+				8D39AA2F7FCB0491E280803E /* Pods_snuboardTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9920C686CA315FC2FB0038FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				767F64B1E43EF4967953AEB6 /* Pods-snuboard.debug.xcconfig */,
+				71813F9A759432122E2CCE83 /* Pods-snuboard.release.xcconfig */,
+				B2FCB8306D40BED4793B840B /* Pods-snuboard-snuboardUITests.debug.xcconfig */,
+				D2597FF70741EAE2F231CECA /* Pods-snuboard-snuboardUITests.release.xcconfig */,
+				5C5D31F06B0390B22637DB95 /* Pods-snuboardTests.debug.xcconfig */,
+				D57F86D6497B39D576239C66 /* Pods-snuboardTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CCD0B31A26DCF0D600439A74 = {
+			isa = PBXGroup;
+			children = (
+				CCD0B32526DCF0D600439A74 /* snuboard */,
+				CCD0B33C26DCF0D900439A74 /* snuboardTests */,
+				CCD0B34726DCF0D900439A74 /* snuboardUITests */,
+				CCD0B32426DCF0D600439A74 /* Products */,
+				9920C686CA315FC2FB0038FA /* Pods */,
+				89A851E982176D551B2500DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CCD0B32426DCF0D600439A74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B32326DCF0D600439A74 /* snuboard.app */,
+				CCD0B33926DCF0D900439A74 /* snuboardTests.xctest */,
+				CCD0B34426DCF0D900439A74 /* snuboardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCD0B32526DCF0D600439A74 /* snuboard */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B35726DCF2B900439A74 /* Resources */,
+				CCD0B35626DCF2B300439A74 /* Sources */,
+				CCD0B32626DCF0D600439A74 /* AppDelegate.swift */,
+				CCD0B32826DCF0D600439A74 /* SceneDelegate.swift */,
+				CCD0B32A26DCF0D600439A74 /* ContentView.swift */,
+				CCD0B33126DCF0D900439A74 /* LaunchScreen.storyboard */,
+				CCD0B33426DCF0D900439A74 /* Info.plist */,
+				CCD0B32E26DCF0D900439A74 /* Preview Content */,
+			);
+			path = snuboard;
+			sourceTree = "<group>";
+		};
+		CCD0B32E26DCF0D900439A74 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B32F26DCF0D900439A74 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CCD0B33C26DCF0D900439A74 /* snuboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B33D26DCF0D900439A74 /* snuboardTests.swift */,
+				CCD0B33F26DCF0D900439A74 /* Info.plist */,
+			);
+			path = snuboardTests;
+			sourceTree = "<group>";
+		};
+		CCD0B34726DCF0D900439A74 /* snuboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B34826DCF0D900439A74 /* snuboardUITests.swift */,
+				CCD0B34A26DCF0D900439A74 /* Info.plist */,
+			);
+			path = snuboardUITests;
+			sourceTree = "<group>";
+		};
+		CCD0B35626DCF2B300439A74 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B36026DCF48100439A74 /* Extensions */,
+				CCD0B35F26DCF47A00439A74 /* ViewModifiers */,
+				CCD0B35E26DCF46C00439A74 /* MoyaPlugins */,
+				CCD0B35D26DCF44E00439A74 /* AppModels */,
+				CCD0B35C26DCF44900439A74 /* APIModels */,
+				CCD0B35B26DCF44100439A74 /* APIServices */,
+				CCD0B35A26DCF40C00439A74 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CCD0B35726DCF2B900439A74 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B32C26DCF0D900439A74 /* Assets.xcassets */,
+				CCD0B35826DCF2D600439A74 /* Colours.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCD0B35A26DCF40C00439A74 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCD0B35B26DCF44100439A74 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		CCD0B35C26DCF44900439A74 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
+		CCD0B35D26DCF44E00439A74 /* AppModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppModels;
+			sourceTree = "<group>";
+		};
+		CCD0B35E26DCF46C00439A74 /* MoyaPlugins */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoyaPlugins;
+			sourceTree = "<group>";
+		};
+		CCD0B35F26DCF47A00439A74 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		CCD0B36026DCF48100439A74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCD0B32226DCF0D600439A74 /* snuboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCD0B34D26DCF0D900439A74 /* Build configuration list for PBXNativeTarget "snuboard" */;
+			buildPhases = (
+				8CAC365CDA12E34BE94BE91D /* [CP] Check Pods Manifest.lock */,
+				CCD0B31F26DCF0D600439A74 /* Sources */,
+				CCD0B32026DCF0D600439A74 /* Frameworks */,
+				CCD0B32126DCF0D600439A74 /* Resources */,
+				6E8943121804BBCF358D36AA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = snuboard;
+			productName = snuboard;
+			productReference = CCD0B32326DCF0D600439A74 /* snuboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCD0B33826DCF0D900439A74 /* snuboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCD0B35026DCF0D900439A74 /* Build configuration list for PBXNativeTarget "snuboardTests" */;
+			buildPhases = (
+				24C61D44C4745CCFD4AACB85 /* [CP] Check Pods Manifest.lock */,
+				CCD0B33526DCF0D900439A74 /* Sources */,
+				CCD0B33626DCF0D900439A74 /* Frameworks */,
+				CCD0B33726DCF0D900439A74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCD0B33B26DCF0D900439A74 /* PBXTargetDependency */,
+			);
+			name = snuboardTests;
+			productName = snuboardTests;
+			productReference = CCD0B33926DCF0D900439A74 /* snuboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CCD0B34326DCF0D900439A74 /* snuboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCD0B35326DCF0D900439A74 /* Build configuration list for PBXNativeTarget "snuboardUITests" */;
+			buildPhases = (
+				B9B3C5F93A3A62DC945AD2AF /* [CP] Check Pods Manifest.lock */,
+				CCD0B34026DCF0D900439A74 /* Sources */,
+				CCD0B34126DCF0D900439A74 /* Frameworks */,
+				CCD0B34226DCF0D900439A74 /* Resources */,
+				5C1C05E75D343021D774EF04 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCD0B34626DCF0D900439A74 /* PBXTargetDependency */,
+			);
+			name = snuboardUITests;
+			productName = snuboardUITests;
+			productReference = CCD0B34426DCF0D900439A74 /* snuboardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCD0B31B26DCF0D600439A74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					CCD0B32226DCF0D600439A74 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					CCD0B33826DCF0D900439A74 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = CCD0B32226DCF0D600439A74;
+					};
+					CCD0B34326DCF0D900439A74 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = CCD0B32226DCF0D600439A74;
+					};
+				};
+			};
+			buildConfigurationList = CCD0B31E26DCF0D600439A74 /* Build configuration list for PBXProject "snuboard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCD0B31A26DCF0D600439A74;
+			productRefGroup = CCD0B32426DCF0D600439A74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCD0B32226DCF0D600439A74 /* snuboard */,
+				CCD0B33826DCF0D900439A74 /* snuboardTests */,
+				CCD0B34326DCF0D900439A74 /* snuboardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCD0B32126DCF0D600439A74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD0B33326DCF0D900439A74 /* LaunchScreen.storyboard in Resources */,
+				CCD0B33026DCF0D900439A74 /* Preview Assets.xcassets in Resources */,
+				CCD0B32D26DCF0D900439A74 /* Assets.xcassets in Resources */,
+				CCD0B35926DCF2D600439A74 /* Colours.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD0B33726DCF0D900439A74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD0B34226DCF0D900439A74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24C61D44C4745CCFD4AACB85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snuboardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C1C05E75D343021D774EF04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snuboard-snuboardUITests/Pods-snuboard-snuboardUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snuboard-snuboardUITests/Pods-snuboard-snuboardUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snuboard-snuboardUITests/Pods-snuboard-snuboardUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E8943121804BBCF358D36AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snuboard/Pods-snuboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snuboard/Pods-snuboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snuboard/Pods-snuboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CAC365CDA12E34BE94BE91D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snuboard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9B3C5F93A3A62DC945AD2AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snuboard-snuboardUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCD0B31F26DCF0D600439A74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD0B32726DCF0D600439A74 /* AppDelegate.swift in Sources */,
+				CCD0B32926DCF0D600439A74 /* SceneDelegate.swift in Sources */,
+				CCD0B32B26DCF0D600439A74 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD0B33526DCF0D900439A74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD0B33E26DCF0D900439A74 /* snuboardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD0B34026DCF0D900439A74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD0B34926DCF0D900439A74 /* snuboardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCD0B33B26DCF0D900439A74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCD0B32226DCF0D600439A74 /* snuboard */;
+			targetProxy = CCD0B33A26DCF0D900439A74 /* PBXContainerItemProxy */;
+		};
+		CCD0B34626DCF0D900439A74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCD0B32226DCF0D600439A74 /* snuboard */;
+			targetProxy = CCD0B34526DCF0D900439A74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CCD0B33126DCF0D900439A74 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD0B33226DCF0D900439A74 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCD0B34B26DCF0D900439A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CCD0B34C26DCF0D900439A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCD0B34E26DCF0D900439A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 767F64B1E43EF4967953AEB6 /* Pods-snuboard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = snuboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.snuboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CCD0B34F26DCF0D900439A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71813F9A759432122E2CCE83 /* Pods-snuboard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = snuboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.snuboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CCD0B35126DCF0D900439A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5D31F06B0390B22637DB95 /* Pods-snuboardTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				INFOPLIST_FILE = snuboardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.snuboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snuboard.app/snuboard";
+			};
+			name = Debug;
+		};
+		CCD0B35226DCF0D900439A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D57F86D6497B39D576239C66 /* Pods-snuboardTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				INFOPLIST_FILE = snuboardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.snuboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snuboard.app/snuboard";
+			};
+			name = Release;
+		};
+		CCD0B35426DCF0D900439A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2FCB8306D40BED4793B840B /* Pods-snuboard-snuboardUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				INFOPLIST_FILE = snuboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.snuboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = snuboard;
+			};
+			name = Debug;
+		};
+		CCD0B35526DCF0D900439A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2597FF70741EAE2F231CECA /* Pods-snuboard-snuboardUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZB44VD5WX7;
+				INFOPLIST_FILE = snuboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.snuboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = snuboard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCD0B31E26DCF0D600439A74 /* Build configuration list for PBXProject "snuboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD0B34B26DCF0D900439A74 /* Debug */,
+				CCD0B34C26DCF0D900439A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCD0B34D26DCF0D900439A74 /* Build configuration list for PBXNativeTarget "snuboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD0B34E26DCF0D900439A74 /* Debug */,
+				CCD0B34F26DCF0D900439A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCD0B35026DCF0D900439A74 /* Build configuration list for PBXNativeTarget "snuboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD0B35126DCF0D900439A74 /* Debug */,
+				CCD0B35226DCF0D900439A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCD0B35326DCF0D900439A74 /* Build configuration list for PBXNativeTarget "snuboardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD0B35426DCF0D900439A74 /* Debug */,
+				CCD0B35526DCF0D900439A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCD0B31B26DCF0D600439A74 /* Project object */;
+}
