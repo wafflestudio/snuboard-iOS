@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Const {
+    // additional constants in extension
+}
