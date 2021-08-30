@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct ImageModifiers: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+// imageResizer
+extension Image {
+    func resizeImage(width: CGFloat, height: CGFloat) -> some View {
+        self
+            .resizable()
+            .scaledToFit()
+            .frame(width: width, height: height, alignment: .center)
+        
     }
 }
 
-struct ImageModifiers_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageModifiers()
-    }
-}
+
