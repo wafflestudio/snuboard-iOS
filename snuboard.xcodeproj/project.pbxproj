@@ -22,6 +22,9 @@
 		CCD0B36226DCF7F500439A74 /* ButtonModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36126DCF7F500439A74 /* ButtonModifiers.swift */; };
 		CCD0B36526DCF98C00439A74 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36426DCF98C00439A74 /* Const.swift */; };
 		CCD0B36726DCF99C00439A74 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36626DCF99C00439A74 /* Colors.swift */; };
+		CCD0B36A26DD240400439A74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCD0B36926DD240400439A74 /* GoogleService-Info.plist */; };
+		CCD0B36C26DD2CB800439A74 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36B26DD2CB800439A74 /* LaunchView.swift */; };
+		CCD0B36E26DD2EF200439A74 /* ImageModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36D26DD2EF200439A74 /* ImageModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,10 @@
 		CCD0B36126DCF7F500439A74 /* ButtonModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifiers.swift; sourceTree = "<group>"; };
 		CCD0B36426DCF98C00439A74 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		CCD0B36626DCF99C00439A74 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CCD0B36826DD1DA700439A74 /* snuboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = snuboard.entitlements; sourceTree = "<group>"; };
+		CCD0B36926DD240400439A74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CCD0B36B26DD2CB800439A74 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		CCD0B36D26DD2EF200439A74 /* ImageModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifiers.swift; sourceTree = "<group>"; };
 		D2597FF70741EAE2F231CECA /* Pods-snuboard-snuboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard-snuboardUITests.release.xcconfig"; path = "Target Support Files/Pods-snuboard-snuboardUITests/Pods-snuboard-snuboardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D57F86D6497B39D576239C66 /* Pods-snuboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboardTests.release.xcconfig"; path = "Target Support Files/Pods-snuboardTests/Pods-snuboardTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +154,8 @@
 		CCD0B32526DCF0D600439A74 /* snuboard */ = {
 			isa = PBXGroup;
 			children = (
+				CCD0B36926DD240400439A74 /* GoogleService-Info.plist */,
+				CCD0B36826DD1DA700439A74 /* snuboard.entitlements */,
 				CCD0B35726DCF2B900439A74 /* Resources */,
 				CCD0B35626DCF2B300439A74 /* Sources */,
 				CCD0B32626DCF0D600439A74 /* AppDelegate.swift */,
@@ -155,6 +164,7 @@
 				CCD0B33126DCF0D900439A74 /* LaunchScreen.storyboard */,
 				CCD0B33426DCF0D900439A74 /* Info.plist */,
 				CCD0B32E26DCF0D900439A74 /* Preview Content */,
+				CCD0B36B26DD2CB800439A74 /* LaunchView.swift */,
 			);
 			path = snuboard;
 			sourceTree = "<group>";
@@ -248,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				CCD0B36126DCF7F500439A74 /* ButtonModifiers.swift */,
+				CCD0B36D26DD2EF200439A74 /* ImageModifiers.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -378,6 +389,7 @@
 			files = (
 				CCD0B33326DCF0D900439A74 /* LaunchScreen.storyboard in Resources */,
 				CCD0B33026DCF0D900439A74 /* Preview Assets.xcassets in Resources */,
+				CCD0B36A26DD240400439A74 /* GoogleService-Info.plist in Resources */,
 				CCD0B32D26DCF0D900439A74 /* Assets.xcassets in Resources */,
 				CCD0B35926DCF2D600439A74 /* Colours.xcassets in Resources */,
 			);
@@ -510,6 +522,8 @@
 				CCD0B32726DCF0D600439A74 /* AppDelegate.swift in Sources */,
 				CCD0B36726DCF99C00439A74 /* Colors.swift in Sources */,
 				CCD0B32926DCF0D600439A74 /* SceneDelegate.swift in Sources */,
+				CCD0B36C26DD2CB800439A74 /* LaunchView.swift in Sources */,
+				CCD0B36E26DD2EF200439A74 /* ImageModifiers.swift in Sources */,
 				CCD0B36226DCF7F500439A74 /* ButtonModifiers.swift in Sources */,
 				CCD0B32B26DCF0D600439A74 /* ContentView.swift in Sources */,
 				CCD0B36526DCF98C00439A74 /* Const.swift in Sources */,
@@ -681,6 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = snuboard/snuboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
 				DEVELOPMENT_TEAM = ZB44VD5WX7;
@@ -704,6 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = snuboard/snuboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
 				DEVELOPMENT_TEAM = ZB44VD5WX7;
