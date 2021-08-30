@@ -19,6 +19,9 @@
 		CCD0B33E26DCF0D900439A74 /* snuboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B33D26DCF0D900439A74 /* snuboardTests.swift */; };
 		CCD0B34926DCF0D900439A74 /* snuboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B34826DCF0D900439A74 /* snuboardUITests.swift */; };
 		CCD0B35926DCF2D600439A74 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD0B35826DCF2D600439A74 /* Colours.xcassets */; };
+		CCD0B36226DCF7F500439A74 /* ButtonModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36126DCF7F500439A74 /* ButtonModifiers.swift */; };
+		CCD0B36526DCF98C00439A74 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36426DCF98C00439A74 /* Const.swift */; };
+		CCD0B36726DCF99C00439A74 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0B36626DCF99C00439A74 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		CCD0B34826DCF0D900439A74 /* snuboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuboardUITests.swift; sourceTree = "<group>"; };
 		CCD0B34A26DCF0D900439A74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCD0B35826DCF2D600439A74 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
+		CCD0B36126DCF7F500439A74 /* ButtonModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifiers.swift; sourceTree = "<group>"; };
+		CCD0B36426DCF98C00439A74 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		CCD0B36626DCF99C00439A74 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D2597FF70741EAE2F231CECA /* Pods-snuboard-snuboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboard-snuboardUITests.release.xcconfig"; path = "Target Support Files/Pods-snuboard-snuboardUITests/Pods-snuboard-snuboardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D57F86D6497B39D576239C66 /* Pods-snuboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuboardTests.release.xcconfig"; path = "Target Support Files/Pods-snuboardTests/Pods-snuboardTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +188,7 @@
 		CCD0B35626DCF2B300439A74 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CCD0B36326DCF98200439A74 /* Consts */,
 				CCD0B36026DCF48100439A74 /* Extensions */,
 				CCD0B35F26DCF47A00439A74 /* ViewModifiers */,
 				CCD0B35E26DCF46C00439A74 /* MoyaPlugins */,
@@ -240,6 +247,7 @@
 		CCD0B35F26DCF47A00439A74 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				CCD0B36126DCF7F500439A74 /* ButtonModifiers.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -249,6 +257,15 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCD0B36326DCF98200439A74 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0B36426DCF98C00439A74 /* Const.swift */,
+				CCD0B36626DCF99C00439A74 /* Colors.swift */,
+			);
+			path = Consts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,8 +508,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCD0B32726DCF0D600439A74 /* AppDelegate.swift in Sources */,
+				CCD0B36726DCF99C00439A74 /* Colors.swift in Sources */,
 				CCD0B32926DCF0D600439A74 /* SceneDelegate.swift in Sources */,
+				CCD0B36226DCF7F500439A74 /* ButtonModifiers.swift in Sources */,
 				CCD0B32B26DCF0D600439A74 /* ContentView.swift in Sources */,
+				CCD0B36526DCF98C00439A74 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
