@@ -7,14 +7,24 @@
 
 import SwiftUI
 
-struct NavigationBarModifiers: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension View {
+    
+    func hideNavigationBar() -> some View {
+        self
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarHidden(true)
     }
-}
+    
+    func applyCustomBackButton(action: @escaping ()->()) -> some View {
+        self
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action: {
+            action()
+        }, label: {
+            Image("navigateBefore")
+        }))
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationViewStyle(StackNavigationViewStyle())
+    }
 
-struct NavigationBarModifiers_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBarModifiers()
-    }
 }

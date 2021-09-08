@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct FeedView: View {
+    
+    @EnvironmentObject var envModel: EnvModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        
+        Text("hello")
+        .navigationBarTitle("hello")
 
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
+        
+
+    
     }
+
 }

@@ -13,8 +13,3 @@ struct DepartmentListView: View {
     }
 }
 
-struct DepartmentListView_Previews: PreviewProvider {
-    static var previews: some View {
-        DepartmentListView()
-    }
-}
