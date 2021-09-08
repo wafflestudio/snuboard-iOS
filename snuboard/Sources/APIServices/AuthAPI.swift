@@ -1,5 +1,5 @@
 //
-//  LaunchAPI.swift
+//  AuthAPI.swift
 //  snuboard
 //
 //  Created by Subeen Park on 2021/08/31.
@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 enum AuthAPI {
     case createNewUser(token: String)
@@ -52,3 +53,7 @@ extension AuthAPI: TargetType {
     
     
 }
+
+
+// Moya 401 Refresh: https://gist.github.com/susemi99/841b2c3935b2028b2162842d479de143
+
