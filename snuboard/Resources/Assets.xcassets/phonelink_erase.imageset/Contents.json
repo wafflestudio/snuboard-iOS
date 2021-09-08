@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo_horizontal.png",
+      "filename" : "phonelink_erase.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logo_horizontal@2x.png",
+      "filename" : "phonelink_erase@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo_horizontal@3x.png",
+      "filename" : "phonelink_erase@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
