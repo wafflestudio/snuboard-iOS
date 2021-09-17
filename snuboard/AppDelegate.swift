@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import UserNotifications
 import FirebaseMessaging
+import CoreData
 
 
 
@@ -21,6 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication
                      .LaunchOptionsKey: Any]?) -> Bool {
+
+    #if DEBUG
+    let secItemClasses = [kSecClassGenericPassword, kSecClassInternetPassword, kSecClassCertificate, kSecClassKey, kSecClassIdentity]
+    for itemClass in secItemClasses {
+        let spec: NSDictionary = [kSecClass: itemClass]
+        SecItemDelete(spec)
+    }
+    #endif
+    
+    
     FirebaseApp.configure()
 
     // [START set_messaging_delegate]
@@ -62,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // Print full message.
+    print("Did Recieve Remote Notification1")
     print(userInfo)
   }
 
@@ -83,7 +95,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // Print full message.
+    print("Did Recieve Remote Notification2")
     print(userInfo)
+    
+    guard let title = userInfo["title"] as? String else { return }
+    guard let body = userInfo["body"] as? String else { return }
+    guard let noticeIdStr = userInfo["noticeId"] as? String else { return }
+    guard let noticeId = Int(noticeIdStr) else { return }
+    guard let departmentIdStr = userInfo["departmentId"] as? String else { return }
+    guard let departmentId = Int(departmentIdStr) else { return }
+    guard let departmentName = userInfo["departmentName"] as? String else { return }
+    guard let preview = userInfo["preview"] as? String else { return }
+    guard let tags = userInfo["tags"] as? String else { return }
+    
+    let notification = NotificationData(title: title, body: body, preview: preview, noticeId: noticeId, noticeIdStr: noticeIdStr, departmentId: departmentId, departmentName: departmentName, tags: tags)
+    
+    let saved = NotificationDataHandler.saveData(notificationData: notification)
+    if saved {
+        LocalNotificationManager.setNotifications(notification: notification)
+    }
+    
+    
 
     completionHandler(UIBackgroundFetchResult.newData)
   }
@@ -105,6 +137,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // With swizzling disabled you must set the APNs token here.
     // Messaging.messaging().apnsToken = deviceToken
   }
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+
+        let container = NSPersistentContainer(name: "NotificationModel")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                 
+                /*
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
 }
 
 // [START ios_10_message_handling]
@@ -158,6 +212,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
     completionHandler()
   }
+    
 }
 
 // [END ios_10_message_handling]
@@ -180,9 +235,9 @@ extension AppDelegate: MessagingDelegate {
     }
     
 
-
-    
-
-
   // [END refresh_token]
 }
+
+
+
+

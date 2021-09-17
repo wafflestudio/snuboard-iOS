@@ -19,16 +19,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let envModel = EnvModel()
-        let contentView = LaunchView().environmentObject(envModel)
 
         // Use a UIHostingController as window root view controller.
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
-            self.window = window
-            window.makeKeyAndVisible()
+        
+        if let token = TokenUtils.loadAccessToken() {
+            if let windowScene = scene as? UIWindowScene {
+                let window = UIWindow(windowScene: windowScene)
+//                window.rootViewController = UIHostingController(rootView: HomeTabView().environmentObject(Settings()).environmentObject(DepartmentListViewModel()).environmentObject(EnvModel()))
+                window.rootViewController = UIHostingController(rootView: LaunchView(showSignUp: false).environmentObject(EnvModel()))
+                self.window = window
+                window.makeKeyAndVisible()
+            }
+            
+        } else {
+            if let windowScene = scene as? UIWindowScene {
+                let window = UIWindow(windowScene: windowScene)
+//                window.rootViewController = UIHostingController(rootView: LaunchView().environmentObject(EnvModel()))
+                window.rootViewController = UIHostingController(rootView: LaunchView(showSignUp: true).environmentObject(EnvModel()))
+                self.window = window
+                window.makeKeyAndVisible()
+            }
         }
+        
+        
+        
+//        let secItemClasses = [kSecClassGenericPassword, kSecClassInternetPassword, kSecClassCertificate, kSecClassKey, kSecClassIdentity]
+//        for itemClass in secItemClasses {
+//            let spec: NSDictionary = [kSecClass: itemClass]
+//            SecItemDelete(spec)
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

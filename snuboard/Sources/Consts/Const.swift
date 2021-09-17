@@ -9,6 +9,9 @@ import Foundation
 
 struct Const {
     // additional constants in extension
+    static let COLLEGES: [String] = ["공과대학" , "인문대학", "사회과학대학", "자연과학대학", "간호대학"
+    , "경영대학",  "농업생명과학대학", "미술대학", "사범대학", "생활과학대학"
+    , "수의과대학", "약학대학", "음악대학", "의과대학", "자유전공학부", "기타 기관"]
     static let POLICY: String = """
 SNUBOARD 개인정보취급방침 <br />
 <br />
@@ -88,4 +91,6 @@ SNUBOARD 담당자<br />
 전화번호 : 02-3480-3751<br />
 홈페이지 주소 : http://www.spo.go.kr<br />
 """
+    
+    static let NOTICE_LIMIT = 30
 }
