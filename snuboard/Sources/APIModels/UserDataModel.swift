@@ -19,11 +19,21 @@ struct UserDataModel: Codable {
     
     public func saveUserAuthDataModel() {
         
+        print("saveUserAuthDataModel")
         UserDefaults.standard.set(true, forKey: "isUserSignedUp")
         UserDefaults.standard.synchronize()
         TokenUtils.storeAccessToken(self.accessToken)
         TokenUtils.storeRefreshToken(self.refreshToken)
+        print("\(TokenUtils.loadAccessToken())")
+        print("\(TokenUtils.loadAccessToken())")
 
+    }
+    
+    public func saveNewTokens() {
+        TokenUtils.storeAccessToken(self.accessToken)
+        TokenUtils.storeRefreshToken(self.refreshToken)
+        
+        
     }
     
 }
