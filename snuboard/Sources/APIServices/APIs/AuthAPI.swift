@@ -11,6 +11,7 @@ import RxSwift
 
 enum AuthAPI {
     case createNewUser(token: String)
+    case refreshToken
 }
 
 
@@ -26,12 +27,16 @@ extension AuthAPI: TargetType {
         switch self {
         case .createNewUser:
             return "/users/"
+        case .refreshToken:
+            return "/users/auth/token/"
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .createNewUser:
+            return .post
+        case .refreshToken:
             return .post
         }
     }
@@ -44,16 +49,34 @@ extension AuthAPI: TargetType {
         switch self {
         case .createNewUser(let token):
             return .requestParameters(parameters: ["token": token], encoding: JSONEncoding.default)
+        case .refreshToken:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        switch self {
+        case .createNewUser:
+            return ["Content-Type": "application/json"]
+        case .refreshToken:
+            return ["Content-Type": "application/json",
+                    "Authorization": TokenUtils.getRefreshTokenHeader()!]
+        }
+        
     }
     
     
 }
 
+/// 인증 관련 API
+final class AuthService: BaseService<AuthAPI> {
+  static let shared = AuthService()
+  private override init() {}
 
-// Moya 401 Refresh: https://gist.github.com/susemi99/841b2c3935b2028b2162842d479de143
+  /// 토큰 재발급
+  func refreshToken() -> Single<Response> {
+    return request(.refreshToken)
+  }
+}
+
 
