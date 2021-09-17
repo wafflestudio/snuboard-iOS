@@ -12,7 +12,10 @@ struct VersionInfo: View {
     
     @Environment(\.presentationMode) var presentationMode
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    let bundlerVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
     @EnvironmentObject var envModel: EnvModel
+
+    
     
     var body: some View {
         
@@ -24,7 +27,7 @@ struct VersionInfo: View {
                 Image("squareLogo").resizable().frame(width: 167, height: 167, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Spacer()
             }
-            Text("버전 \(appVersion ?? "0.0.1")")
+            Text("버전 \(appVersion ?? "0.0").\(bundlerVersion ?? "-1")")
                 .font(.system(size: 20))
                 .foregroundColor(Const.Colors.Gray3.color)
             Text("최신 업데이트 2021.08.20")
