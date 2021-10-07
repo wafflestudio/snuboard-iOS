@@ -10,6 +10,7 @@ import SwiftUI
 struct NoticeDetailView: View {
     
     @StateObject var noticeModel: NoticeDetailViewModel
+    @EnvironmentObject var noticeSummaryModel: NoticeViewModel
     @Environment(\.presentationMode) var presentationMode
     
 
@@ -19,64 +20,88 @@ struct NoticeDetailView: View {
     }
     
     var body: some View {
+        
         VStack {
-            VStack(alignment: .leading) {
-                Text(noticeModel.notice.title)
-                    .font(.system(size: 18))
-                    .foregroundColor(Color.black)
-                    .bold()
-                NoticeTagListView(dept: noticeModel.notice.departmentName, tags: noticeModel.notice.tags)
-                HTMLView(htmlContent: noticeModel.notice.content)
-                HStack{
+            
+            if noticeModel.loading {
+                VStack {
                     Spacer()
-                    Text(noticeModel.notice.createdAt.asDate())
-                        .font(.system(size: 12))
-                        .foregroundColor(Const.Colors.Unselected.color)
-                }
-            }
-            .padding(20)
-            .background(Color.white)
-            
-            Spacer()
-                .frame(height: 10)
-            
-            VStack{
-                
-                HStack {
-                    
                     HStack {
-                        Image("folder_open")
-                            .frame(width: 16, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        Text("첨부파일")
-                            .font(.system(size: 14))
+                        Spacer()
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
                         Spacer()
                     }
-                    
-                }
-                
-                VStack {
-                    ForEach(noticeModel.notice.files) { file in
-                        Link(destination: URL(string: file.link)!, label: {
-                                HStack {
-                                    Image("file_copy")
-                                        .frame(width: 16, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    Text(file.name)
-                                        .foregroundColor(Const.Colors.Gray2.color)
-                                        .font(.system(size: 12))
-                                    
-                                    Spacer()
-                                }
-                                
-                            })
-                    }
+                    Spacer()
                 }
             }
-            .padding(20)
-            .background(Color.white)
+            
+            else {
+                VStack {
+                    VStack(alignment: .leading) {
+                        Text(noticeModel.notice.title)
+                            .font(.system(size: 18))
+                            .foregroundColor(Color.black)
+                            .bold()
+                        NoticeTagListView(dept: noticeModel.notice.departmentName, tags: noticeModel.notice.tags)
+                        HTMLView(htmlContent: noticeModel.notice.content)
+                        HStack{
+                            Spacer()
+                            Text(noticeModel.notice.createdAt.asDate())
+                                .font(.system(size: 12))
+                                .foregroundColor(Const.Colors.Unselected.color)
+                        }
+                    }
+                    .padding(20)
+                    .background(Color.white)
+                    
+                    Spacer()
+                        .frame(height: 10)
+                    
+                    VStack{
+                        
+                        HStack {
+                            
+                            HStack {
+                                Image("folder_open")
+                                    .frame(width: 16, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                Text("첨부파일")
+                                    .font(.system(size: 14))
+                                Spacer()
+                            }
+                            
+                        }
+                        
+                        VStack {
+                            ForEach(noticeModel.notice.files) { file in
+                                Link(destination: URL(string: file.link)!, label: {
+                                        HStack {
+                                            Image("file_copy")
+                                                .frame(width: 16, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            Text(file.name)
+                                                .foregroundColor(Const.Colors.Gray2.color)
+                                                .font(.system(size: 12))
+                                            
+                                            Spacer()
+                                        }
+                                        
+                                    })
+                            }
+                        }
+                    }
+                    .padding(20)
+                    .background(Color.white)
+                    
+                }
+                .background(Const.Colors.BgGray.color)
+                .padding(.top, 1)
+            }
             
         }
-        .background(Const.Colors.BgGray.color)
-        .padding(.top, 1)
+        .onAppear {
+            noticeModel.getNotice()
+            AppState.shared.pageToNavigationTo = nil
+        }    
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 HStack {
@@ -98,6 +123,7 @@ struct NoticeDetailView: View {
                     if noticeModel.notice.isScrapped {
                         Button(action: {
                             noticeModel.deleteNoticeScrap(id: noticeModel.notice.id)
+                            noticeSummaryModel.deleteNoticeScrap(id: noticeModel.notice.id)
                         }, label: {
                             Image("favorite_selected")
                                 .resizable()
@@ -105,7 +131,9 @@ struct NoticeDetailView: View {
                         })
                     } else {
                         Button(action: {
-                            noticeModel.postNoticeScrap(id: noticeModel.notice.id)
+                            noticeModel.createNoticeScrap(id: noticeModel.notice.id)
+                            noticeSummaryModel.createNoticeScrap(id: noticeModel.notice.id)
+  
                         }, label: {
                             Image("favorite_unselected")
                                 .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)

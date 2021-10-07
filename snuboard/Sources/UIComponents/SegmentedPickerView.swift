@@ -110,6 +110,7 @@ struct SegmentedPicker: View {
             HStack {
                 ForEach(0..<self.items.count, id: \.self) { index in
                     self.getSegmentView(for: index)
+                        .contentShape(Rectangle())
                         .onTapGesture { self.onItemTap(index: index) }
                 }
             }
@@ -131,7 +132,7 @@ struct SegmentedPicker: View {
         let isSelected = self.selection == index
         return
             Text(self.items[index])
-                .font(.system(size: 14)).bold()
+                .font(.system(size: 15)).bold()
                 .foregroundColor(isSelected ? SegmentedPicker.SelectedTextColor: SegmentedPicker.TextColor)
                 .lineLimit(1)
                 .padding(.vertical, SegmentedPicker.SegmentYPadding)

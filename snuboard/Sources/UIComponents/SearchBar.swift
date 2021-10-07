@@ -12,11 +12,13 @@ struct SearchBar: View {
     
     @Binding var searchText: String
     var action: () -> ()
+    var dismissAction: () -> ()
     @Environment(\.presentationMode) var presentationMode
     
-    init(searchText: Binding<String>, action: @escaping ()->()) {
+    init(searchText: Binding<String>, action: @escaping ()->(), dismissAction: @escaping() -> ()) {
         self._searchText = searchText
         self.action = action
+        self.dismissAction = dismissAction
     }
     
     
@@ -36,7 +38,8 @@ struct SearchBar: View {
             Text("취소")
             .font(.system(size: 15))
             .onTapGesture {
-                presentationMode.wrappedValue.dismiss()
+//                presentationMode.wrappedValue.dismiss()
+                self.dismissAction()
             }
         }
         .padding([.leading, .trailing], 10)
