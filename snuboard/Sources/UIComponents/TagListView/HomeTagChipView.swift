@@ -39,7 +39,7 @@ struct HomeTagChipView: View {
     var body: some View {
 
         Text(verbatim: item)
-            .font(.system(size: 10))
+            .font(.system(size: 11))
             .foregroundColor(.white)
             .bold()
             .padding(5)

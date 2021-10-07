@@ -29,7 +29,7 @@ struct FeedTagListView: View {
         
         FlexibleView(
             data: deptModel.colleges[deptModel.getCollegeLoc(college: college)].departments[deptModel.getDeptLoc(college: college, deptId: id)].tags,
-            spacing: 8,
+            spacing: 5,
                 alignment: .leading
               )  { item in
             TagChipView(item: item, selected: deptModel.colleges[deptModel.getCollegeLoc(college: college)].departments[deptModel.getDeptLoc(college: college, deptId: id)].follow.contains(item), id: id, notificationTurnedOn: $notificationTurnedOn).environmentObject(deptModel)
