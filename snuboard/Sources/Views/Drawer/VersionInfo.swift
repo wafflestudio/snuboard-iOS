@@ -41,7 +41,7 @@ struct VersionInfo: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Image("navigateBefore").onTapGesture {
-                    envModel.isDrawerOpen = true
+                    envModel.isDrawerOpen = false
                     envModel.showVersinoInfo = false
                     presentationMode.wrappedValue.dismiss()
                 }

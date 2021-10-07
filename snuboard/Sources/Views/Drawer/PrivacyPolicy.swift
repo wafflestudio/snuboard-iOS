@@ -29,7 +29,7 @@ struct PrivacyPolicy: View {
             
             // Button
             Button(action: {
-                    envModel.isDrawerOpen = true
+                    envModel.isDrawerOpen = false
                     envModel.showPrivacy = false
                     presentationMode.wrappedValue.dismiss()
                     }, // end of button action
