@@ -57,14 +57,19 @@ struct FeedSearchView: View {
               )
             .background(Const.Colors.BgGray.color)
             VStack(spacing: 0) {
-                SearchBar(searchText: $searchText, action: {
-                    if searchText.count < 2 {
-                        self.showAlert = true
-                    } else {
-                        noticeModel.searchNoticesWithFollow(keywords: searchText)
-                    }
-                    
-                })
+                SearchBar(searchText: $searchText,
+                          action: {
+                            if searchText.count < 2 {
+                                self.showAlert = true
+                            } else {
+                                noticeModel.searchNoticesWithFollow(keywords: searchText)
+                            }
+                          },
+                          dismissAction: {
+                            self.presentationMode.wrappedValue.dismiss()
+                          })
+                
+               
                 Divider().background(Const.Colors.Gray5.color)
                 Spacer()
             }

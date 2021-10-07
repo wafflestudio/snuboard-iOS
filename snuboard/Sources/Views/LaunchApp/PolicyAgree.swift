@@ -12,8 +12,8 @@ struct PolicyAgree: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var envModel: EnvModel
     @StateObject var deptModel: DepartmentListViewModel = DepartmentListViewModel()
+    @EnvironmentObject var viewModel: AuthViewModel
     @StateObject var settings = Settings()
-    @State var pushActive = false
 
     
     var body: some View {
@@ -34,9 +34,9 @@ struct PolicyAgree: View {
                             .environmentObject(deptModel)
                             .environmentObject(settings)
                             .navigationBarBackButtonHidden(true),
-                           isActive: $pushActive, label: {
+                           isActive: $viewModel.pushActive, label: {
                 Button(action: {
-                    self.pushActive = true
+                    viewModel.signUp()
                 }, label: {
                     Text("동의하기")
                         .blueButtonText()
@@ -44,6 +44,7 @@ struct PolicyAgree: View {
                         .blueButtonBackground()
                 })
             })
+                .isDetailLink(false)
             
             
         } // End of VStack 0

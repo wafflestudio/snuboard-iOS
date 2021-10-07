@@ -29,15 +29,16 @@ struct SignUpView: View {
             } // End of VStack 1
 
             // Button
-            NavigationLink(destination: PolicyAgree().environmentObject(envModel), isActive: $viewModel.pushActive) { EmptyView() }
-            
-            Text("시작하기")
+            NavigationLink(destination: PolicyAgree()
+                            .environmentObject(envModel)
+                            .environmentObject(viewModel)) {
+                Text("시작하기")
                 .blueButtonText()
                 .frame(width: 193, height: 40, alignment: .center)
                 .blueButtonBackground()
-                .onTapGesture {
-                    viewModel.signUp()
-                }
+                
+            }.isDetailLink(false)
+
 
         } // End of outer VStack0
     }

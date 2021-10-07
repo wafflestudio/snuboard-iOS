@@ -32,61 +32,76 @@ struct DepartmentDetailHomeView: View {
                 .padding(12)
                 .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.white))
             
-            if noticeModel.notices.isEmpty && noticeModel.nextCursor == "" {
+            
+            ScrollView {
+                VStack {
+                    ForEach(noticeModel.notices) { noticeSummary in
+                        NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
+                    }
+                }
+                
+                if !noticeModel.noMoreContent {
+                    HStack { // Load more Hstack
+                        Spacer()
+                        HStack {
+                            Button(action: {
+                                
+                                if searchText.count < 2 {
+                                    print("load ordinary notices")
+                                    noticeModel.loadMoreNoticesByDepartmentId(tags: UserDefaults.standard.queryParameters[dept.name] ?? [])
+                                } else {
+                                    print("load search results")
+                                    noticeModel.loadMoreSearchResultsByDepartmentId(tags: UserDefaults.standard.queryParameters[dept.name] ?? [], keywords: searchText)
+                                }
+                                
+                                
+                            }, label: {
+                                Text("더보기")
+                                    .foregroundColor(Const.Colors.MainBlue.color)
+                                    .font(.system(size: 14))
+                            })
+                            
+                            
+                        }
+                        Spacer()
+                    } // end of load more Hstack
+                }
+                
+                if noticeModel.loading {
+
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                        Spacer()
+                    }
+
+                }
+                
+                
+            }
+            
+            
+            
+            if noticeModel.notices.isEmpty && noticeModel.nextCursor == "" && !noticeModel.loading {
                 VStack {
                     Spacer()
                     Image("search_placeholder")
                         .resizable()
                         .frame(width: 203, height: 203, alignment: .center)
                 }
-            } else {
-                ScrollView {
-                    VStack {
-                        ForEach(noticeModel.notices) { noticeSummary in
-                            NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
-                        }
-                    }
-                    
-                    if !noticeModel.noMoreContent {
-                        HStack { // Load more Hstack
-                            Spacer()
-                            HStack {
-                                Button(action: {
-                                    
-                                    if searchText.count < 2 {
-                                        print("load ordinary notices")
-                                        noticeModel.loadMoreNoticesByDepartmentId(tags: UserDefaults.standard.queryParameters[dept.name] ?? [])
-                                    } else {
-                                        print("load search results")
-                                        noticeModel.loadMoreSearchResultsByDepartmentId(tags: UserDefaults.standard.queryParameters[dept.name] ?? [], keywords: searchText)
-                                    }
-                                    
-                                    
-                                }, label: {
-                                    Text("더보기")
-                                        .foregroundColor(Const.Colors.MainBlue.color)
-                                        .font(.system(size: 12))
-                                })
-                                
-                                
-                            }
-                            Spacer()
-                        } // end of load more Hstack
-                    }
-                    
-                    
-                }
-            }
+            } 
 
         }
         .onAppear {
             
+            
             settings.initUserDefaults()
-            print(settings.queryParameters)
-            
-            let finalTags = UserDefaults.standard.queryParameters[dept.name] ?? []
-            
-            noticeModel.initModelWithDepartmentId(id: self.dept.id, tags: finalTags.isEmpty ? self.dept.tags : finalTags)
+//            print(settings.queryParameters)
+//
+//            let finalTags = UserDefaults.standard.queryParameters[dept.name] ?? []
+//
+//            noticeModel.initModelWithDepartmentId(id: self.dept.id, tags: finalTags.isEmpty ? self.dept.tags : finalTags)
             
         }
         .edgesIgnoringSafeArea(.bottom)

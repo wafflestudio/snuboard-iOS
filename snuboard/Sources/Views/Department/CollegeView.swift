@@ -11,6 +11,7 @@ struct CollegeView: View {
     
     @EnvironmentObject var deptModel: DepartmentListViewModel
     @EnvironmentObject var settings: Settings
+    @EnvironmentObject var envModel: EnvModel
     
     var body: some View {
         
@@ -18,36 +19,56 @@ struct CollegeView: View {
             
             Const.Colors.BgGray.color
             
-            VStack(spacing: 0) {
-                ScrollView(showsIndicators: false){
-                    
-                    ForEach(deptModel.colleges, id: \.self) { college in
-
-                        ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in
-                            DepartmentSummaryView(id: dept.id)
-                                .environmentObject(deptModel)
-                        }
-
+            if deptModel.loading {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                        Spacer()
                     }
-                    VStack(spacing: 10) {
-    
-                        ForEach(deptModel.colleges, id: \.self) { college in
-                            
-                            CollegeViewCell(college: college)
-                                .environmentObject(settings)
-        
-                        } // End of ForEach
-                    }// End of VStack
-                    .padding(.top, 1)
-                } // End of Scroll View
-                .padding()
-                .background(Const.Colors.BgGray.color)
+                    Spacer()
+                }
+            }
+            else {
                 
-            } // End of VStack
-            .padding(.top, settings.showMenu ? 45 : 1 ).animation(.none)
+                VStack(spacing: 0) {
+                    ScrollView(showsIndicators: false){
+                        
+                        VStack(spacing: 10) {
+                            
+                            ForEach(deptModel.colleges, id: \.self) { college in
+
+                                ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in
+                                    DepartmentSummaryView(id: dept.id)
+                                        .environmentObject(deptModel)
+                                }
+
+                            }
+                            
+                            ForEach(deptModel.colleges, id: \.self) { college in
+                                
+                                CollegeViewCell(college: college)
+                                    .environmentObject(settings)
+            
+                            } // End of ForEach
+                        }// End of VStack
+                        
+                        .padding()
+                        .background(Const.Colors.BgGray.color)
+                        
+                    } // End of Scroll View
+                    .padding(.top, 1)
+
+                } // End of VStack
+                
+            }
+            
+            
             
         } // End of ZStack
-    
+
             
     
 

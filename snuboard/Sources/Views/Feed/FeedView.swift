@@ -11,18 +11,35 @@ struct FeedView: View {
     
     @EnvironmentObject var envModel: EnvModel
     @StateObject var noticeModel = NoticeViewModel(type: .follow)
+    @ObservedObject var appState = AppState.shared
+    
     
     var body: some View {
         
         VStack(spacing: 0) {
-            if noticeModel.notices.isEmpty {
+            
+            if noticeModel.notices.isEmpty && !noticeModel.loading {
                 PlaceHolderView("feed_placeholder")
             }
             else {
+                
                 ScrollView {
                     VStack {
                         ForEach(noticeModel.notices) { noticeSummary in
-                            NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
+                            
+    //                        NavigationLink(destination: NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel), isActive: $isShowingDetailView) { EmptyView() }
+                            
+                            NavigationLink(
+                                destination: NoticeDetailView(id: noticeSummary.id).environmentObject(noticeModel),
+                                isActive: .constant(appState.pageToNavigationTo==noticeSummary.id),
+                                label: {
+                                    NoticeSummaryView(notice: noticeSummary)
+                                        .environmentObject(noticeModel)
+                                        .onTapGesture {
+                                            appState.pageToNavigationTo = noticeSummary.id
+                                        }
+                                })
+                            
                         }
                         if !noticeModel.noMoreContent {
                             HStack { // Load more Hstack
@@ -34,7 +51,7 @@ struct FeedView: View {
                                     }, label: {
                                         Text("더보기")
                                             .foregroundColor(Const.Colors.MainBlue.color)
-                                            .font(.system(size: 12))
+                                            .font(.system(size: 14))
                                     })
                                     
                                 }
@@ -43,18 +60,28 @@ struct FeedView: View {
                         }
                         
                     }.padding(10)
+                    if noticeModel.loading {
+                        HStack {
+                            Spacer()
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                            Spacer()
+                        }
+                    }
                 } // End of scroll view
                 .padding(.top, 1)
                 .background(Const.Colors.BgGray.color)
+                
             }
-        }
-        .onAppear {
-            noticeModel.getNoticesByFollow()
-        }
-        
- 
 
-        
+        }
+        .onChange(of: envModel.refreshTab, perform: { newVal in
+            print("Recieve refresh tab change \(newVal)")
+            if newVal {
+                noticeModel.getNoticesByFollow()
+                envModel.refreshTab = false
+            }
+        })
 
     
     }
