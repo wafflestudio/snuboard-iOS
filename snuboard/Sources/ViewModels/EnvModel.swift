@@ -20,6 +20,8 @@ class EnvModel: ObservableObject {
     @Published var showTeamSnuboard = false
     @Published var showNotification = false
     
+    @Published var refreshTab: Bool = false
+    
 
     
     func toggleLoading() {

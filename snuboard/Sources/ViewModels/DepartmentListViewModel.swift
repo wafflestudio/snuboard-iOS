@@ -15,9 +15,11 @@ class DepartmentListViewModel: ObservableObject {
     @Published var colleges: [College] = []
     @Published var depts: [Department] = []
     var disposeBag = DisposeBag()
+    @Published var loading = false
 
     func getAllDepartments() {
         
+        self.loading = true
         DepartmentService.shared.getAllDepartments()
             .map([Department].self)
             .subscribe(
@@ -42,12 +44,13 @@ class DepartmentListViewModel: ObservableObject {
                     self.colleges = newCollegeList
                     
                     self.setUserDefaults()
-                    
+                    self.loading = false
                     
                 },
                 onError: {
                     print("DepartmentListViewModel: getAllDepartments")
                     print("==== error: \($0)")
+                    self.loading = false
                 }
             ).disposed(by: disposeBag)
 
@@ -62,6 +65,7 @@ class DepartmentListViewModel: ObservableObject {
     }
     
     func createDepartmentFollow(id: Int, follow: String) {
+        self.loading = true
         DepartmentService.shared.createDepartmentFollow(id: id, follow: follow)
             .map(Department.self)
             .subscribe(
@@ -77,12 +81,13 @@ class DepartmentListViewModel: ObservableObject {
                             
                         }
                     }
-                    
+                    self.loading = false
                     
                 },
                 onError: {
                     print("DepartmentListViewModel: getAllDepartments")
                     print("==== error: \($0)")
+                    self.loading = false
                 }
             ).disposed(by: disposeBag)
         
@@ -111,6 +116,7 @@ class DepartmentListViewModel: ObservableObject {
             }
             UserDefaults.standard.deptColor = deptColor
         }
+    
         
         if UserDefaults.standard.deptColor.count !=
             self.depts.count {
@@ -130,6 +136,7 @@ class DepartmentListViewModel: ObservableObject {
     }
     
     func deleteDepartmentFollow(id: Int, follow: String) {
+        self.loading = true
         DepartmentService.shared.deleteDepartmentFollow(id: id, follow: follow)
             .map(Department.self)
             .subscribe(
@@ -146,11 +153,12 @@ class DepartmentListViewModel: ObservableObject {
                         }
                     }
                     
-                    
+                    self.loading = false
                 },
                 onError: {
                     print("DepartmentListViewModel: getAllDepartments")
                     print("==== error: \($0)")
+                    self.loading = false
                 }
             ).disposed(by: disposeBag)
         
