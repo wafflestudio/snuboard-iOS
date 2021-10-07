@@ -28,7 +28,7 @@ struct NoticeSummaryView: View {
     var body: some View {
         
         // Title
-        NavigationLink(destination: NoticeDetailView(id: notice.id)) {
+        NavigationLink(destination: NoticeDetailView(id: notice.id).environmentObject(noticeModel)) {
             VStack(alignment: .leading, spacing: 8) {
                 
 

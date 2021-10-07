@@ -25,7 +25,7 @@ struct HomeTagListView: View {
     var body: some View {
         FlexibleView(
             data: deptTags,
-            spacing: 8,
+            spacing: 5,
                 alignment: .leading
               )  { item in
             

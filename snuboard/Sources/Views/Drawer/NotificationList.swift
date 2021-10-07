@@ -86,7 +86,7 @@ struct NotificationList: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Image("navigateBefore").onTapGesture {
                     envModel.showNotification = false
-                    envModel.isDrawerOpen = true
+                    envModel.isDrawerOpen = false
                     presentationMode.wrappedValue.dismiss()
                 }
             }

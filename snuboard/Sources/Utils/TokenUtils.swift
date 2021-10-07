@@ -7,13 +7,14 @@
 //  Copyright © 2018 Coinbase All rights reserved.
 
 
-import Foundation
+import SwiftUI
 
 public struct TokenUtils {
     
     private static var accessTokenKey = "accessTokenKey"
     private static var refreshTokenKey = "refreshTokenKey"
     private static var fcmToken = "FCMtoken"
+    let defaults = UserDefaults.standard
     
     public static func storeTokens(accessToken: String?, refreshToken: String?) {
         storeAccessToken(accessToken)
@@ -21,27 +22,33 @@ public struct TokenUtils {
     }
     
     public static func storeFCMtoken(_ token: String?) {
-        KeychainService.save(string: token, for: self.fcmToken)
+//        KeychainService.save(string: token, for: self.fcmToken)
+        UserDefaults.standard.set(token, forKey: self.fcmToken)
     }
     
     public static func storeAccessToken(_ token: String?) {
-        KeychainService.save(string: token, for: accessTokenKey)
+//        KeychainService.save(string: token, for: accessTokenKey)
+        UserDefaults.standard.set(token, forKey: self.accessTokenKey)
     }
     
     public static func storeRefreshToken(_ token: String?) {
-        KeychainService.save(string: token, for: refreshTokenKey)
+//        KeychainService.save(string: token, for: refreshTokenKey)
+        UserDefaults.standard.set(token, forKey: self.refreshTokenKey)
     }
     
     public static func loadAccessToken() -> String? {
-        return KeychainService.loadString(for: accessTokenKey)
+//        return KeychainService.loadString(for: accessTokenKey)
+        return UserDefaults.standard.string(forKey: self.accessTokenKey)
     }
     
     public static func loadRefreshToken() -> String? {
-        return KeychainService.loadString(for: refreshTokenKey)
+//        return KeychainService.loadString(for: refreshTokenKey)
+        return UserDefaults.standard.string(forKey: self.refreshTokenKey)
     }
     
     public static func loadFCMtoken() -> String? {
-        return KeychainService.loadString(for: fcmToken)
+//        return KeychainService.loadString(for: fcmToken)
+        return UserDefaults.standard.string(forKey: self.fcmToken)
     }
     
     public static func getAccessTokenHeader() -> String? {

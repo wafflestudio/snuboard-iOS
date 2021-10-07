@@ -48,6 +48,7 @@ struct DrawerContent: View {
                             Text("버전 정보")
                             Spacer()
                         }
+                        .contentShape(Rectangle())
                         .frame(height: 48)
                         .onTapGesture {
                             envModel.isDrawerOpen = false
@@ -59,6 +60,7 @@ struct DrawerContent: View {
                             Text("개인정보처리방침")
                             Spacer()
                         }
+                        .contentShape(Rectangle())
                         .frame(height: 48)
                         .onTapGesture {
                             envModel.isDrawerOpen = false
@@ -71,6 +73,7 @@ struct DrawerContent: View {
                                 Text("개발자 괴롭히기")
                                 Spacer()
                             }
+                            .contentShape(Rectangle())
                             .frame(height: 48)
                         }
                         
@@ -79,6 +82,7 @@ struct DrawerContent: View {
                             Text("팀 스누보드")
                             Spacer()
                         }
+                        .contentShape(Rectangle())
                         .frame(height: 48)
                         .onTapGesture {
                             envModel.isDrawerOpen = false
@@ -92,33 +96,34 @@ struct DrawerContent: View {
                     
                     Divider()
                     
-                    // Notification Stack
-                    
-                    Text("Notification")
-                        .font(.system(size: 14))
-                        .foregroundColor(Const.Colors.MenuGray.color)
-                        .padding(.leading, 16)
-                    
-                    
-                    VStack(spacing: 0) {
-                        
-
-                        HStack(spacing: 24) {
-                            Image("notifications_none")
-                            Text("알림 목록")
-                            Spacer()
-                        }
-                        .frame(height: 48)
-                        .onTapGesture {
-                            envModel.isDrawerOpen = false
-                            envModel.showNotification = true
-                        }
-
-                        
-                    } // End of Notification Stack
-                    .font(.system(size: 14)).foregroundColor(.black)
-                    .padding(.leading, 16)
-                    .transition(.move(edge: .leading))
+//                    // Notification Stack
+//
+//                    Text("Notification")
+//                        .font(.system(size: 14))
+//                        .foregroundColor(Const.Colors.MenuGray.color)
+//                        .padding(.leading, 16)
+//                    
+//
+//                    VStack(spacing: 0) {
+//
+//
+//                        HStack(spacing: 24) {
+//                            Image("notifications_none")
+//                            Text("알림 목록")
+//                            Spacer()
+//                        }
+//                        .contentShape(Rectangle())
+//                        .frame(height: 48)
+//                        .onTapGesture {
+//                            envModel.isDrawerOpen = false
+//                            envModel.showNotification = true
+//                        }
+//
+//
+//                    } // End of Notification Stack
+//                    .font(.system(size: 14)).foregroundColor(.black)
+//                    .padding(.leading, 16)
+//                    .transition(.move(edge: .leading))
                     
                     Spacer()
 

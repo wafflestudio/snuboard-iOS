@@ -13,7 +13,7 @@ struct DepartmentDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var deptModel: DepartmentListViewModel
     @EnvironmentObject var settings: Settings
-    @StateObject var noticeModel: NoticeViewModel = NoticeViewModel()
+    @StateObject private var noticeModel: NoticeViewModel
     
     let id: Int
     @State var indexSelected: Int = 0
@@ -21,8 +21,11 @@ struct DepartmentDetailView: View {
         deptModel.depts.first { $0.id == id }!
     }
 
-    init(id: Int) {
-        self.id = id
+    init(dept: Department) {
+        self.id = dept.id
+        let finalTags = UserDefaults.standard.queryParameters[dept.name] ?? []
+        let noticeModelInit = NoticeViewModel(id: id, tags: finalTags.isEmpty ? dept.tags : finalTags)
+        self._noticeModel = StateObject(wrappedValue: noticeModelInit)
         UIKit.UINavigationBar.appearance().backgroundColor = .white
     }
     

@@ -110,6 +110,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let notification = NotificationData(title: title, body: body, preview: preview, noticeId: noticeId, noticeIdStr: noticeIdStr, departmentId: departmentId, departmentName: departmentName, tags: tags)
     
+//    AppState.shared.pageToNavigationTo = notification.noticeId
+    UserDefaults.standard.setValue(notification.noticeId, forKey: "NotificationId")
+    
     let saved = NotificationDataHandler.saveData(notificationData: notification)
     if saved {
         LocalNotificationManager.setNotifications(notification: notification)

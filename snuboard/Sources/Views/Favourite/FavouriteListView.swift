@@ -16,14 +16,17 @@ struct FavouriteListView: View {
     
     @StateObject var noticeModel = NoticeViewModel(type: .scrap)
     @EnvironmentObject var settings: Settings
+    @EnvironmentObject var envModel: EnvModel
     
     var body: some View {
             VStack(spacing: 0) {
-                if noticeModel.notices.filter { $0.isScrapped }.isEmpty {
-                    PlaceHolderView("favourite_placeholder")
-                }
-                else {
-                    ScrollView {
+                
+                
+            if noticeModel.notices.filter { $0.isScrapped }.isEmpty && !noticeModel.loading{
+                PlaceHolderView("favourite_placeholder")
+            }
+            else {
+                ScrollView {
                         VStack {
                             ForEach(noticeModel.notices.filter { $0.isScrapped }) { noticeSummary in
                                 NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
@@ -38,7 +41,7 @@ struct FavouriteListView: View {
                                         }, label: {
                                             Text("더보기")
                                                 .foregroundColor(Const.Colors.MainBlue.color)
-                                                .font(.system(size: 12))
+                                                .font(.system(size: 14))
                                         })
                                         
                                     }
@@ -47,16 +50,31 @@ struct FavouriteListView: View {
                             }
                             
                         }.padding(10)
+                        if noticeModel.loading {
+                            Spacer()
+                            HStack {
+                                Spacer()
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                Spacer()
+                            }
+           
+                        }
                     }
                     .padding(.top, 1)
                     .background(Const.Colors.BgGray.color)
+                    
+                    
                 }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onChange(of: envModel.refreshTab, perform: { newVal in
+            print("Recieve refresh tab change \(newVal)")
+            if newVal {
+                noticeModel.getNoticesByFollow()
+                envModel.refreshTab = false
             }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .onAppear {
-                noticeModel.getScrappedNotices()
-            }
-            
+        })
         
     }
 }

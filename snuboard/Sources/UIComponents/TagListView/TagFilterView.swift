@@ -29,16 +29,7 @@ struct TagFilterView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Image("home")
-                    .resizable()
-                    .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                Text("태그 필터")
-                    .foregroundColor(Const.Colors.Gray1.color)
-                    .font(.system(size: 16))
-                    .bold()
-                Spacer()
-            }
+            
             HStack {
                 Image("search")
                     .renderingMode(.template)
@@ -52,7 +43,7 @@ struct TagFilterView: View {
                     }
                     
                 })
-                    .font(.system(size: 13))
+                    .font(.system(size: 14))
             }
             .padding([.top, .bottom], 5)
             .padding([.leading], 5)
@@ -60,6 +51,41 @@ struct TagFilterView: View {
             HomeTagListView(id: deptId, dept: deptName, deptTags: tags)
                 .environmentObject(settings)
                 .environmentObject(noticeModel)
+            
+            HStack {
+                Button(action: {
+                    settings.queryParameters[deptName]? = []
+                    noticeModel.initModelWithDepartmentId(id: deptId, tags: tags)
+                }, label: {
+                    Text("필터 제거").foregroundColor(Const.Colors.Gray1.color)
+                        .bold()
+                        .font(.system(size: 13))
+                })
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 30)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Const.Colors.Gray1.color, lineWidth: 1)
+                )
+                
+                Button(action: {
+                    if searchText.count < 2 {
+                        showAlert = true
+                    } else {
+                        noticeModel.searchNoticesWithDepartmentId(tags: settings.queryParameters[deptName] ?? [], keywords: searchText)
+                        UIApplication.shared.endEditing()
+                    }
+                }, label: {
+                    Text("검색")
+                        .bold()
+                        .foregroundColor(.white)
+                        .font(.system(size: 13))
+                })
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 30)
+                .background(RoundedRectangle(cornerRadius: 8).foregroundColor(Const.Colors.MainBlue.color))
+                
+            } // End of button HStack
+            
+            
         } // End of VStack
         .alert(isPresented: $showAlert, content: {
             Alert(title: Text("검색"), message: Text("각 단어의 길이는 두 글자 이상이어야 합니다."), dismissButton: .default(Text("확인")))

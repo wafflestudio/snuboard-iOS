@@ -70,6 +70,7 @@ class Settings: ObservableObject{
     
     @Published var showMenu: Bool = false
 
+
     
     @Published var deptColor: [String: String] = UserDefaults.standard.deptColor {
         didSet {
@@ -102,6 +103,11 @@ class Settings: ObservableObject{
     }
     
     static func getSubsciptionStatus(for department: String) -> Bool {
+        
+        if UserDefaults.standard.object(forKey: "\(department)Notification") == nil {
+            UserDefaults.standard.set(true, forKey: "\(department)Notification")
+        }
+        
         return UserDefaults.standard.bool(forKey: "\(department)Notification")
     }
 

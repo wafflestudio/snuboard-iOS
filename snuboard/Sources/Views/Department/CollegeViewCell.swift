@@ -34,7 +34,7 @@ struct CollegeViewCell: View {
                         .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     Text(college.college)
                         .bold()
-                        .font(.system(size: 16))
+                        .font(.system(size: 17))
                         .foregroundColor(Const.Colors.Gray2.color)
                     Spacer()
                     ZStack() {
@@ -49,12 +49,12 @@ struct CollegeViewCell: View {
                         Spacer()
                             .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
-                    .onTapGesture {
-                        showDetail.toggle()
-                    }
-                    
                        
                 } // End of Hstack
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    showDetail.toggle()
+                }
                 .padding(.leading, 13)
                 .padding(.trailing, 13)
                 .padding(.top, 8.5)
@@ -65,22 +65,24 @@ struct CollegeViewCell: View {
                 if showDetail {
                     VStack(spacing: 12) {
                         ForEach(college.departments, id: \.self) { department in
-                            HStack {
-                                Image("book")
-                                    .resizable()
-                                    .frame(width: 16 , height:16)
-                                Text(department.name)
-                                    .font(.system(size: 13))
-                                Spacer()
-                                NavigationLink(
-                                    destination: DepartmentDetailView(id: department.id).environmentObject(deptModel).environmentObject(settings),
-                                    label: {
+                            
+                            NavigationLink(
+                                destination: DepartmentDetailView(dept: department).environmentObject(deptModel).environmentObject(settings),
+                                label: {
+                                    HStack {
+                                        Image("book")
+                                            .resizable()
+                                            .frame(width: 16 , height:16)
+                                        Text(department.name)
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.black)
+                                        Spacer()
                                         Image("navigate_next")
                                             .resizable()
                                             .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    })
-                                
-                            }
+                                    } // End of HStack
+                                    .contentShape(Rectangle())
+                                }) // End of NavigationLink
                             .padding(.leading, 13)
                             .padding(.trailing, 13)
                         }

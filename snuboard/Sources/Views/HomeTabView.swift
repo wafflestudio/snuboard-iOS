@@ -12,7 +12,7 @@ struct HomeTabView: View {
     @StateObject var deptModel: DepartmentListViewModel = DepartmentListViewModel()
     @StateObject var settings: Settings = Settings()
     @EnvironmentObject var envModel: EnvModel
-    @State private var selection = 0
+    @State private var selection: Int = 0
 
     
     
@@ -47,6 +47,7 @@ struct HomeTabView: View {
             
             // TAB 3
             FavouriteListView()
+                .environmentObject(envModel)
                 .tabItem {
                     selection == 2 ?
                         Image("favorite_selected").resizable().frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).scaledToFit() : Image("favorite_unselected").resizable().frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).scaledToFit()
@@ -58,10 +59,15 @@ struct HomeTabView: View {
                     selection = 2
                 }.tag(2)
         } // End of tab view
+        .onChange(of: selection, perform: { _ in
+            envModel.refreshTab = true
+            print("Tab changed: \(envModel.refreshTab)")
+        })
         .zIndex(0)
         .navigationBarTitleDisplayMode(.inline)
         .environmentObject(deptModel)
         .environmentObject(settings)
+        .environmentObject(envModel)
         .toolbar {
             ToolbarItem(placement: .principal, content: {
                 switch selection {

@@ -30,7 +30,7 @@ struct NoticeTagListView: View {
         
         FlexibleView(
             data: self.data,
-            spacing: 8,
+            spacing: 5,
                 alignment: .leading
               )  { item in
 

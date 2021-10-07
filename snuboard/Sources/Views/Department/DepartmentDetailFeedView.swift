@@ -16,7 +16,7 @@ struct DepartmentDetailFeedView: View {
     
     var dept: Department
     var collegeId: Int = 0
-    @State var isAlarmTurnedOn: Bool = false
+    @State var isAlarmTurnedOn: Bool = true
     
     init(dept: Department) {
         self.dept = dept

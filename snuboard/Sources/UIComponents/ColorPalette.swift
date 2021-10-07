@@ -26,7 +26,7 @@ struct PaletteCell: View {
                 .foregroundColor(Color(color))
                 .frame(width: 14, height: 14, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Text(color)
-                .font(.system(size: 10))
+                .font(.system(size: 11))
             Spacer()
             if color == settings.deptColor[dept] {
                 Image("check").resizable().frame(width: 13, height: 13, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -59,6 +59,7 @@ struct ColorPalette: View {
                 VStack {
                     ForEach(row, id: \.self) { color in
                         PaletteCell(color: color, dept: dept)
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 self.settings.deptColor[dept] = color
                             }

@@ -27,7 +27,7 @@ struct DeveloperInfoView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Image("navigateBefore").onTapGesture {
-                    envModel.isDrawerOpen = true
+                    envModel.isDrawerOpen = false
                     envModel.showTeamSnuboard = false
                     presentationMode.wrappedValue.dismiss()
                 }
