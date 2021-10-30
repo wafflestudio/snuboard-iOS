@@ -5,8 +5,6 @@
 //  Created by Subeen Park on 2021/09/10.
 //
 
-import SwiftUI
-
 
 import SwiftUI
 import WebKit
@@ -28,6 +26,7 @@ struct NoticeSummaryView: View {
     var body: some View {
         
         // Title
+        
         NavigationLink(destination: NoticeDetailView(id: notice.id).environmentObject(noticeModel)) {
             VStack(alignment: .leading, spacing: 8) {
                 
@@ -41,12 +40,15 @@ struct NoticeSummaryView: View {
                         .font(.system(size: 16))
                         .foregroundColor(Color.black)
                         .bold()
+                        .multilineTextAlignment(.leading)
                 }
                 HStack {
                     Text(notice.preview)
                         .font(.system(size: 12))
                         .foregroundColor(Color.black)
                         .lineLimit(2)
+                        .frame(alignment: .leading)
+                        .multilineTextAlignment(.leading)
                 }
                 
                 HStack {

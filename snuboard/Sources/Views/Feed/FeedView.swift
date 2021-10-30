@@ -69,7 +69,7 @@ struct FeedView: View {
                         }
                     }
                 } // End of scroll view
-                .padding(.top, 1)
+                .padding([.top, .bottom], 1)
                 .background(Const.Colors.BgGray.color)
                 
             }

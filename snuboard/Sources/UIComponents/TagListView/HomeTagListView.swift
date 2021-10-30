@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeTagListView: View {
     
     @EnvironmentObject var settings: Settings
-    @EnvironmentObject var noticeModel: NoticeViewModel
+    @EnvironmentObject var deptModel: DepartmentViewModel
     
     let id: Int
     let dept: String
@@ -31,10 +31,10 @@ struct HomeTagListView: View {
             
             HomeTagChipView(id: id, dept: dept, item: item, action: {
                 let finalTags = UserDefaults.standard.queryParameters[dept] ?? []
-                noticeModel.initModelWithDepartmentId(id: id, tags: finalTags.isEmpty ? self.deptTags : finalTags)
+                deptModel.initModelWithDepartmentId(id: id, tags: finalTags.isEmpty ? self.deptTags : finalTags)
             })
                 .environmentObject(settings)
-                .environmentObject(noticeModel)
+                .environmentObject(deptModel)
                 
           }
     }

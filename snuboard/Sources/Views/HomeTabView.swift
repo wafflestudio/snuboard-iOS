@@ -14,6 +14,13 @@ struct HomeTabView: View {
     @EnvironmentObject var envModel: EnvModel
     @State private var selection: Int = 0
 
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().layer.borderColor = Const.Colors.Gray1.color.cgColor
+        UITabBar.appearance().layer.borderWidth = 0.50
+        UITabBar.appearance().clipsToBounds = true
+
+    }
     
     
     var body: some View {
@@ -33,6 +40,7 @@ struct HomeTabView: View {
             
             // TAB 2
             CollegeView()
+                .environmentObject(settings)
                 .tabItem {
                     selection == 1 ? Image("domain_active").resizable().frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).scaledToFit() : Image("domain").resizable().frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).scaledToFit()
                     Text("학과")
@@ -59,6 +67,7 @@ struct HomeTabView: View {
                     selection = 2
                 }.tag(2)
         } // End of tab view
+        
         .onChange(of: selection, perform: { _ in
             envModel.refreshTab = true
             print("Tab changed: \(envModel.refreshTab)")

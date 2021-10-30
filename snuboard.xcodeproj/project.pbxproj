@@ -46,6 +46,15 @@
 		CC20214526EB9722007EDF28 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC20214426EB9722007EDF28 /* SearchBar.swift */; };
 		CC20214726EB97F4007EDF28 /* FeedTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC20214626EB97F4007EDF28 /* FeedTagListView.swift */; };
 		CC20214926EB9818007EDF28 /* TagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC20214826EB9818007EDF28 /* TagChipView.swift */; };
+		CC4C6E2A272A76CF00EFFF11 /* DepartmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E29272A76CF00EFFF11 /* DepartmentListView.swift */; };
+		CC4C6E2C272A78B400EFFF11 /* Collapsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E2B272A78B400EFFF11 /* Collapsible.swift */; };
+		CC4C6E2E272A8F4000EFFF11 /* DepartmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E2D272A8F4000EFFF11 /* DepartmentView.swift */; };
+		CC4C6E30272A937400EFFF11 /* DepartmentNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E2F272A937400EFFF11 /* DepartmentNoticeView.swift */; };
+		CC4C6E32272A93B200EFFF11 /* DepartmentSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E31272A93B200EFFF11 /* DepartmentSettingView.swift */; };
+		CC4C6E34272A953800EFFF11 /* DepartmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E33272A953800EFFF11 /* DepartmentViewModel.swift */; };
+		CC4C6E36272C091400EFFF11 /* FollowTagChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E35272C091400EFFF11 /* FollowTagChipView.swift */; };
+		CC4C6E3C272C173C00EFFF11 /* DeptNoticeSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E3B272C173C00EFFF11 /* DeptNoticeSummaryView.swift */; };
+		CC4C6E3E272C176900EFFF11 /* DeptNoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4C6E3D272C176900EFFF11 /* DeptNoticeDetailView.swift */; };
 		CC64381326F50145007747D8 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64381226F50145007747D8 /* UINavigationController+Extension.swift */; };
 		CC64381526F50896007747D8 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64381426F50896007747D8 /* UIApplication+Extension.swift */; };
 		CC7FF35726E25E3E00B16CF5 /* VersionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FF35626E25E3E00B16CF5 /* VersionInfo.swift */; };
@@ -166,6 +175,15 @@
 		CC20214426EB9722007EDF28 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		CC20214626EB97F4007EDF28 /* FeedTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTagListView.swift; sourceTree = "<group>"; };
 		CC20214826EB9818007EDF28 /* TagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChipView.swift; sourceTree = "<group>"; };
+		CC4C6E29272A76CF00EFFF11 /* DepartmentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListView.swift; sourceTree = "<group>"; };
+		CC4C6E2B272A78B400EFFF11 /* Collapsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collapsible.swift; sourceTree = "<group>"; };
+		CC4C6E2D272A8F4000EFFF11 /* DepartmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentView.swift; sourceTree = "<group>"; };
+		CC4C6E2F272A937400EFFF11 /* DepartmentNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentNoticeView.swift; sourceTree = "<group>"; };
+		CC4C6E31272A93B200EFFF11 /* DepartmentSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSettingView.swift; sourceTree = "<group>"; };
+		CC4C6E33272A953800EFFF11 /* DepartmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewModel.swift; sourceTree = "<group>"; };
+		CC4C6E35272C091400EFFF11 /* FollowTagChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowTagChipView.swift; sourceTree = "<group>"; };
+		CC4C6E3B272C173C00EFFF11 /* DeptNoticeSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeptNoticeSummaryView.swift; sourceTree = "<group>"; };
+		CC4C6E3D272C176900EFFF11 /* DeptNoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeptNoticeDetailView.swift; sourceTree = "<group>"; };
 		CC64381226F50145007747D8 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		CC64381426F50896007747D8 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		CC7FF35626E25E3E00B16CF5 /* VersionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInfo.swift; sourceTree = "<group>"; };
@@ -286,6 +304,7 @@
 		CC2020FA26EA5BA1007EDF28 /* TagListView */ = {
 			isa = PBXGroup;
 			children = (
+				CC4C6E37272C091B00EFFF11 /* DepartmentFollow */,
 				CC2020FD26EA5D2C007EDF28 /* FlexibleView.swift */,
 				CC2020FF26EA5D4B007EDF28 /* _FlexibleView.swift */,
 				CC20210126EA5D78007EDF28 /* TagView.swift */,
@@ -331,6 +350,25 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		CC4C6E37272C091B00EFFF11 /* DepartmentFollow */ = {
+			isa = PBXGroup;
+			children = (
+				CC4C6E35272C091400EFFF11 /* FollowTagChipView.swift */,
+			);
+			path = DepartmentFollow;
+			sourceTree = "<group>";
+		};
+		CC4C6E3A272C171600EFFF11 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				CC20213626EB93D6007EDF28 /* NoticeDetailView.swift */,
+				CC20213426EB93BA007EDF28 /* NoticeSummaryView.swift */,
+				CC4C6E3B272C173C00EFFF11 /* DeptNoticeSummaryView.swift */,
+				CC4C6E3D272C176900EFFF11 /* DeptNoticeDetailView.swift */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
 		CC87FBF126F0C22C00F17B0D /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +386,10 @@
 				CC20212026EA7575007EDF28 /* DepartmentDetailView.swift */,
 				CC20213026EB9356007EDF28 /* DepartmentDetailHomeView.swift */,
 				CC20213E26EB95A8007EDF28 /* DepartmentDetailFeedView.swift */,
+				CC4C6E29272A76CF00EFFF11 /* DepartmentListView.swift */,
+				CC4C6E2D272A8F4000EFFF11 /* DepartmentView.swift */,
+				CC4C6E2F272A937400EFFF11 /* DepartmentNoticeView.swift */,
+				CC4C6E31272A93B200EFFF11 /* DepartmentSettingView.swift */,
 			);
 			path = Department;
 			sourceTree = "<group>";
@@ -563,6 +605,7 @@
 				CCC9BABD26E89886000C5336 /* NoticeViewModel.swift */,
 				CCC9BAC726E89F2E000C5336 /* DepartmentListViewModel.swift */,
 				CC20213A26EB9435007EDF28 /* NoticeDetailViewModel.swift */,
+				CC4C6E33272A953800EFFF11 /* DepartmentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -570,15 +613,15 @@
 		CCD0B38726E2204700439A74 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				CC4C6E3A272C171600EFFF11 /* Notice */,
 				CC2020FA26EA5BA1007EDF28 /* TagListView */,
 				CCD0B38826E2206800439A74 /* ActivityIndicator.swift */,
 				CCD0B38A26E220B000439A74 /* ActivityIndicatorView.swift */,
 				CC20212E26EB932F007EDF28 /* SegmentedPickerView.swift */,
-				CC20213426EB93BA007EDF28 /* NoticeSummaryView.swift */,
-				CC20213626EB93D6007EDF28 /* NoticeDetailView.swift */,
 				CC20214026EB95DB007EDF28 /* ColorPalette.swift */,
 				CC20214426EB9722007EDF28 /* SearchBar.swift */,
 				CC87FBF626F0C3D900F17B0D /* PlaceHolderView.swift */,
+				CC4C6E2B272A78B400EFFF11 /* Collapsible.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -853,6 +896,7 @@
 				CC20214526EB9722007EDF28 /* SearchBar.swift in Sources */,
 				CC20213B26EB9435007EDF28 /* NoticeDetailViewModel.swift in Sources */,
 				CCEC5FCC270C645900A66FC8 /* AppState.swift in Sources */,
+				CC4C6E3C272C173C00EFFF11 /* DeptNoticeSummaryView.swift in Sources */,
 				CC20210F26EA67DB007EDF28 /* ResponseError.swift in Sources */,
 				CCC9BAC026E89AF0000C5336 /* CollegeViewCell.swift in Sources */,
 				CCD0B32726DCF0D600439A74 /* AppDelegate.swift in Sources */,
@@ -860,8 +904,11 @@
 				CCD0B37126DD325900439A74 /* PolicyAgree.swift in Sources */,
 				CC20213926EB9402007EDF28 /* NoticeTagListView.swift in Sources */,
 				CCC9BAA926E884A9000C5336 /* PrivacyPolicy.swift in Sources */,
+				CC4C6E2A272A76CF00EFFF11 /* DepartmentListView.swift in Sources */,
 				CCC9BAB026E888CB000C5336 /* NotificationList.swift in Sources */,
 				CC20211B26EA745A007EDF28 /* DepartmentTagChipView.swift in Sources */,
+				CC4C6E32272A93B200EFFF11 /* DepartmentSettingView.swift in Sources */,
+				CC4C6E2C272A78B400EFFF11 /* Collapsible.swift in Sources */,
 				CCD0B39326E2380800439A74 /* DrawerContent.swift in Sources */,
 				CC87FBF926F0EDFE00F17B0D /* FeedSearchView.swift in Sources */,
 				CCD0B38626E21CAC00439A74 /* AuthViewModel.swift in Sources */,
@@ -883,12 +930,14 @@
 				CCD0B32926DCF0D600439A74 /* SceneDelegate.swift in Sources */,
 				CC64381526F50896007747D8 /* UIApplication+Extension.swift in Sources */,
 				CCC9BAC426E89B69000C5336 /* College.swift in Sources */,
+				CC4C6E34272A953800EFFF11 /* DepartmentViewModel.swift in Sources */,
 				CCC9BAC226E89B4C000C5336 /* Department.swift in Sources */,
 				CC20210B26EA66BA007EDF28 /* handleResponse.swift in Sources */,
 				CCC9BAAD26E886E3000C5336 /* DeveloperInfoView.swift in Sources */,
 				CCD0B39626E2384200439A74 /* NavigationDrawer.swift in Sources */,
 				CCD0B36C26DD2CB800439A74 /* LaunchView.swift in Sources */,
 				CC20212126EA7575007EDF28 /* DepartmentDetailView.swift in Sources */,
+				CC4C6E3E272C176900EFFF11 /* DeptNoticeDetailView.swift in Sources */,
 				CCC9BAAB26E885E9000C5336 /* Developer.swift in Sources */,
 				CCD0B38326E21BBF00439A74 /* TokenUtils.swift in Sources */,
 				CCD0B38F26E236EE00439A74 /* HomeTabView.swift in Sources */,
@@ -902,6 +951,7 @@
 				CC20214726EB97F4007EDF28 /* FeedTagListView.swift in Sources */,
 				CC20214326EB961D007EDF28 /* HomeTagListView.swift in Sources */,
 				CCD0B3F926E2457200439A74 /* FeedView.swift in Sources */,
+				CC4C6E36272C091400EFFF11 /* FollowTagChipView.swift in Sources */,
 				CCD0B36226DCF7F500439A74 /* ButtonModifiers.swift in Sources */,
 				CC7FF35726E25E3E00B16CF5 /* VersionInfo.swift in Sources */,
 				CC20211726EA6F29007EDF28 /* Settings.swift in Sources */,
@@ -917,6 +967,7 @@
 				CC2020FE26EA5D2C007EDF28 /* FlexibleView.swift in Sources */,
 				CC20213726EB93D6007EDF28 /* NoticeDetailView.swift in Sources */,
 				CC20213526EB93BA007EDF28 /* NoticeSummaryView.swift in Sources */,
+				CC4C6E30272A937400EFFF11 /* DepartmentNoticeView.swift in Sources */,
 				CC2020FC26EA5C03007EDF28 /* View+Extension.swift in Sources */,
 				CC20213D26EB954C007EDF28 /* String+Extension.swift in Sources */,
 				CC20212926EB8F81007EDF28 /* NoticeFile.swift in Sources */,
@@ -930,6 +981,7 @@
 				CC87FC0E26F109E100F17B0D /* NotificationDataHandler.swift in Sources */,
 				CCD0B36526DCF98C00439A74 /* Const.swift in Sources */,
 				CC20210426EA5DBE007EDF28 /* TagViewCell.swift in Sources */,
+				CC4C6E2E272A8F4000EFFF11 /* DepartmentView.swift in Sources */,
 				CCD0B38926E2206800439A74 /* ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1102,7 +1154,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = snuboard/snuboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
 				DEVELOPMENT_TEAM = ZB44VD5WX7;
 				ENABLE_PREVIEWS = YES;
@@ -1128,7 +1180,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = snuboard/snuboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"snuboard/Preview Content\"";
 				DEVELOPMENT_TEAM = ZB44VD5WX7;
 				ENABLE_PREVIEWS = YES;

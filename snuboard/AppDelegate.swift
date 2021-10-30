@@ -30,7 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SecItemDelete(spec)
     }
     #endif
-    
+      
+      let remoteNotif = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: Any]
+     if remoteNotif == nil {
+         UserDefaults.standard.removeObject(forKey: "NotificationId")
+     }
     
     FirebaseApp.configure()
 

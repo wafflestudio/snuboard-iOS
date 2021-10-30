@@ -66,8 +66,8 @@ struct DrawerContent: View {
                             envModel.isDrawerOpen = false
                             envModel.showPrivacy = true
                         }
-
-                        Link(destination: URL(string: "googlegmail:///co?to=snuboard@waffle.com")!) {
+                        
+                        Link(destination: URL(string: "mailto:snuboard@waffle.com")!) {
                             HStack(spacing: 24) {
                                 Image("email")
                                 Text("개발자 괴롭히기")

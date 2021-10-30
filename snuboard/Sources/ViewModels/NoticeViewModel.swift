@@ -16,6 +16,7 @@ class NoticeViewModel: ObservableObject, RandomAccessCollection {
         case department
         case scrap
         case follow
+        case search
     }
     
     @Published var notices: [NoticeSummary] = []
@@ -29,7 +30,9 @@ class NoticeViewModel: ObservableObject, RandomAccessCollection {
     // Random access position
     typealias Element = NoticeSummary
     
-    init() {}
+    init() {
+        self.type = .search
+    }
     init(type: NoticeViewModel.TYPE) {
         self.loading = true
         self.type = type
@@ -137,7 +140,7 @@ class NoticeViewModel: ObservableObject, RandomAccessCollection {
             return
         }
         
-        NoticeService.shared.getNoticesByDepartmentId(id: id, cursor: self.nextCursor, tags: tags.joined(separator: ","))
+        NoticeService.shared.getNoticesByDepartmentId(id: id, cursor: self.nextCursor, tags: tags.joined(separator: ",")) 
             .map(NoticeSummaryDataModel.self)
             .subscribe(
                 onSuccess: { data in
@@ -216,14 +219,7 @@ class NoticeViewModel: ObservableObject, RandomAccessCollection {
     }
     
     
-    func initModelWithDepartmentId(id: Int, tags: [String]) {
-        self.type = .department
-        self.deptId = id
-        self.notices = []
-        self.nextCursor = nil
-        
-        loadMoreNoticesByDepartmentId(tags: tags)
-    }
+
     
     
     func loadMoreSearchResultsByDepartmentId(tags: [String], keywords: String) {
@@ -255,14 +251,7 @@ class NoticeViewModel: ObservableObject, RandomAccessCollection {
         
     }
     
-    func searchNoticesWithDepartmentId(tags: [String], keywords: String) {
-        
-        self.nextCursor = nil
-        self.notices = []
-        
-        self.loadMoreSearchResultsByDepartmentId(tags: tags, keywords: keywords)
-        
-    }
+  
     
     func loadMoreSearchResultsByFollow(keywords: String) {
         
@@ -274,6 +263,7 @@ class NoticeViewModel: ObservableObject, RandomAccessCollection {
                     // save department list in raw
                     self.nextCursor = data.nextCursor
                     if data.nextCursor == "" {
+                        print("Next cursor nil")
                         self.noMoreContent = true
                     }
                     self.notices.append(contentsOf: data.notices)
