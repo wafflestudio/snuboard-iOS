@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedSearchView: View {
     
-    @StateObject var noticeModel = NoticeViewModel(type: .follow)
+    @StateObject var noticeModel = NoticeViewModel()
     @Environment(\.presentationMode) var presentationMode
     @State var searchText = ""
     @State var showAlert = false
@@ -39,10 +39,41 @@ struct FeedSearchView: View {
                     ScrollView {
                         
                         VStack {
+                            
+                            
                             ForEach(noticeModel.notices) { noticeSummary in
                                 NoticeSummaryView(notice: noticeSummary).environmentObject(noticeModel)
+                                
                             }
-                        }.padding([.top, .leading, .trailing], 10)
+                            
+                            if noticeModel.loading {
+                                HStack {
+                                    Spacer()
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle())
+                                    Spacer()
+                                }
+                            }
+                            
+                            
+                            if !noticeModel.noMoreContent && !noticeModel.notices.isEmpty && !noticeModel.loading {
+                                HStack { // Load more Hstack
+                                    Spacer()
+                                    HStack {
+                                        Button(action: {
+                                            noticeModel.loadMoreSearchResultsByFollow(keywords: searchText)
+
+                                        }, label: {
+                                            Text("더보기")
+                                                .foregroundColor(Const.Colors.MainBlue.color)
+                                                .font(.system(size: 14))
+                                        })
+                                        
+                                    }
+                                    Spacer()
+                                } // end of load more Hstack
+                            }
+                        }.padding([.top, .leading, .trailing, .bottom], 10)
                     }
                 }
                 
@@ -74,7 +105,9 @@ struct FeedSearchView: View {
                 Spacer()
             }
         } // End of ZStack
-        .edgesIgnoringSafeArea(.bottom)
+        .onAppear {
+
+        }
         .hideNavigationBar()
         .alert(isPresented: $showAlert, content: {
             Alert(title: Text("검색"), message: Text("각 단어의 길이는 두 글자 이상이어야 합니다."), dismissButton: .default(Text("확인")))

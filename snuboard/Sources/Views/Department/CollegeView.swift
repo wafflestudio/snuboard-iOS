@@ -41,7 +41,7 @@ struct CollegeView: View {
                             ForEach(deptModel.colleges, id: \.self) { college in
 
                                 ForEach(college.departments.filter({!$0.follow.isEmpty}), id: \.self) { dept in
-                                    DepartmentSummaryView(id: dept.id)
+                                    DepartmentSummaryView(dept: dept)
                                         .environmentObject(deptModel)
                                 }
 
@@ -53,13 +53,17 @@ struct CollegeView: View {
                                     .environmentObject(settings)
             
                             } // End of ForEach
+                            
+                            NavigationLink(destination: EmptyView()) {
+                                EmptyView()
+                            }
                         }// End of VStack
                         
                         .padding()
                         .background(Const.Colors.BgGray.color)
                         
                     } // End of Scroll View
-                    .padding(.top, 1)
+                    .padding([.top, .bottom], 1)
 
                 } // End of VStack
                 
@@ -68,11 +72,15 @@ struct CollegeView: View {
             
             
         } // End of ZStack
+        .onChange(of: envModel.refreshTab, perform: { newVal in
+            print("Recieve refresh tab change \(newVal)")
+            if newVal {
+                envModel.refreshTab = false
+            }
+        })
 
-            
-    
 
-        
     }
+    
     
 }

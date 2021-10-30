@@ -16,7 +16,8 @@ class DepartmentListViewModel: ObservableObject {
     @Published var depts: [Department] = []
     var disposeBag = DisposeBag()
     @Published var loading = false
-
+    
+    
     func getAllDepartments() {
         
         self.loading = true
@@ -64,34 +65,6 @@ class DepartmentListViewModel: ObservableObject {
 
     }
     
-    func createDepartmentFollow(id: Int, follow: String) {
-        self.loading = true
-        DepartmentService.shared.createDepartmentFollow(id: id, follow: follow)
-            .map(Department.self)
-            .subscribe(
-                onSuccess: { data in
-                    
-                    if let collegeIdx = self.colleges.firstIndex(where: { $0.college == data.college }) {
-                        if let deptIdx = self.colleges[collegeIdx].departments.firstIndex(where: {$0.name == data.name}) {
-                            self.colleges[collegeIdx].departments[deptIdx] = data
-                            self.depts = self.depts.filter({$0.id != data.id})
-                            self.depts.append(data)
-                            print("\(data.name)-\(data.follow) followed!")
-                            
-                            
-                        }
-                    }
-                    self.loading = false
-                    
-                },
-                onError: {
-                    print("DepartmentListViewModel: getAllDepartments")
-                    print("==== error: \($0)")
-                    self.loading = false
-                }
-            ).disposed(by: disposeBag)
-        
-    }
     
     func setUserDefaults() {
         if UserDefaults.standard.queryParameters.isEmpty {
@@ -135,34 +108,7 @@ class DepartmentListViewModel: ObservableObject {
         print(UserDefaults.standard.deptColor)
     }
     
-    func deleteDepartmentFollow(id: Int, follow: String) {
-        self.loading = true
-        DepartmentService.shared.deleteDepartmentFollow(id: id, follow: follow)
-            .map(Department.self)
-            .subscribe(
-                onSuccess: { data in
-                    
-                    if let collegeIdx = self.colleges.firstIndex(where: { $0.college == data.college }) {
-                        if let deptIdx = self.colleges[collegeIdx].departments.firstIndex(where: {$0.name == data.name}) {
-                            self.colleges[collegeIdx].departments[deptIdx] = data
-                            self.depts = self.depts.filter({$0.id != data.id})
-                            self.depts.append(data)
-                            print("\(data.name)-\(follow) deleted!")
-                            
-                            
-                        }
-                    }
-                    
-                    self.loading = false
-                },
-                onError: {
-                    print("DepartmentListViewModel: getAllDepartments")
-                    print("==== error: \($0)")
-                    self.loading = false
-                }
-            ).disposed(by: disposeBag)
-        
-    }
+    
     
     
     func getCollegeLoc(college: String) -> Int {
@@ -180,29 +126,7 @@ class DepartmentListViewModel: ObservableObject {
         return deptLoc ?? 0
     }
     
-    func followTopic(deptId: Int, topic: String) {
-        
-        guard let deptIndex = self.depts.firstIndex(where: {$0.id == deptId}) else { return }
-        let department = self.depts[deptIndex]
-
-        let encodedTopic = "\(department.name)/\(topic)".toBase64URL()
-        Messaging.messaging().subscribe(toTopic: encodedTopic) { error in
-            print("\(topic) : \(encodedTopic) subscribed")
-        }
-
-    }
     
-    func unfollowTopic(deptId: Int, topic: String) {
-        
-        guard let deptIndex = self.depts.firstIndex(where: {$0.id == deptId}) else { return }
-        let department = self.depts[deptIndex]
-
-        let encodedTopic = "\(department.name)/\(topic)".toBase64URL()
-        Messaging.messaging().unsubscribe(fromTopic: encodedTopic) { error in
-            print("\(topic) : \(encodedTopic) unsubscribed")
-        }
-
-    }
     
 
     func turnOnNotifications(deptId: Int) {

@@ -25,5 +25,8 @@ final class DepartmentService: BaseService<DepartmentAPI> {
         return request(.deleteDepartmentFollow(id: id, follow: follow))
     }
     
+    func getDepartmentById(id: Int) -> Single<Response> {
+        return request(.getDepartmentById(id: id))
+    }
 
 }

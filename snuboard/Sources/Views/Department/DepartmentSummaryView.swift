@@ -11,36 +11,23 @@ struct DepartmentSummaryView: View {
     @EnvironmentObject var deptModel: DepartmentListViewModel
     @EnvironmentObject var settings: Settings
     
-    var id: Int = 0
-    var dept: String {
-        let department = deptModel.depts.first(where: {$0.id == id})
-        return department?.name ?? ""
-    }
-    var tags: [String] {
-        let department = deptModel.depts.first(where: {$0.id == id})
-        return department?.follow ?? []
-    }
     
-    init (id: Int) {
-        self.id = id
+    var dept: Department
+    
+    init(dept: Department) {
+        self.dept = dept
     }
-    
-    var deptObject: Department {
-        deptModel.depts.first(where: {$0.id == id})!
-    }
-    
-    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             NavigationLink(
-                destination: DepartmentDetailView(dept: deptObject)
+                destination: DepartmentView(dept: dept)
                     .environmentObject(deptModel)
                     .environmentObject(settings)
                     ,
                 label: {
                     HStack {
-                        Text(dept)
+                        Text(dept.name)
                             .font(.system(size: 13))
                             .bold()
                             .foregroundColor(.white)
@@ -59,11 +46,11 @@ struct DepartmentSummaryView: View {
                 
             .padding(8)
             .background(Color(UserDefaults.standard
-                                .deptColor[dept] ?? Const.Colors.color_palette[0]).cornerRadius(8, corners: [.topLeft, .topRight]))
+                                .deptColor[dept.name] ?? Const.Colors.color_palette[0]).cornerRadius(8, corners: [.topLeft, .topRight]))
             
             
     
-            FlexibleView(data: tags, spacing: 5, alignment: .leading) { item in
+            FlexibleView(data: dept.follow, spacing: 5, alignment: .leading) { item in
                 DepartmentTagChipView(item: item, isDept: false)
             }
             .padding(10)

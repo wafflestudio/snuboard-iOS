@@ -67,7 +67,7 @@ struct CollegeViewCell: View {
                         ForEach(college.departments, id: \.self) { department in
                             
                             NavigationLink(
-                                destination: DepartmentDetailView(dept: department).environmentObject(deptModel).environmentObject(settings),
+                                destination: DepartmentView(dept: department).environmentObject(settings),
                                 label: {
                                     HStack {
                                         Image("book")
@@ -85,6 +85,10 @@ struct CollegeViewCell: View {
                                 }) // End of NavigationLink
                             .padding(.leading, 13)
                             .padding(.trailing, 13)
+                        }
+
+                        NavigationLink(destination: EmptyView()) {
+                            EmptyView()
                         }
                     }
                     .padding(.leading, 5)

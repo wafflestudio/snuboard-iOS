@@ -1,62 +1,48 @@
 //
-//  DepartmentDetailView.swift
+//  DepartmentView.swift
 //  snuboard
 //
-//  Created by Subeen Park on 2021/09/10.
+//  Created by Subeen Park on 2021/10/28.
 //
 
 import SwiftUI
 
-
-struct DepartmentDetailView: View {
+struct DepartmentView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var deptModel: DepartmentListViewModel
-    @EnvironmentObject var settings: Settings
-    @StateObject private var noticeModel: NoticeViewModel
     
-    let id: Int
+    var dept: Department
     @State var indexSelected: Int = 0
-    var dept: Department {
-        deptModel.depts.first { $0.id == id }!
-    }
-
+    @EnvironmentObject var deptListModel: DepartmentListViewModel
+    @StateObject var deptModel: DepartmentViewModel
+    @EnvironmentObject var settings: Settings
+    
     init(dept: Department) {
-        self.id = dept.id
-        let finalTags = UserDefaults.standard.queryParameters[dept.name] ?? []
-        let noticeModelInit = NoticeViewModel(id: id, tags: finalTags.isEmpty ? dept.tags : finalTags)
-        self._noticeModel = StateObject(wrappedValue: noticeModelInit)
-        UIKit.UINavigationBar.appearance().backgroundColor = .white
+        self.dept = dept
+        _deptModel = StateObject(wrappedValue: DepartmentViewModel(id: dept.id))
     }
     
-
     var body: some View {
-
-
         VStack(spacing: 0) {
-
+            // PICKER
             SegmentedPickerView(selectedIndex: $indexSelected)
             if (indexSelected == 0) {
-                DepartmentDetailFeedView(dept: dept)
+
+                DepartmentSettingView()
                     .environmentObject(deptModel)
                     .environmentObject(settings)
             }
             else if (indexSelected == 1) {
-                DepartmentDetailHomeView(dept: dept)
+//                DepartmentDetailHomeView(dept: dept)
+//                    .environmentObject(deptModel)
+//                    .environmentObject(settings)
+                DepartmentNoticeView()
                     .environmentObject(deptModel)
-                    .environmentObject(settings)
-                    .environmentObject(noticeModel)
             }
-            Spacer()
-
-            NavigationLink(destination: EmptyView()) {
-                EmptyView()
-            }
-        }
-        .onAppear {
-//            noticeModel.initModelWithDepartmentId(id: self.id)
-        }
-        .background(Const.Colors.BgGray.color.edgesIgnoringSafeArea(.bottom))
+            
+            
+            
+        } // END OF VSTACK
         .navigationBarTitle(dept.name, displayMode: .inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -85,6 +71,7 @@ struct DepartmentDetailView: View {
                 }
             }
         } // END OF TOOLBAR
-
     }
+    
 }
+

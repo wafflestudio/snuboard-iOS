@@ -9,6 +9,7 @@ import Foundation
 import Moya
 import RxSwift
 
+
 class NoticeDetailViewModel: ObservableObject {
     
     @Published var notice: NoticeDetail = NoticeDetail(id: 0, title: "", content: "", createdAt: "12345678", isPinned: false, link: "", files: [], isScrapped: false, departmentID: 3, departmentName: "", tags: [])
@@ -19,6 +20,19 @@ class NoticeDetailViewModel: ObservableObject {
     init(id: Int) {
         self.id = id
         self.loading = true
+        NoticeService.shared.getNoticeById(id: self.id)
+            .map(NoticeDetail.self)
+            .subscribe(
+                onSuccess: { data in
+                    self.notice = data
+                    self.loading = false
+                },
+                onError: {
+                    print("NoticeDetailViewModel: init")
+                    print("==== error: \($0)")
+                    self.loading = false
+                }
+            ).disposed(by: disposeBag)
 
     }
 

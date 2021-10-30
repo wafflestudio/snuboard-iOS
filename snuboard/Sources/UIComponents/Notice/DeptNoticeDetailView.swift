@@ -1,16 +1,16 @@
 //
-//  NoticeDetailView.swift
+//  DeptNoticeDetailView.swift
 //  snuboard
 //
-//  Created by Subeen Park on 2021/09/10.
+//  Created by Subeen Park on 2021/10/29.
 //
 
 import SwiftUI
 
-struct NoticeDetailView: View {
+struct DeptNoticeDetailView: View {
     
     @StateObject var noticeModel: NoticeDetailViewModel
-    @EnvironmentObject var noticeSummaryModel: NoticeViewModel
+    @EnvironmentObject var deptModel: DepartmentViewModel
     @Environment(\.presentationMode) var presentationMode
     
 
@@ -35,7 +35,7 @@ struct NoticeDetailView: View {
                     Spacer()
                 }
             }
-            
+
             else {
                 VStack {
                     VStack(alignment: .leading) {
@@ -54,14 +54,14 @@ struct NoticeDetailView: View {
                     }
                     .padding(20)
                     .background(Color.white)
-                    
+
                     Spacer()
                         .frame(height: 10)
-                    
+
                     VStack{
-                        
+
                         HStack {
-                            
+
                             HStack {
                                 Image("folder_open")
                                     .frame(width: 16, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -69,9 +69,9 @@ struct NoticeDetailView: View {
                                     .font(.system(size: 14))
                                 Spacer()
                             }
-                            
+
                         }
-                        
+
                         VStack {
                             ForEach(noticeModel.notice.files) { file in
                                 Link(destination: URL(string: file.link)!, label: {
@@ -81,27 +81,23 @@ struct NoticeDetailView: View {
                                             Text(file.name)
                                                 .foregroundColor(Const.Colors.Gray2.color)
                                                 .font(.system(size: 12))
-                                            
+
                                             Spacer()
                                         }
-                                        
+
                                     })
                             }
                         }
                     }
                     .padding(20)
                     .background(Color.white)
-                    
+
                 }
                 .background(Const.Colors.BgGray.color)
                 .padding(.top, 1)
             }
-            
+
         }
-        .onAppear {
-            noticeModel.getNotice()
-            AppState.shared.pageToNavigationTo = nil
-        }    
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 HStack {
@@ -118,12 +114,12 @@ struct NoticeDetailView: View {
                             .foregroundColor(Const.Colors.Gray2.color)
                             .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
-                
+
 
                     if noticeModel.notice.isScrapped {
                         Button(action: {
                             noticeModel.deleteNoticeScrap(id: noticeModel.notice.id)
-                            noticeSummaryModel.deleteNoticeScrap(id: noticeModel.notice.id)
+                            deptModel.deleteNoticeScrap(id: noticeModel.notice.id)
                         }, label: {
                             Image("favorite_selected")
                                 .resizable()
@@ -132,8 +128,7 @@ struct NoticeDetailView: View {
                     } else {
                         Button(action: {
                             noticeModel.createNoticeScrap(id: noticeModel.notice.id)
-                            noticeSummaryModel.createNoticeScrap(id: noticeModel.notice.id)
-  
+                            deptModel.createNoticeScrap(id: noticeModel.notice.id)
                         }, label: {
                             Image("favorite_unselected")
                                 .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
@@ -142,15 +137,15 @@ struct NoticeDetailView: View {
                                 .foregroundColor(Const.Colors.Gray2.color)
                         })
                     }
-                    
+
                 }
-                
-                
+
+
             }
         }
         .customNavBarWithOutSearch(title: "", action: {
             presentationMode.wrappedValue.dismiss()
         })
-        
+           
     }
 }

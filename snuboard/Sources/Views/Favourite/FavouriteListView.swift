@@ -61,7 +61,7 @@ struct FavouriteListView: View {
            
                         }
                     }
-                    .padding(.top, 1)
+                    .padding([.top, .bottom], 1)
                     .background(Const.Colors.BgGray.color)
                     
                     
@@ -71,7 +71,7 @@ struct FavouriteListView: View {
         .onChange(of: envModel.refreshTab, perform: { newVal in
             print("Recieve refresh tab change \(newVal)")
             if newVal {
-                noticeModel.getNoticesByFollow()
+                noticeModel.getScrappedNotices()
                 envModel.refreshTab = false
             }
         })

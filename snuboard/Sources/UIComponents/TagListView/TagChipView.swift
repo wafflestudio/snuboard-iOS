@@ -45,18 +45,18 @@ struct TagChipView: View {
             )
             .onTapGesture {
                 selected.toggle()
-                if selected {
-                    deptModel.createDepartmentFollow(id: id, follow: item)
-                    if notificationTurnedOn {
-                        deptModel.followTopic(deptId: id, topic: item)
-                    }
-                }
-                else {
-                    deptModel.deleteDepartmentFollow(id: id, follow: item)
-                    if notificationTurnedOn {
-                        deptModel.unfollowTopic(deptId: id, topic: item)
-                    }
-                }
+//                if selected {
+//                    deptModel.createDepartmentFollow(id: id, follow: item)
+//                    if notificationTurnedOn {
+//                        deptModel.followTopic(deptId: id, topic: item)
+//                    }
+//                }
+//                else {
+//                    deptModel.deleteDepartmentFollow(id: id, follow: item)
+//                    if notificationTurnedOn {
+//                        deptModel.unfollowTopic(deptId: id, topic: item)
+//                    }
+//                }
             }
         
     }
