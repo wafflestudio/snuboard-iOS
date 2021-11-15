@@ -72,6 +72,9 @@ struct CollegeView: View {
             
             
         } // End of ZStack
+        .onAppear {
+            settings.initUserDefaults()
+        }
         .onChange(of: envModel.refreshTab, perform: { newVal in
             print("Recieve refresh tab change \(newVal)")
             if newVal {
