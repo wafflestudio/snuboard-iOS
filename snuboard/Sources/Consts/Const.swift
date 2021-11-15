@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Const {
     // additional constants in extension
@@ -93,4 +94,5 @@ SNUBOARD 담당자<br />
 """
     
     static let NOTICE_LIMIT = 30
+    static let WEB_VIEW_WIDTH = max(0, UIScreen.main.bounds.width - 40)
 }
