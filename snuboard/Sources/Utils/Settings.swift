@@ -83,6 +83,7 @@ class Settings: ObservableObject{
         didSet {
             print(queryParameters)
             UserDefaults.standard.queryParameters = self.queryParameters
+            print("USER DEFAULTS \(UserDefaults.standard.queryParameters)")
         }
     }
     

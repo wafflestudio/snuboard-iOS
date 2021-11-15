@@ -25,7 +25,7 @@ class DepartmentViewModel: ObservableObject {
     
 
     
-    init(id: Int) {
+    init(id: Int, name: String) {
         self.loading = true
         
         DepartmentService.shared.getDepartmentById(id: id)
@@ -42,7 +42,8 @@ class DepartmentViewModel: ObservableObject {
             )
             .disposed(by: disposeBag)
         
-        let tags = UserDefaults.standard.queryParameters[department.name] ?? []
+        let tags = UserDefaults.standard.queryParameters[name] ?? []
+        print("TAGS: \(tags)")
         
         NoticeService.shared.getNoticesByDepartmentId(id: id, cursor: self.nextCursor, tags: tags.joined(separator: ","))
             .map(NoticeSummaryDataModel.self)

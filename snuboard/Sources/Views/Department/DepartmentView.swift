@@ -19,7 +19,7 @@ struct DepartmentView: View {
     
     init(dept: Department) {
         self.dept = dept
-        _deptModel = StateObject(wrappedValue: DepartmentViewModel(id: dept.id))
+        _deptModel = StateObject(wrappedValue: DepartmentViewModel(id: dept.id, name: dept.name))
     }
     
     var body: some View {
